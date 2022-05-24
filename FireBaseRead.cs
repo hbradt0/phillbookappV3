@@ -70,7 +70,6 @@ namespace EmailReader //rename
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                File.AppendAllText(EmailFileRead.fileName1, e.Message);
             }
         }
         }
@@ -103,7 +102,6 @@ namespace EmailReader //rename
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-                    File.AppendAllText(EmailFileRead.fileName1, e.Message);
                 }
             }
         }
@@ -136,7 +134,6 @@ namespace EmailReader //rename
                 catch (Exception e)
                 {
                     Console.WriteLine(e);
-                    File.AppendAllText(EmailFileRead.fileName1, e.Message);
                 }
             }
         }
