@@ -80,6 +80,7 @@
 /Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/optimized/chapter4.png
 /Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/optimized/chapter5.png
 /Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/optimized/
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.csproj.AssemblyReference.cache
 /Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.csproj.CoreCompileInputs.cache
 /Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.csproj.CopyComplete
 /Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.exe

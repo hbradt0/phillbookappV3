@@ -8,7 +8,7 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/System.Core.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/System.Net.Http.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/Facades/System.Drawing.Common.dll
-/Users/psargent/phillbookApp2/packages/Microsoft.Azure.Storage.Common.11.2.3/lib/netstandard2.0/Microsoft.Azure.Storage.Common.dll
+/Users/psargent/phillbookApp2/packages/Microsoft.Azure.Storage.Blob.11.2.3/lib/netstandard2.0/Microsoft.Azure.Storage.Blob.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/Facades/netstandard.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/System.Data.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/System.Transactions.dll
@@ -20,6 +20,7 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/System.ServiceModel.Internals.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/System.Web.Services.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/System.Xml.Linq.dll
+/Users/psargent/phillbookApp2/packages/Microsoft.Azure.Storage.Common.11.2.3/lib/netstandard2.0/Microsoft.Azure.Storage.Common.dll
 /Users/psargent/phillbookApp2/packages/Newtonsoft.Json.10.0.2/lib/netstandard1.3/Newtonsoft.Json.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/Facades/System.Runtime.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/Facades/System.IO.dll
@@ -47,5 +48,4 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/Facades/System.Reflection.Primitives.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/Facades/System.Text.Encoding.Extensions.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll
-/Users/psargent/phillbookApp2/packages/Microsoft.Azure.Storage.Blob.11.2.3/lib/netstandard2.0/Microsoft.Azure.Storage.Blob.dll
 /Users/psargent/phillbookApp2/packages/Microsoft.Azure.KeyVault.Core.2.0.4/lib/netstandard1.5/Microsoft.Azure.KeyVault.Core.dll

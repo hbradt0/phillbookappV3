@@ -1,9 +1,13 @@
-objc[33387]: Class NSURLSessionDelegate is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy (0x7fff87c202d8) and /Users/psargent/Library/Developer/CoreSimulator/Devices/EF3AF984-4147-4AF4-AB16-F60248290383/data/Containers/Bundle/Application/7A4C3DD1-69A4-4EDF-9B5B-8B08A289D930/Hello_MultiScreen_iPhone.app/Hello_MultiScreen_iPhone (0x106dff540). One of the two will be used. Which one is undefined.
+objc[38840]: Class NSURLSessionDelegate is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy (0x7fff87c202d8) and /Users/psargent/Library/Developer/CoreSimulator/Devices/BE6AE2BE-A355-48F8-870C-D99FC72AFEC0/data/Containers/Bundle/Application/B2CB0338-DE51-4B8E-9E3B-BBE6CB7543DF/Hello_MultiScreen_iPhone.app/Hello_MultiScreen_iPhone (0x101161540). One of the two will be used. Which one is undefined.
 MonoTouch: Could not install sigaction override, unexpected sigaction implementation.
-2022-05-23 19:52:48.482840-0700 Hello_MultiScreen_iPhone[33387:1329143] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=33387
-2022-05-23 19:52:48.483221-0700 Hello_MultiScreen_iPhone[33387:1329143] SecTaskCopyDebugDescription: Hello_MultiScree[33387]/0#-1 LF=0
-2022-05-23 19:52:48.491736-0700 Hello_MultiScreen_iPhone[33387:1329143] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=33387
-2022-05-23 19:52:48.492006-0700 Hello_MultiScreen_iPhone[33387:1329143] SecTaskCopyDebugDescription: Hello_MultiScree[33387]/0#-1 LF=0
-2022-05-23 19:52:48.631653-0700 Hello_MultiScreen_iPhone[33387:1329143] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=33387
-2022-05-23 19:52:48.631934-0700 Hello_MultiScreen_iPhone[33387:1329143] SecTaskCopyDebugDescription: Hello_MultiScree[33387]/0#-1 LF=0
-2022-05-23 19:52:57.602301-0700 Hello_MultiScreen_iPhone[33387:1329233] XPC connection interrupted
+2022-05-24 08:20:55.157464-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=38840
+2022-05-24 08:20:55.157856-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskCopyDebugDescription: Hello_MultiScree[38840]/0#-1 LF=0
+2022-05-24 08:20:55.164690-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=38840
+2022-05-24 08:20:55.164947-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskCopyDebugDescription: Hello_MultiScree[38840]/0#-1 LF=0
+2022-05-24 08:20:55.285798-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=38840
+2022-05-24 08:20:55.286187-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskCopyDebugDescription: Hello_MultiScree[38840]/0#-1 LF=0
+2022-05-24 08:21:00.897235-0700 Hello_MultiScreen_iPhone[38840:1548230] [unspecified] container_system_group_path_for_identifier: error = ((container_error_t)98) NOT_CODESIGNED
+2022-05-24 08:21:00.897369-0700 Hello_MultiScreen_iPhone[38840:1548230] [MC] Error getting system group container for systemgroup.com.apple.configurationprofiles: 98
+2022-05-24 08:21:00.897660-0700 Hello_MultiScreen_iPhone[38840:1548230] [MC] Failed to get profile system group container path. Overriding with expected path: /Users/psargent/Library/Developer/CoreSimulator/Devices/BE6AE2BE-A355-48F8-870C-D99FC72AFEC0/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+2022-05-24 08:21:01.772171-0700 Hello_MultiScreen_iPhone[38840:1548230] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
+2022-05-24 08:21:01.773410-0700 Hello_MultiScreen_iPhone[38840:1548230] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.

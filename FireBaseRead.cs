@@ -26,18 +26,44 @@ namespace EmailReader //rename
 
         public static bool cloudservices = false;
         public static string phoneID = "";
+        public static string LoginEmail = "";
+        public static string LoginPassword = "";
         const String storageConnection = "DefaultEndpointsProtocol=https;AccountName=halbookappstorage;AccountKey=+D6AxCmqVcfNVCG27qpciwmIsYL1FaAaLodN7iY6L+s6MjVWuVfq8yjWbKOrfgYLBvntOzIteFdW+ASt6HSKpw==;EndpointSuffix=core.windows.net;";
         const String accessKey = "+D6AxCmqVcfNVCG27qpciwmIsYL1FaAaLodN7iY6L+s6MjVWuVfq8yjWbKOrfgYLBvntOzIteFdW+ASt6HSKpw==";
         const String storageName = "halbookappstorage";
 
-        public static void Encrypt()
+        public static string Base64Decode(string base64EncodedData)
         {
-            //phoneID.Encrypt;
+            var base64EncodedBytes = System.Convert.FromBase64String(base64EncodedData);
+            return System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
         }
 
-        public static void Decrypt()
+        public static string Base64Encode(string plainText)
         {
-            
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
+            return System.Convert.ToBase64String(plainTextBytes);
+        }
+
+        public static void Encrypt()
+        {
+            if(phoneID!="")
+                phoneID = Base64Encode(phoneID);
+        }
+
+        public static void EncryptFile(String file, CloudBlockBlob cloud)
+        {
+            String text = File.ReadAllText(file);
+            String encodedtext = Base64Encode(text);
+            File.WriteAllText(file,encodedtext);
+            cloud.UploadFromFile(file, null);
+            File.WriteAllText(file, text);
+        }
+
+        public static void DecryptFile(String file)
+        {
+            String text = File.ReadAllText(file);
+            String encodedtext = Base64Decode(text);
+            File.WriteAllText(file, text);
         }
 
         public static void UploadFile(String file, String cont = "halbookappblob")
@@ -65,7 +91,8 @@ namespace EmailReader //rename
                 //    blob.Uri+blob.GetSharedAccessSignature(sasConstraints));
 
                 var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
-                cloudBlockBlob.UploadFromFile(file1.FullName,null);
+                    EncryptFile(file1.FullName, cloudBlockBlob);
+                //cloudBlockBlob.UploadFromFile(file1.FullName,null);
             }
             catch (Exception e)
             {
@@ -79,7 +106,6 @@ namespace EmailReader //rename
             if (cloudservices && phoneID != "")
             {
                 Encrypt();
-                Decrypt();
                 try
                 {
                     var connectionString = String.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
@@ -98,6 +124,7 @@ namespace EmailReader //rename
           
                     var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
                     cloudBlockBlob.DownloadToFile(file1.FullName, FileMode.OpenOrCreate);
+                    DecryptFile(file1.FullName);
                 }
                 catch (Exception e)
                 {

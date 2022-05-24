@@ -15,6 +15,7 @@ namespace Hello_MultiScreen_iPhone
         public UITextView LoginInstructions;
         public UITextView Usernamelabel;
         public UITextView Passwordlabel;
+        public UITableView listView;
 
         public UIButton LoginButton;
         public UIButton UploadCloud;
@@ -37,6 +38,13 @@ namespace Hello_MultiScreen_iPhone
         private UIViewAnimationCurve animCurve;
         private bool keyboardShowing;
         private bool keyboardOpen = false;
+
+        public static string[] list = {
+            "Journal",
+            "Todo List",
+            "Image Calendar",
+            "All"
+            };
 
         //loads the HelloWorldScreen.xib file and connects it to this object
         public LoginScreen() : base("LoginScreen", null)
@@ -80,7 +88,7 @@ namespace Hello_MultiScreen_iPhone
             {
                 Editable = false
             };
-
+            listView = new UITableView();
             loginemail = new UITextField();
             loginpassword = new UITextField();
             DownloadCloud = new UIButton(UIButtonType.System);
@@ -92,17 +100,23 @@ namespace Hello_MultiScreen_iPhone
             LoginInstructions.Text = "Login to Sync Cloud";
 
             Usernamelabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 260, 100, 50);
+            Usernamelabel.BackgroundColor = UIColor.White;
             Usernamelabel.Text = "Username: ";
 
             Passwordlabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 360, 100, 50);
             Passwordlabel.Text = "Password: ";
+            Passwordlabel.BackgroundColor = UIColor.White;
+
+            listView.Frame = new CGRect(Usernamelabel.Frame.X + 100, View.Frame.Top + 260, ResponsiveSizeX - 100, 50);
+            listView.Source = new TableSource(list);
 
             loginemail.Frame = new CGRect(Usernamelabel.Frame.X+100, View.Frame.Top + 260, ResponsiveSizeX-100, 50);
             loginemail.BackgroundColor = UIColor.FromRGB(230, 230, 250);
             loginemail.TextColor = UIColor.SystemPurple;
             loginemail.KeyboardType = UIKeyboardType.ASCIICapable;
             loginemail.ReturnKeyType = UIReturnKeyType.Done;
-
+            loginemail.ShouldReturn = (textField) => { textField.ResignFirstResponder(); return true; };
+            loginpassword.ShouldReturn = (textField) => { textField.ResignFirstResponder(); return true; };
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
             g.CancelsTouchesInView = false; //for iOS5View.AddGestureRecognizer (g);
 
@@ -118,21 +132,23 @@ namespace Hello_MultiScreen_iPhone
 
             DownloadCloud.BackgroundColor = UIColor.SystemPurple;
             DownloadCloud.SetTitle("Download Cloud Data", UIControlState.Normal);
-            DownloadCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 260, ResponsiveSizeX, 30);
+            DownloadCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 360, ResponsiveSizeX, 30);
 
             UploadCloud.BackgroundColor = UIColor.SystemPurple;
             UploadCloud.SetTitle("Upload Cloud Data", UIControlState.Normal);
-            UploadCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 360, ResponsiveSizeX, 30);
+            UploadCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 460, ResponsiveSizeX, 30);
 
             Logout.BackgroundColor = UIColor.SystemPurple;
             Logout.SetTitle("Logout", UIControlState.Normal);
-            Logout.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 460, ResponsiveSizeX, 30);
+            Logout.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 560, ResponsiveSizeX, 30);
 
             DeleteCloud.BackgroundColor = UIColor.SystemPurple;
             DeleteCloud.SetTitle("Delete Cloud Files", UIControlState.Normal);
-            DeleteCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 560, ResponsiveSizeX, 30);
+            DeleteCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 660, ResponsiveSizeX, 30);
 
             FireBaseRead.cloudservices = false;
+            FireBaseRead.LoginEmail = "";
+            FireBaseRead.LoginPassword = "";
             FireBaseRead.phoneID = "";
 
             scrollView = new UIScrollView
@@ -151,6 +167,7 @@ namespace Hello_MultiScreen_iPhone
             DeleteCloud.AddTarget(DeleteCloudClick, UIControlEvent.TouchUpInside);
 
             scrollView.Add(Logout);
+            scrollView.Add(listView) ;
             scrollView.Add(loginemail);
             scrollView.AddSubview(LoginInstructions);
             scrollView.AddSubview(Usernamelabel);
@@ -249,18 +266,40 @@ namespace Hello_MultiScreen_iPhone
 
         void LoginButtonClick(object sender, EventArgs eventArgs)
         {
-            LoginInstructions.Text = "Welcome " + loginemail.Text + "!";
-            FireBaseRead.cloudservices = true;
-            FireBaseRead.phoneID = loginemail.Text + loginpassword.Text;
-            LoginButton.Hidden = true;
-            loginemail.Hidden = true;
-            loginpassword.Hidden = true;
-            DownloadCloud.Hidden = false;
-            UploadCloud.Hidden = false;
-            Logout.Hidden = false;
-            Usernamelabel.Hidden = true;
-            Passwordlabel.Hidden = true;
-            DeleteCloud.Hidden = false;
+            if (FireBaseRead.phoneID == "" || FireBaseRead.phoneID == FireBaseRead.Base64Encode(loginemail.Text + loginpassword.Text))
+            { 
+                LoginButton.Hidden = true;
+                loginemail.Hidden = true;
+                loginpassword.Hidden = true;
+                DownloadCloud.Hidden = false;
+                UploadCloud.Hidden = false;
+                Logout.Hidden = false;
+                Usernamelabel.Hidden = true;
+                Passwordlabel.Hidden = true;
+                DeleteCloud.Hidden = false;
+                FireBaseRead.cloudservices = true;
+                FireBaseRead.phoneID = loginemail.Text + loginpassword.Text;
+                LoginInstructions.Text = "Welcome " + loginemail.Text + "!";
+                FireBaseRead.LoginEmail = loginemail.Text;
+                FireBaseRead.LoginPassword = loginpassword.Text;
+            }
+            else
+            {
+                var Confirm = new UIAlertView("Confirmation", "Already registered, please click confirm to repopulate your login", null, "Cancel", "Yes");
+                Confirm.Show();
+                Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
+                {
+                    if (es.ButtonIndex == 0)
+                    {
+                        //Do nothing
+                    }
+                    else
+                    {
+                        loginemail.Text = FireBaseRead.LoginEmail;
+                        loginpassword.Text = FireBaseRead.LoginPassword;
+                    }
+                };
+            }
             UIApplication.SharedApplication.KeyWindow.EndEditing(true);
             keyboardOpen = false;
             scrollView.ScrollRectToVisible(LoginInstructions.Frame, true);
@@ -278,9 +317,24 @@ namespace Hello_MultiScreen_iPhone
                 }
                 else
                 {
-                    FireBaseRead.UploadFile(EmailFileRead.fileName1);
-                    FireBaseRead.UploadFile(EmailFileRead.fileName2);
-                    FireBaseRead.UploadSyncImages();
+                    if (TableSource.SelectedRow == list[0])
+                    {
+                        FireBaseRead.UploadFile(EmailFileRead.fileName1);
+                    }
+                    else if (TableSource.SelectedRow == list[1])
+                    {
+                        FireBaseRead.UploadFile(EmailFileRead.fileName2);
+                    }
+                    else if (TableSource.SelectedRow == list[2])
+                    {
+                        FireBaseRead.UploadSyncImages();
+                    }
+                    else 
+                    {
+                        FireBaseRead.UploadFile(EmailFileRead.fileName1);
+                        FireBaseRead.UploadFile(EmailFileRead.fileName2);
+                        FireBaseRead.UploadSyncImages();
+                    }
                 }
             };
 
@@ -299,9 +353,25 @@ namespace Hello_MultiScreen_iPhone
                 }
                 else
                 {
-                    FireBaseRead.DeleteFile(EmailFileRead.fileName1);
-                    FireBaseRead.DeleteFile(EmailFileRead.fileName2);
-                    FireBaseRead.DeleteSyncFiles();
+                    if (TableSource.SelectedRow == list[0])
+                    {
+                        FireBaseRead.DeleteFile(EmailFileRead.fileName1);
+                    }
+                    else if (TableSource.SelectedRow == list[1])
+                    {
+                        FireBaseRead.DeleteFile(EmailFileRead.fileName2);
+                    }
+                    else if (TableSource.SelectedRow == list[2])
+                    {
+                        FireBaseRead.DeleteSyncFiles();
+                    }
+                    else
+                    {
+
+                        FireBaseRead.DeleteFile(EmailFileRead.fileName1);
+                        FireBaseRead.DeleteFile(EmailFileRead.fileName2);
+                        FireBaseRead.DeleteSyncFiles();
+                    }
                 }
             };
 
@@ -319,9 +389,24 @@ namespace Hello_MultiScreen_iPhone
                 }
                 else
                 {
-                    FireBaseRead.DownloadFile(EmailFileRead.fileName1);
-                    FireBaseRead.DownloadFile(EmailFileRead.fileName2);
-                    FireBaseRead.DownloadSyncFiles();
+                    if (TableSource.SelectedRow == list[0])
+                    {
+                        FireBaseRead.DownloadFile(EmailFileRead.fileName1);
+                    }
+                    else if (TableSource.SelectedRow == list[1])
+                    {
+                        FireBaseRead.DownloadFile(EmailFileRead.fileName2);
+                    }
+                    else if (TableSource.SelectedRow == list[2])
+                    {
+                        FireBaseRead.DownloadSyncFiles();
+                    }
+                    else
+                    {
+                        FireBaseRead.DownloadFile(EmailFileRead.fileName1);
+                        FireBaseRead.DownloadFile(EmailFileRead.fileName2);
+                        FireBaseRead.DownloadSyncFiles();
+                    }
                 }
             };
         }
@@ -373,5 +458,41 @@ namespace Hello_MultiScreen_iPhone
 
         }
 
+
     }
+
+        public class TableSource : UITableViewSource
+        {
+            string[] list;
+            public TableSource() { }
+            public TableSource(string[] list)
+            {
+                this.list = list;
+            }
+            
+
+            public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
+            {
+                var cell = new UITableViewCell(UITableViewCellStyle.Default, "");
+                string item = list[indexPath.Row];
+                cell.TextLabel.Text = item;
+                return cell;
+            }
+
+            public override nint RowsInSection(UITableView tableview, nint section)
+            {
+                return list.Length;
+            }
+
+
+            public static string SelectedRow;
+
+            public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+            {
+                string item = list[indexPath.Row];
+                new UIAlertView("Row Selected", item, null, "OK").Show();
+                SelectedRow = item;
+            }
+    }
+    
 }

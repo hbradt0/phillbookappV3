@@ -9,7 +9,7 @@ RemoveDynamicRegistrar:false
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.Core.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.Net.Http.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.Drawing.Common.dll
-/Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/Microsoft.Azure.Storage.Common.dll
+/Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/Microsoft.Azure.Storage.Blob.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/netstandard.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.Data.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.Transactions.dll
@@ -21,6 +21,7 @@ RemoveDynamicRegistrar:false
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.ServiceModel.Internals.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.Web.Services.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.Xml.Linq.dll
+/Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/Microsoft.Azure.Storage.Common.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/Newtonsoft.Json.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.Runtime.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.IO.dll
@@ -48,5 +49,4 @@ RemoveDynamicRegistrar:false
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.Reflection.Primitives.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.Text.Encoding.Extensions.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/Microsoft.CSharp.dll
-/Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/Microsoft.Azure.Storage.Blob.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/Microsoft.Azure.KeyVault.Core.dll
