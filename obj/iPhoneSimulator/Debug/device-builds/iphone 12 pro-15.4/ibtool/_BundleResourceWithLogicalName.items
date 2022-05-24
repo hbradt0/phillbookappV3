@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/ibtool/ImageScreen.nib">
+      <Optimize>false</Optimize>
+      <LogicalName>ImageScreen.nib</LogicalName>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/ibtool/HelloWorldScreen.nib">
+      <Optimize>false</Optimize>
+      <LogicalName>HelloWorldScreen.nib</LogicalName>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/ibtool/EditJournalScreen.nib">
+      <Optimize>false</Optimize>
+      <LogicalName>EditJournalScreen.nib</LogicalName>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/ibtool/HomeScreen2.nib">
+      <Optimize>false</Optimize>
+      <LogicalName>HomeScreen2.nib</LogicalName>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/ibtool/HomeScreen.nib">
+      <Optimize>false</Optimize>
+      <LogicalName>HomeScreen.nib</LogicalName>
+    </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/ibtool/HelloUniverseScreen.nib">
+      <Optimize>false</Optimize>
+      <LogicalName>HelloUniverseScreen.nib</LogicalName>
+    </_BundleResourceWithLogicalName>
+  </ItemGroup>
+</Project>

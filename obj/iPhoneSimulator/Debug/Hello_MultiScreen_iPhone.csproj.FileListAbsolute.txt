@@ -1,0 +1,37 @@
+/Users/psargent/phillbookApp2/bin/iPhoneSimulator/Debug/Hello_MultiScreen_iPhone.exe
+/Users/psargent/phillbookApp2/bin/iPhoneSimulator/Debug/Hello_MultiScreen_iPhone.pdb
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/Hello_MultiScreen_iPhone.csproj.CoreCompileInputs.cache
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/Hello_MultiScreen_iPhone.exe
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/Hello_MultiScreen_iPhone.pdb
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/Hello_MultiScreen_iPhone.csproj.AssemblyReference.cache
+/Users/psargent/phillbookApp2/bin/iPhoneSimulator/Debug/Tesseract.Binding.iOS.dll
+/Users/psargent/phillbookApp2/bin/iPhoneSimulator/Debug/Tesseract.dll
+/Users/psargent/phillbookApp2/bin/iPhoneSimulator/Debug/Tesseract.iOS.dll
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/Hello_MultiScreen_iPhone.csproj.CopyComplete
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/actool/_PartialAppManifest.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/actool/_BundleResourceWithLogicalName.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/actool/_ProcessedImageAssetsPath.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/ibtool/_BundleResourceWithLogicalName.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/ibtool/_ProcessedInterfaceDefinitionsPath.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/coremlc/_PartialAppManifest.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/coremlc/_BundleResourceWithLogicalName.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/coremlc/_ProcessedCoreMLModelsPath.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/_ProcessedBundleResourcesPath.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/_ProcessedContentPath.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/icon-72.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/icon-50.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/icon-100.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/iTunesArtwork@2x.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/Default-568h@2x.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/Default-Landscape@2x~ipad.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/Default-Landscape~ipad.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/Default-Portrait@2x~ipad.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/Default-Portrait~ipad.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/Default.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/Default@2x.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/icon-144.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/ic_launcher.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/ic_launcher_foreground.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/ic_launcher_round.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/MainTitlePic.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 12 pro-15.4/optimized/

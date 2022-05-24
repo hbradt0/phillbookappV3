@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A10944A3-80E8-4A8D-A6F5-1A10606AAE60}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Hello_MultiScreen_iPhone</RootNamespace>
+    <AssemblyName>Hello_MultiScreen_iPhone</AssemblyName>
+    <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchDebug>True</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <CodesignKey>Apple Distribution: Phillip Sargent (FG4YNF644N)</CodesignKey>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Tesseract.Binding.iOS">
+      <HintPath>packages\Xamarin.Tesseract.0.3.4\lib\Xamarin.iOS10\Tesseract.Binding.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Tesseract">
+      <HintPath>packages\Xamarin.Tesseract.0.3.4\lib\Xamarin.iOS10\Tesseract.dll</HintPath>
+    </Reference>
+    <Reference Include="Tesseract.iOS">
+      <HintPath>packages\Xamarin.Tesseract.0.3.4\lib\Xamarin.iOS10\Tesseract.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>packages\System.Buffers.4.5.1\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\netstandard1.3\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>packages\System.Memory.4.5.4\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Hashing">
+      <HintPath>packages\System.IO.Hashing.6.0.0\lib\netstandard2.0\System.IO.Hashing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web">
+      <HintPath>packages\System.Text.Encodings.Web.4.7.2\lib\netstandard2.1\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\netstandard2.1\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json">
+      <HintPath>packages\System.Text.Json.4.7.2\lib\netstandard2.0\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory.Data">
+      <HintPath>packages\System.Memory.Data.1.0.2\lib\netstandard2.0\System.Memory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Core">
+      <HintPath>packages\Azure.Core.1.24.0\lib\netstandard2.0\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Storage.Common">
+      <HintPath>packages\Azure.Storage.Common.12.11.0\lib\netstandard2.0\Azure.Storage.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Storage.Blobs">
+      <HintPath>packages\Azure.Storage.Blobs.12.12.0\lib\netstandard2.0\Azure.Storage.Blobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Azure.KeyVault.Core">
+      <HintPath>packages\Microsoft.Azure.KeyVault.Core.2.0.4\lib\netstandard1.5\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Storage.Common">
+      <HintPath>packages\Microsoft.Azure.Storage.Common.11.2.3\lib\netstandard2.0\Microsoft.Azure.Storage.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.Azure.Storage.Blob">
+      <HintPath>packages\Microsoft.Azure.Storage.Blob.11.2.3\lib\netstandard2.0\Microsoft.Azure.Storage.Blob.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <InterfaceDefinition Include="Screens\HomeScreen2.xib" />
+    <InterfaceDefinition Include="Screens\EditJournalScreen.xib" />
+    <InterfaceDefinition Include="Screens\ImageScreen.xib" />
+    <None Include="packages.config" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <InterfaceDefinition Include="Screens\StoryScreen.xib" />
+    <InterfaceDefinition Include="Screens\LoginScreen.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmailFileRead.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Screens\EditJournalScreen.cs" />
+    <Compile Include="Screens\EditJournalScreen.designer.cs">
+      <DependentUpon>EditJournalScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\HomeScreen.designer.cs">
+      <DependentUpon>HomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\HelloWorldScreen.designer.cs">
+      <DependentUpon>HelloWorldScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\HelloUniverseScreen.designer.cs">
+      <DependentUpon>HelloUniverseScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\HomeScreen.cs" />
+    <Compile Include="Screens\HelloWorldScreen.cs" />
+    <Compile Include="Screens\HelloUniverseScreen.cs" />
+    <Compile Include="Screens\HomeScreen2.cs" />
+    <Compile Include="Screens\HomeScreen2.designer.cs">
+      <DependentUpon>HomeScreen2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ImageScreen.cs" />
+    <Compile Include="Screens\ImageScreen.designer.cs" />
+    <Compile Include="Screens\StoryScreen.cs" />
+    <Compile Include="Screens\StoryScreen.designer.cs" />
+    <Compile Include="FireBaseRead.cs" />
+    <Compile Include="Screens\LoginScreen.cs" />
+    <Compile Include="Screens\LoginScreen.designer.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <InterfaceDefinition Include="Screens\HomeScreen.xib" />
+    <InterfaceDefinition Include="Screens\HelloWorldScreen.xib" />
+    <InterfaceDefinition Include="Screens\HelloUniverseScreen.xib" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="None" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+    <ITunesArtwork Include="Resources\iTunesArtwork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\100.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\114.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\128.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\144.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\16.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\172.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\196.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\216.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\256.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\32.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\48.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\50.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\512.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\55.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\57.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\64.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\72.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\88.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\.DS_Store" />
+    <BundleResource Include="Resources\alert.jpg" />
+    <BundleResource Include="Resources\border.xml" />
+    <BundleResource Include="Resources\camera.png" />
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default%402x.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default-Landscape%402x~ipad.png" />
+    <BundleResource Include="Resources\Default-Landscape~ipad.png" />
+    <BundleResource Include="Resources\Default-Portrait%402x~ipad.png" />
+    <BundleResource Include="Resources\Default-Portrait~ipad.png" />
+    <BundleResource Include="Resources\gallery.png" />
+    <BundleResource Include="Resources\Halbook.txt" />
+    <BundleResource Include="Resources\ic_launcher.png" />
+    <BundleResource Include="Resources\ic_launcher_foreground.png" />
+    <BundleResource Include="Resources\ic_launcher_round.png" />
+    <BundleResource Include="Resources\ic_launcher512.png" />
+    <BundleResource Include="Resources\ic120.png" />
+    <BundleResource Include="Resources\ic152.png" />
+    <BundleResource Include="Resources\ic167.png" />
+    <BundleResource Include="Resources\ic180.png" />
+    <BundleResource Include="Resources\ic20.png" />
+    <BundleResource Include="Resources\ic29.png" />
+    <BundleResource Include="Resources\ic40.png" />
+    <BundleResource Include="Resources\ic58.png" />
+    <BundleResource Include="Resources\ic60.png" />
+    <BundleResource Include="Resources\ic76.png" />
+    <BundleResource Include="Resources\ic80.png" />
+    <BundleResource Include="Resources\ic87.png" />
+    <BundleResource Include="Resources\icon-100.png" />
+    <BundleResource Include="Resources\icon-144.png" />
+    <BundleResource Include="Resources\icon-50.png" />
+    <BundleResource Include="Resources\icon-72.png" />
+    <BundleResource Include="Resources\MainTitlePic.png" />
+    <BundleResource Include="Resources\MainTitlePic1.png" />
+    <BundleResource Include="Resources\pic5.jpg" />
+    <BundleResource Include="Resources\pic8.jpg" />
+    <BundleResource Include="Resources\pinkflower.png" />
+    <BundleResource Include="Resources\Reflections.docx" />
+    <BundleResource Include="Resources\Reflections2.txt" />
+    <BundleResource Include="Resources\TestPic.png" />
+    <BundleResource Include="Resources\Untitled.png" />
+    <BundleResource Include="Resources\mailicon.png" />
+    <BundleResource Include="Resources\Story1.txt" />
+    <BundleResource Include="Resources\Story10.txt" />
+    <BundleResource Include="Resources\Story25.txt" />
+    <BundleResource Include="Resources\Story50.txt" />
+    <BundleResource Include="Resources\WinText.txt" />
+    <BundleResource Include="Resources\chapter1.png" />
+    <BundleResource Include="Resources\chapter2.png" />
+    <BundleResource Include="Resources\chapter3.png" />
+    <BundleResource Include="Resources\chapter4.png" />
+    <BundleResource Include="Resources\chapter5.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+</Project>

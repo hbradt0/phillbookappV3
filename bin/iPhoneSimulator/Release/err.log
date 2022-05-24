@@ -1,0 +1,107 @@
+objc[31862]: Class NSURLSessionDelegate is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy (0x7fff87c202d8) and /Users/psargent/Library/Developer/CoreSimulator/Devices/7ECEA1F5-3C4A-4D4E-B775-AA44C507282E/data/Containers/Bundle/Application/967BE47E-9D23-4979-9113-EF6226AC83F1/Hello_MultiScreen_iPhone.app/Hello_MultiScreen_iPhone (0x10937a540). One of the two will be used. Which one is undefined.
+MonoTouch: Could not install sigaction override, unexpected sigaction implementation.
+2022-05-23 19:25:32.409390-0700 Hello_MultiScreen_iPhone[31862:1301504] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=31862
+2022-05-23 19:25:32.409641-0700 Hello_MultiScreen_iPhone[31862:1301504] SecTaskCopyDebugDescription: Hello_MultiScree[31862]/0#-1 LF=0
+2022-05-23 19:25:32.415501-0700 Hello_MultiScreen_iPhone[31862:1301504] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=31862
+2022-05-23 19:25:32.415786-0700 Hello_MultiScreen_iPhone[31862:1301504] SecTaskCopyDebugDescription: Hello_MultiScree[31862]/0#-1 LF=0
+2022-05-23 19:25:32.515088-0700 Hello_MultiScreen_iPhone[31862:1301504] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=31862
+2022-05-23 19:25:32.515378-0700 Hello_MultiScreen_iPhone[31862:1301504] SecTaskCopyDebugDescription: Hello_MultiScree[31862]/0#-1 LF=0
+2022-05-23 19:25:37.997871-0700 Hello_MultiScreen_iPhone[31862:1301504] [unspecified] container_system_group_path_for_identifier: error = ((container_error_t)98) NOT_CODESIGNED
+2022-05-23 19:25:37.998017-0700 Hello_MultiScreen_iPhone[31862:1301504] [MC] Error getting system group container for systemgroup.com.apple.configurationprofiles: 98
+2022-05-23 19:25:37.998347-0700 Hello_MultiScreen_iPhone[31862:1301504] [MC] Failed to get profile system group container path. Overriding with expected path: /Users/psargent/Library/Developer/CoreSimulator/Devices/7ECEA1F5-3C4A-4D4E-B775-AA44C507282E/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+2022-05-23 19:25:38.988450-0700 Hello_MultiScreen_iPhone[31862:1301504] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
+2022-05-23 19:25:38.989664-0700 Hello_MultiScreen_iPhone[31862:1301504] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
+2022-05-23 19:25:47.208026-0700 Hello_MultiScreen_iPhone[31862:1301504] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358209) use primary keyboard info instead.
+2022-05-23 19:25:47.209220-0700 Hello_MultiScreen_iPhone[31862:1301504] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358209) use primary keyboard info instead.
+2022-05-23 19:26:46.938325-0700 Hello_MultiScreen_iPhone[31862:1301504] Microsoft.Azure.Storage.StorageException: The specified blob does not exist.
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext, System.Threading.CancellationToken token) [0x0102b] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor+<>c__DisplayClass0_0`1[T].<ExecuteSync>b__0 () [0x00022] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Util.CommonUtility.RunWithoutSynchronizationContext[T] (System.Func`1[TResult] actionToRun) [0x0000c] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteSync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadRangeToStream (System.IO.Stream target, System.Nullable`1[T] offset, System.Nullable`1[T] length, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToStream (System.IO.Stream target, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00000] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToFile (System.String path, System.IO.FileMode mode, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00046] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at EmailReader.FireBaseRead.DownloadFile (System.String file, System.String cont) [0x000f1] in <a6b3a071881d495190d50b295a70346b>:0 
+Request Information
+RequestID:1ac76913-501e-005a-7115-6fc342000000
+RequestDate:Mon, 23 May 2022 19:26:46 GMT
+StatusMessage:The specified blob does not exist.
+ErrorCode:BlobNotFound
+ErrorMessage:The specified blob does not exist.
+RequestId:1ac76913-501e-005a-7115-6fc342000000
+Time:2022-05-24T02:26:46.9110615Z
+2022-05-23 19:26:46.938723-0700 Hello_MultiScreen_iPhone[31862:1301504] 
+2022-05-23 19:26:47.024761-0700 Hello_MultiScreen_iPhone[31862:1301504] Microsoft.Azure.Storage.StorageException: The specified blob does not exist.
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext, System.Threading.CancellationToken token) [0x0102b] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor+<>c__DisplayClass0_0`1[T].<ExecuteSync>b__0 () [0x00022] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Util.CommonUtility.RunWithoutSynchronizationContext[T] (System.Func`1[TResult] actionToRun) [0x0000c] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteSync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadRangeToStream (System.IO.Stream target, System.Nullable`1[T] offset, System.Nullable`1[T] length, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToStream (System.IO.Stream target, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00000] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToFile (System.String path, System.IO.FileMode mode, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00046] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at EmailReader.FireBaseRead.DownloadFile (System.String file, System.String cont) [0x000f1] in <a6b3a071881d495190d50b295a70346b>:0 
+Request Information
+RequestID:1ac7696d-501e-005a-4715-6fc342000000
+RequestDate:Mon, 23 May 2022 19:26:47 GMT
+StatusMessage:The specified blob does not exist.
+ErrorCode:BlobNotFound
+ErrorMessage:The specified blob does not exist.
+RequestId:1ac7696d-501e-005a-4715-6fc342000000
+Time:2022-05-24T02:26:47.0239966Z
+2022-05-23 19:26:47.025269-0700 Hello_MultiScreen_iPhone[31862:1301504] 
+2022-05-23 19:26:47.025403-0700 Hello_MultiScreen_iPhone[31862:1301504] 
+2022-05-23 19:26:47.107603-0700 Hello_MultiScreen_iPhone[31862:1301504] Microsoft.Azure.Storage.StorageException: The specified blob does not exist.
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext, System.Threading.CancellationToken token) [0x0102b] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor+<>c__DisplayClass0_0`1[T].<ExecuteSync>b__0 () [0x00022] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Util.CommonUtility.RunWithoutSynchronizationContext[T] (System.Func`1[TResult] actionToRun) [0x0000c] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteSync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadRangeToStream (System.IO.Stream target, System.Nullable`1[T] offset, System.Nullable`1[T] length, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToStream (System.IO.Stream target, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00000] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToFile (System.String path, System.IO.FileMode mode, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00046] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at EmailReader.FireBaseRead.DownloadFile (System.String file, System.String cont) [0x000f1] in <a6b3a071881d495190d50b295a70346b>:0 
+Request Information
+RequestID:1ac769b0-501e-005a-0415-6fc342000000
+RequestDate:Mon, 23 May 2022 19:26:47 GMT
+StatusMessage:The specified blob does not exist.
+ErrorCode:BlobNotFound
+ErrorMessage:The specified blob does not exist.
+RequestId:1ac769b0-501e-005a-0415-6fc342000000
+Time:2022-05-24T02:26:47.1089470Z
+2022-05-23 19:26:47.108244-0700 Hello_MultiScreen_iPhone[31862:1301504] 
+2022-05-23 19:26:47.189555-0700 Hello_MultiScreen_iPhone[31862:1301504] Microsoft.Azure.Storage.StorageException: The specified blob does not exist.
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext, System.Threading.CancellationToken token) [0x0102b] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor+<>c__DisplayClass0_0`1[T].<ExecuteSync>b__0 () [0x00022] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Util.CommonUtility.RunWithoutSynchronizationContext[T] (System.Func`1[TResult] actionToRun) [0x0000c] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteSync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadRangeToStream (System.IO.Stream target, System.Nullable`1[T] offset, System.Nullable`1[T] length, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToStream (System.IO.Stream target, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00000] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToFile (System.String path, System.IO.FileMode mode, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00046] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at EmailReader.FireBaseRead.DownloadFile (System.String file, System.String cont) [0x000f1] in <a6b3a071881d495190d50b295a70346b>:0 
+Request Information
+RequestID:1ac769e2-501e-005a-2f15-6fc342000000
+RequestDate:Mon, 23 May 2022 19:26:47 GMT
+StatusMessage:The specified blob does not exist.
+ErrorCode:BlobNotFound
+ErrorMessage:The specified blob does not exist.
+RequestId:1ac769e2-501e-005a-2f15-6fc342000000
+Time:2022-05-24T02:26:47.1899014Z
+2022-05-23 19:26:47.190102-0700 Hello_MultiScreen_iPhone[31862:1301504] 
+2022-05-23 19:26:47.190290-0700 Hello_MultiScreen_iPhone[31862:1301504] 
+2022-05-23 19:26:47.271283-0700 Hello_MultiScreen_iPhone[31862:1301504] Microsoft.Azure.Storage.StorageException: The specified blob does not exist.
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext, System.Threading.CancellationToken token) [0x0102b] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor+<>c__DisplayClass0_0`1[T].<ExecuteSync>b__0 () [0x00022] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Util.CommonUtility.RunWithoutSynchronizationContext[T] (System.Func`1[TResult] actionToRun) [0x0000c] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteSync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadRangeToStream (System.IO.Stream target, System.Nullable`1[T] offset, System.Nullable`1[T] length, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToStream (System.IO.Stream target, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00000] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToFile (System.String path, System.IO.FileMode mode, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00046] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at EmailReader.FireBaseRead.DownloadFile (System.String file, System.String cont) [0x000f1] in <a6b3a071881d495190d50b295a70346b>:0 
+Request Information
+RequestID:1ac76a20-501e-005a-6815-6fc342000000
+RequestDate:Mon, 23 May 2022 19:26:47 GMT
+StatusMessage:The specified blob does not exist.
+ErrorCode:BlobNotFound
+ErrorMessage:The specified blob does not exist.
+RequestId:1ac76a20-501e-005a-6815-6fc342000000
+Time:2022-05-24T02:26:47.2728534Z
+2022-05-23 19:26:47.271848-0700 Hello_MultiScreen_iPhone[31862:1301504] 
