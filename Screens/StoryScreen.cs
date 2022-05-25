@@ -144,11 +144,7 @@ namespace Hello_MultiScreen_iPhone
             scrollView.AddSubview(booktextView);
             scrollView.Add(ButtonShare);
             View.AddSubview(scrollView);//ps
-
-
         }
-
-
 
         void ShareButtonClick(object sender, EventArgs eventArgs)
         {

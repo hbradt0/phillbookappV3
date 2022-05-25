@@ -3,27 +3,27 @@
     <Files>
       <File FileName="Screens/EditJournalScreen.cs" Line="122" Column="1" />
       <File FileName="Screens/HomeScreen.cs" />
-      <File FileName="Screens/HomeScreen2.cs" Line="448" Column="1" />
-      <File FileName="EmailFileRead.cs" Line="108" Column="10" />
+      <File FileName="Screens/HomeScreen2.cs" />
+      <File FileName="EmailFileRead.cs" Line="105" Column="1" />
       <File FileName="Info.plist" />
       <File FileName="Resources/Story1.txt" />
       <File FileName="Resources/Story10.txt" />
       <File FileName="Resources/Story25.txt" />
       <File FileName="Resources/Story50.txt" />
       <File FileName="Resources/WinText.txt" />
-      <File FileName="Screens/StoryScreen.cs" Line="151" Column="1" />
+      <File FileName="Screens/StoryScreen.cs" Line="146" Column="45" />
       <File FileName="Screens/StoryScreen.designer.cs" />
       <File FileName="AppDelegate.cs" />
       <File FileName="Screens/HelloUniverseScreen.cs" />
       <File FileName="Screens/HelloUniverseScreen.designer.cs" />
-      <File FileName="Screens/HelloWorldScreen.cs" Line="367" Column="10" />
+      <File FileName="Screens/HelloWorldScreen.cs" />
       <File FileName="Screens/HelloWorldScreen.designer.cs" />
-      <File FileName="Screens/ImageScreen.cs" Line="196" Column="34" />
+      <File FileName="Screens/ImageScreen.cs" Line="573" Column="50" />
       <File FileName="Screens/ImageScreen.designer.cs" />
-      <File FileName="FireBaseRead.cs" Line="137" Column="1" />
       <File FileName="packages.config" />
-      <File FileName="Screens/LoginScreen.cs" Line="252" Column="73" />
-      <File FileName="Screens/LoginScreen.designer.cs" Line="12" Column="27" />
+      <File FileName="Screens/LoginScreen.cs" Line="520" Column="48" />
+      <File FileName="Screens/LoginScreen.designer.cs" />
+      <File FileName="FireBaseRead.cs" Line="209" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

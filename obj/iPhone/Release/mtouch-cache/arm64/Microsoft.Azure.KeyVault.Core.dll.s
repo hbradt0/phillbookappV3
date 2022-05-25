@@ -166,7 +166,7 @@ _mono_aot_file_info:
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
-	.byte 43,41,207,241,227,154,150,9,126,42,56,179,40,228,114,197
+	.byte 207,80,67,207,218,188,115,62,151,80,194,54,107,254,189,124
 	.globl _mono_aot_module_Microsoft_Azure_KeyVault_Core_info
 	.align 3
 _mono_aot_module_Microsoft_Azure_KeyVault_Core_info:

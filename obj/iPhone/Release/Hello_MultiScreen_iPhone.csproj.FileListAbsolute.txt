@@ -83,4 +83,3 @@
 /Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.csproj.CoreCompileInputs.cache
 /Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.csproj.CopyComplete
 /Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.exe
-/Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.csproj.AssemblyReference.cache

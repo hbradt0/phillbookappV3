@@ -42,7 +42,7 @@ namespace Hello_MultiScreen_iPhone
         public static string[] list = {
             "Journal",
             "Todo List",
-            "Everything"
+            "Images"
             };
 
         //loads the HelloWorldScreen.xib file and connects it to this object
@@ -99,18 +99,18 @@ namespace Hello_MultiScreen_iPhone
             LoginInstructions.Text = "Please login, choose password and email for Cloud Services";
             LoginInstructions.BackgroundColor = UIColor.FromRGB(204, 204, 255);
 
-            Usernamelabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 200, 100, 50);
+            Usernamelabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 200, 100, 30);
             Usernamelabel.BackgroundColor = UIColor.FromRGB(204, 204, 255);
             Usernamelabel.Text = "Username: ";
 
-            Passwordlabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 300, 100, 50);
+            Passwordlabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 250, 100, 30);
             Passwordlabel.Text = "Password: ";
             Passwordlabel.BackgroundColor = UIColor.FromRGB(204, 204, 255);
 
-            listView.Frame = new CGRect(Usernamelabel.Frame.X, View.Frame.Top + 150, ResponsiveSizeX - 100, 180);
+            listView.Frame = new CGRect(Usernamelabel.Frame.X, View.Frame.Top + 150, ResponsiveSizeX - 100, 150);
             listView.Source = new TableSource(list);
 
-            loginemail.Frame = new CGRect(Usernamelabel.Frame.X+100, View.Frame.Top + 200, ResponsiveSizeX-100, 50);
+            loginemail.Frame = new CGRect(Usernamelabel.Frame.X+100, View.Frame.Top + 200, ResponsiveSizeX-100, 30);
             loginemail.BackgroundColor = UIColor.FromRGB(230, 230, 250);
             loginemail.TextColor = UIColor.SystemPurple;
             loginemail.KeyboardType = UIKeyboardType.ASCIICapable;
@@ -120,7 +120,7 @@ namespace Hello_MultiScreen_iPhone
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
             g.CancelsTouchesInView = false; //for iOS5View.AddGestureRecognizer (g);
 
-            loginpassword.Frame = new CGRect(Passwordlabel.Frame.X+100, View.Frame.Top + 300, ResponsiveSizeX-100, 50);
+            loginpassword.Frame = new CGRect(Passwordlabel.Frame.X+100, View.Frame.Top + 250, ResponsiveSizeX-100, 30);
             loginpassword.BackgroundColor = UIColor.FromRGB(230, 230, 250);
             loginpassword.TextColor = UIColor.SystemPurple;
             loginpassword.KeyboardType = UIKeyboardType.ASCIICapable;
@@ -128,7 +128,7 @@ namespace Hello_MultiScreen_iPhone
 
             LoginButton.BackgroundColor = UIColor.SystemPurple;
             LoginButton.SetTitle("Login", UIControlState.Normal);
-            LoginButton.Frame = new CGRect(ResponsiveWidthLeft+30, View.Frame.Top + 400, ResponsiveSizeX, 30);
+            LoginButton.Frame = new CGRect(ResponsiveWidthLeft+30, View.Frame.Top + 350, ResponsiveSizeX, 30);
 
             DownloadCloud.BackgroundColor = UIColor.SystemPurple;
             DownloadCloud.SetTitle("Download Cloud Data", UIControlState.Normal);
@@ -140,11 +140,11 @@ namespace Hello_MultiScreen_iPhone
 
             Logout.BackgroundColor = UIColor.SystemTeal;
             Logout.SetTitle("Logout", UIControlState.Normal);
-            Logout.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 510, ResponsiveSizeX, 30);
+            Logout.Frame = new CGRect(ResponsiveWidthRight, View.Frame.Top + 100, 50, 30);
 
             DeleteCloud.BackgroundColor = UIColor.Red;
             DeleteCloud.SetTitle("Delete Cloud Files", UIControlState.Normal);
-            DeleteCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 460, ResponsiveSizeX, 30);
+            DeleteCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 470, ResponsiveSizeX, 30);
 
             FireBaseRead.cloudservices = false;
             FireBaseRead.LoginEmail = "";
@@ -176,7 +176,7 @@ namespace Hello_MultiScreen_iPhone
             Logout.AddTarget(LogoutCloud, UIControlEvent.TouchUpInside);
             DeleteCloud.AddTarget(DeleteCloudClick, UIControlEvent.TouchUpInside);
 
-            scrollView.Add(Logout);
+            //scrollView.Add(Logout);
             scrollView.Add(listView) ;
             scrollView.Add(loginemail);
             scrollView.AddSubview(LoginInstructions);
@@ -292,6 +292,7 @@ namespace Hello_MultiScreen_iPhone
                     DeleteCloud.Hidden = false;
                     FireBaseRead.cloudservices = true;
                     FireBaseRead.phoneID = loginemail.Text + loginpassword.Text;
+                    FireBaseRead.Encrypt();
                     LoginInstructions.Text = "Welcome " + loginemail.Text + "!";
                     FireBaseRead.LoginEmail = loginemail.Text;
                     FireBaseRead.LoginPassword = loginpassword.Text;
@@ -321,7 +322,12 @@ namespace Hello_MultiScreen_iPhone
 
         void UploadToCloud(object sender, EventArgs eventArgs)
         {
-            var Confirm = new UIAlertView("Confirmation", "Uploading to the cloud, "+TableSource.SelectedRow+" file(s), will not overwrite other changes so please share the files before! This will take a while!", null, "Cancel", "Yes");
+            String table = TableSource.SelectedRow;
+            if(table=="")
+            {
+                table = list.First();
+            }
+            var Confirm = new UIAlertView("Confirmation", "Uploading to the cloud, "+table+" file(s), will not overwrite other changes so please share the files before! This will take a while!", null, "Cancel", "Yes");
             Confirm.Show();
             Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
             {
@@ -339,11 +345,15 @@ namespace Hello_MultiScreen_iPhone
                     {
                         FireBaseRead.UploadFile(EmailFileRead.fileName2);
                     }
+                    else if (TableSource.SelectedRow.Contains(list[2]))
+                    {
+                        FireBaseRead.UploadSyncImages();
+                    }
                     else 
                     {
                         FireBaseRead.UploadFile(EmailFileRead.fileName1);
-                        FireBaseRead.UploadFile(EmailFileRead.fileName2);
-                        FireBaseRead.UploadSyncImages();
+                        //FireBaseRead.UploadFile(EmailFileRead.fileName2);
+                        //FireBaseRead.UploadSyncImages();
                     }
                 }
             };
@@ -353,7 +363,13 @@ namespace Hello_MultiScreen_iPhone
 
         void DeleteCloudClick(object sender, EventArgs eventArgs)
         {
-            var Confirm = new UIAlertView("Confirmation", "Deleting from the cloud, " + TableSource.SelectedRow + " file(s),will be deleted, This will take a while!", null, "Cancel", "Yes");
+            String table = TableSource.SelectedRow;
+            if (table == "")
+            {
+                table = list.First();
+            }
+
+            var Confirm = new UIAlertView("Confirmation", "Deleting from the cloud, " + table + " file(s),will be deleted, This will take a while!", null, "Cancel", "Yes");
             Confirm.Show();
             Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
             {
@@ -371,12 +387,16 @@ namespace Hello_MultiScreen_iPhone
                     {
                         FireBaseRead.DeleteFile(EmailFileRead.fileName2);
                     }
+                    else if (TableSource.SelectedRow.Contains(list[2]))
+                    {
+                        FireBaseRead.DeleteSyncFiles();
+                    }
                     else
                     {
 
                         FireBaseRead.DeleteFile(EmailFileRead.fileName1);
-                        FireBaseRead.DeleteFile(EmailFileRead.fileName2);
-                        FireBaseRead.DeleteSyncFiles();
+                        //FireBaseRead.DeleteFile(EmailFileRead.fileName2);
+                        //FireBaseRead.DeleteSyncFiles();
                     }
                 }
             };
@@ -385,7 +405,13 @@ namespace Hello_MultiScreen_iPhone
 
         void DownloadToCloud(object sender, EventArgs eventArgs)
         {
-            var Confirm = new UIAlertView("Confirmation", "Downloading from the cloud, " + TableSource.SelectedRow + " file(s),will overwrite other changes so please share the files before! This will take a while!", null, "Cancel", "Yes");
+            String table = TableSource.SelectedRow;
+            if (table == "")
+            {
+                table = list.First();
+            }
+
+            var Confirm = new UIAlertView("Confirmation", "Downloading from the cloud, " + table + " file(s),will overwrite other changes so please share the files before! This will take a while!", null, "Cancel", "Yes");
             Confirm.Show();
             Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
             {
@@ -403,11 +429,13 @@ namespace Hello_MultiScreen_iPhone
                     {
                         FireBaseRead.DownloadFile(EmailFileRead.fileName2);
                     }
+                    else if (TableSource.SelectedRow.Contains(list[2]))
+                    {
+                        FireBaseRead.DownloadSyncFiles();
+                    }
                     else
                     {
                         FireBaseRead.DownloadFile(EmailFileRead.fileName1);
-                        FireBaseRead.DownloadFile(EmailFileRead.fileName2);
-                        FireBaseRead.DownloadSyncFiles();
                     }
                 }
             };
@@ -440,7 +468,7 @@ namespace Hello_MultiScreen_iPhone
                 loginpassword.Hidden = true;
                 DownloadCloud.Hidden = false;
                 UploadCloud.Hidden = false;
-                Logout.Hidden = false;
+                Logout.Hidden = true;
                 Usernamelabel.Hidden = true;
                 Passwordlabel.Hidden = true;
                 listView.Hidden = false;
@@ -490,7 +518,7 @@ namespace Hello_MultiScreen_iPhone
             }
 
 
-            public static string SelectedRow;
+            public static string SelectedRow="";
 
             public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
             {
@@ -498,6 +526,8 @@ namespace Hello_MultiScreen_iPhone
                 //new UIAlertView("Row Selected", item, null, "OK").Show();
                 SelectedRow = item;
             }
+
+       
     }
     
 }

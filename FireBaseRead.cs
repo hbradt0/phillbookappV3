@@ -27,6 +27,7 @@ namespace EmailReader //rename
         public static bool cloudservices = false;
         public static string phoneID = "";
         public static string LoginEmail = "";
+        public static bool encrypted = false;
         public static string LoginPassword = "";
         const String storageConnection = "DefaultEndpointsProtocol=https;AccountName=halbookappstorage;AccountKey=+D6AxCmqVcfNVCG27qpciwmIsYL1FaAaLodN7iY6L+s6MjVWuVfq8yjWbKOrfgYLBvntOzIteFdW+ASt6HSKpw==;EndpointSuffix=core.windows.net;";
         const String accessKey = "+D6AxCmqVcfNVCG27qpciwmIsYL1FaAaLodN7iY6L+s6MjVWuVfq8yjWbKOrfgYLBvntOzIteFdW+ASt6HSKpw==";
@@ -51,8 +52,11 @@ namespace EmailReader //rename
 
         public static void Encrypt()
         {
-            //if(phoneID!="")
-            //    phoneID = Base64Encode(phoneID);
+            if (phoneID != "" && !encrypted)
+            { 
+                phoneID = Base64Encode(phoneID);
+                encrypted = true;
+            }
         }
 
         public static void EncryptFile(String file, CloudBlockBlob cloud)
@@ -75,7 +79,6 @@ namespace EmailReader //rename
         {
             if (cloudservices && phoneID != "")
             {
-                Encrypt();
                 try
                 {
                     var connectionString = String.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
@@ -92,8 +95,6 @@ namespace EmailReader //rename
                     FileInfo file1 = new FileInfo(file);
                     var blob = container.GetBlockBlobReference(phoneID + file1.Name);
                     var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
-                    //File.AppendAllText(EmailFileRead.fileName1,
-                    //    blob.Uri+blob.GetSharedAccessSignature(sasConstraints));
 
                     var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
                     cloudBlockBlob.UploadFromFile(file1.FullName, null);
@@ -109,8 +110,6 @@ namespace EmailReader //rename
         {
             if (cloudservices && phoneID != "")
             {
-                Encrypt();
-                Decrypt();
                 try
                 {
                     var connectionString = String.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
@@ -128,8 +127,9 @@ namespace EmailReader //rename
                     var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
 
                     var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
-                    File.Delete(file1.FullName);
-                    cloudBlockBlob.DownloadToFile(file1.FullName, FileMode.OpenOrCreate);
+                    if(file1.Exists && cloudBlockBlob.Exists())
+                        File.Delete(file1.FullName);
+                    cloudBlockBlob.DownloadToFile(file, FileMode.OpenOrCreate);
                 }
                 catch (Exception e)
                 {
@@ -141,7 +141,6 @@ namespace EmailReader //rename
 
         public static void DeleteFile(String file, String cont = "halbookappblob")
         {
-            Encrypt();
             if (cloudservices && phoneID != "")
             {
                 try
@@ -171,42 +170,88 @@ namespace EmailReader //rename
         }
 
 
-        public static void DownloadSyncFiles()
+        public static void DownloadSyncFiles(String cont = "halbookappblob")
         {
             if (cloudservices && phoneID != "")
             {
-                String file = "";
-                DirectoryInfo dir = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
-                foreach (FileInfo v in dir.GetFiles())
+                try
                 {
-                    if (v.FullName.Contains("image_"))
+                    var connectionString = String.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
+                    storageName, // your storage account name
+                    accessKey); // your storage account access key
+                    var storageAccount = CloudStorageAccount.Parse(connectionString);
+                    CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+                    CloudBlobContainer container = blobClient.GetContainerReference(cont);
+
+                    SharedAccessBlobPolicy sasConstraints = new SharedAccessBlobPolicy();
+                    sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(30);
+                    sasConstraints.Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Create | SharedAccessBlobPermissions.Read;
+                    foreach (var v in container.ListBlobs())
                     {
-                        file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), v.Name);
-                        FireBaseRead.DownloadFile(file);
+                        if (v.Uri.Segments.Last().Contains(phoneID) && v.Uri.Segments.Last().Contains("image"))
+                        {
+                            var fileName = v.Uri.Segments.Last();
+                            var blob = container.GetBlockBlobReference(fileName);
+                            fileName = fileName.Replace(phoneID, "");
+                            fileName = fileName.Replace("JPG", ".jpg");
+                            fileName = fileName.Replace("PNG", ".png");
+                            var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
+                            var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
+                            var file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), fileName);
+                            if (File.Exists(file) && cloudBlockBlob.Exists())
+                                File.Delete(file);
+                            cloudBlockBlob.DownloadToFile(file, FileMode.OpenOrCreate);
+                        }
                     }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
                 }
             }
         }
 
-        public static void DeleteSyncFiles()
+        public static void DeleteSyncFiles(String cont = "halbookappblob")
         {
             if (cloudservices && phoneID != "")
             {
-                String file = "";
-                DirectoryInfo dir = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
-                foreach (FileInfo v in dir.GetFiles())
+                try
                 {
-                    if (v.FullName.Contains("image_"))
+                    var connectionString = String.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
+                    storageName, // your storage account name
+                    accessKey); // your storage account access key
+                    var storageAccount = CloudStorageAccount.Parse(connectionString);
+                    CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+                    CloudBlobContainer container = blobClient.GetContainerReference(cont);
+
+                    SharedAccessBlobPolicy sasConstraints = new SharedAccessBlobPolicy();
+                    sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(30);
+                    sasConstraints.Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Delete;
+                    foreach (var v in container.ListBlobs())
                     {
-                        file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), v.Name);
-                        FireBaseRead.DeleteFile(file);
+                        if (v.Uri.Segments.Last().Contains(phoneID) && v.Uri.Segments.Last().Contains("image"))
+                        {
+                            var fileName = v.Uri.Segments.Last();
+                            var blob = container.GetBlockBlobReference(fileName);
+                            fileName = fileName.Replace(phoneID, "");
+                            fileName = fileName.Replace("JPG", ".jpg");
+                            fileName = fileName.Replace("PNG", ".png");
+                            var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
+                            var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
+                            cloudBlockBlob.DeleteIfExists();
+                        }
                     }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
                 }
             }
         }
 
         public static void UploadSyncImages()
         {
+       
             if (cloudservices && phoneID != "")
             {
                 String file = "";
