@@ -123,6 +123,21 @@ namespace EmailReader //rename
                 File.Delete(file);
         }
 
+        public static void DeleteImageFileName(String str)
+        {
+            String file = "";
+            DirectoryInfo dir = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+            foreach (FileInfo v in dir.GetFiles())
+            {
+                if (v.FullName.Contains(str) && v.FullName.Contains("image"))
+                {
+                    file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), v.Name);
+                    if (file != "")
+                        File.Delete(file);
+                }
+            }
+        }
+
         public static void DeleteAllImages()
         {
             String file = "";

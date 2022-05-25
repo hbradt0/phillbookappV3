@@ -93,7 +93,7 @@ namespace EmailReader //rename
                     sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(30);
                     sasConstraints.Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Create;
                     FileInfo file1 = new FileInfo(file);
-                    var blob = container.GetBlockBlobReference(phoneID + file1.Name);
+                    var blob = container.GetBlockBlobReference(phoneID + "/"+ file1.Name);
                     var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
 
                     var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
@@ -123,7 +123,7 @@ namespace EmailReader //rename
                     sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(30);
                     sasConstraints.Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Create | SharedAccessBlobPermissions.Read;
                     FileInfo file1 = new FileInfo(file);
-                    var blob = container.GetBlockBlobReference(phoneID + file1.Name);
+                    var blob = container.GetBlockBlobReference(phoneID + "/" + file1.Name);
                     var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
 
                     var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
@@ -156,7 +156,7 @@ namespace EmailReader //rename
                     sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(30);
                     sasConstraints.Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Delete | SharedAccessBlobPermissions.Read;
                     FileInfo file1 = new FileInfo(file);
-                    var blob = container.GetBlockBlobReference(phoneID + file1.Name);
+                    var blob = container.GetBlockBlobReference(phoneID + "/" + file1.Name);
                     var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
 
                     var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
@@ -186,20 +186,22 @@ namespace EmailReader //rename
                     SharedAccessBlobPolicy sasConstraints = new SharedAccessBlobPolicy();
                     sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(30);
                     sasConstraints.Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Create | SharedAccessBlobPermissions.Read;
-                    foreach (var v in container.ListBlobs())
+
+                    CloudBlobDirectory dir = container.GetDirectoryReference(phoneID);
+                    foreach (var v in dir.ListBlobs())
                     {
-                        if (v.Uri.Segments.Last().Contains(phoneID) && v.Uri.Segments.Last().Contains("image"))
+                        if (v.Uri.Segments.Last().Contains("image"))
                         {
                             var fileName = v.Uri.Segments.Last();
-                            var blob = container.GetBlockBlobReference(fileName);
-                            fileName = fileName.Replace(phoneID, "");
+                            var blob = container.GetBlockBlobReference(phoneID+"/"+fileName);
+                            //fileName = fileName.Replace(phoneID, "");
                             fileName = fileName.Replace("JPG", ".jpg");
                             fileName = fileName.Replace("PNG", ".png");
                             var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
                             var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
                             var file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), fileName);
-                            if (File.Exists(file) && cloudBlockBlob.Exists())
-                                File.Delete(file);
+                            if (cloudBlockBlob.Exists())
+                                EmailFileRead.DeleteImageFileName(fileName);
                             cloudBlockBlob.DownloadToFile(file, FileMode.OpenOrCreate);
                         }
                     }
@@ -227,13 +229,14 @@ namespace EmailReader //rename
                     SharedAccessBlobPolicy sasConstraints = new SharedAccessBlobPolicy();
                     sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(30);
                     sasConstraints.Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Delete;
-                    foreach (var v in container.ListBlobs())
+                    CloudBlobDirectory dir = container.GetDirectoryReference(phoneID);
+                    foreach (var v in dir.ListBlobs())
                     {
-                        if (v.Uri.Segments.Last().Contains(phoneID) && v.Uri.Segments.Last().Contains("image"))
+                        if (v.Uri.Segments.Last().Contains("image"))
                         {
                             var fileName = v.Uri.Segments.Last();
-                            var blob = container.GetBlockBlobReference(fileName);
-                            fileName = fileName.Replace(phoneID, "");
+                            var blob = container.GetBlockBlobReference(phoneID + "/" + fileName);
+                            //fileName = fileName.Replace(phoneID, "");
                             fileName = fileName.Replace("JPG", ".jpg");
                             fileName = fileName.Replace("PNG", ".png");
                             var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
