@@ -122,7 +122,7 @@ namespace Hello_MultiScreen_iPhone
             CloudLoginButton.SetTitleColor(UIColor.White, UIControlState.Normal);
             CloudLoginButton.BackgroundColor = UIColor.SystemTeal;
             CloudLoginButton.SetTitle("Login Cloud", UIControlState.Normal);
-            CloudLoginButton.Frame = new CGRect(ResponsiveWidthRight, booktextView.Frame.Bottom + 10, 100, 35);
+            CloudLoginButton.Frame = new CGRect(ResponsiveWidthRight, booktextView.Frame.Bottom + 10, 100, 30);
 
             editTextDate.BackgroundColor = UIColor.White;
             editTextDate.TextColor = UIColor.Purple;

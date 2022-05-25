@@ -447,6 +447,7 @@ namespace Hello_MultiScreen_iPhone
             base.ViewDidAppear(animated);
             UIApplication.SharedApplication.KeyWindow.EndEditing(true);
             keyboardOpen = false;
+            textViewWrite.Text = EmailFileRead.ReadText(EmailFileRead.fileName2);
             scrollView.ScrollRectToVisible(textViewWrite.Frame, true);
 
         }

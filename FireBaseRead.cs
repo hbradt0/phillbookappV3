@@ -44,10 +44,15 @@ namespace EmailReader //rename
             return System.Convert.ToBase64String(plainTextBytes);
         }
 
+        public static void Decrypt()
+        {
+
+        }
+
         public static void Encrypt()
         {
-            if(phoneID!="")
-                phoneID = Base64Encode(phoneID);
+            //if(phoneID!="")
+            //    phoneID = Base64Encode(phoneID);
         }
 
         public static void EncryptFile(String file, CloudBlockBlob cloud)
@@ -73,32 +78,31 @@ namespace EmailReader //rename
                 Encrypt();
                 try
                 {
-                var connectionString = String.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
-                storageName, // your storage account name
-                accessKey); // your storage account access key
+                    var connectionString = String.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
+                    storageName, // your storage account name
+                    accessKey); // your storage account access key
 
-                var storageAccount = CloudStorageAccount.Parse(connectionString);
-                CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-                CloudBlobContainer container = blobClient.GetContainerReference(cont);
+                    var storageAccount = CloudStorageAccount.Parse(connectionString);
+                    CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+                    CloudBlobContainer container = blobClient.GetContainerReference(cont);
 
-                SharedAccessBlobPolicy sasConstraints = new SharedAccessBlobPolicy();
-                sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(30);
-                sasConstraints.Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Create;
-                FileInfo file1 = new FileInfo(file);
-                var blob = container.GetBlockBlobReference(phoneID + file1.Name);
-                var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
-                //File.AppendAllText(EmailFileRead.fileName1,
-                //    blob.Uri+blob.GetSharedAccessSignature(sasConstraints));
+                    SharedAccessBlobPolicy sasConstraints = new SharedAccessBlobPolicy();
+                    sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(30);
+                    sasConstraints.Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Create;
+                    FileInfo file1 = new FileInfo(file);
+                    var blob = container.GetBlockBlobReference(phoneID + file1.Name);
+                    var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
+                    //File.AppendAllText(EmailFileRead.fileName1,
+                    //    blob.Uri+blob.GetSharedAccessSignature(sasConstraints));
 
-                var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
-                    EncryptFile(file1.FullName, cloudBlockBlob);
-                //cloudBlockBlob.UploadFromFile(file1.FullName,null);
+                    var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
+                    cloudBlockBlob.UploadFromFile(file1.FullName, null);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-        }
         }
 
         public static void DownloadFile(String file, String cont = "halbookappblob")
@@ -106,6 +110,7 @@ namespace EmailReader //rename
             if (cloudservices && phoneID != "")
             {
                 Encrypt();
+                Decrypt();
                 try
                 {
                     var connectionString = String.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
@@ -121,10 +126,10 @@ namespace EmailReader //rename
                     FileInfo file1 = new FileInfo(file);
                     var blob = container.GetBlockBlobReference(phoneID + file1.Name);
                     var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
-          
+
                     var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
+                    File.Delete(file1.FullName);
                     cloudBlockBlob.DownloadToFile(file1.FullName, FileMode.OpenOrCreate);
-                    DecryptFile(file1.FullName);
                 }
                 catch (Exception e)
                 {

@@ -1,13 +1,32 @@
-objc[38840]: Class NSURLSessionDelegate is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy (0x7fff87c202d8) and /Users/psargent/Library/Developer/CoreSimulator/Devices/BE6AE2BE-A355-48F8-870C-D99FC72AFEC0/data/Containers/Bundle/Application/B2CB0338-DE51-4B8E-9E3B-BBE6CB7543DF/Hello_MultiScreen_iPhone.app/Hello_MultiScreen_iPhone (0x101161540). One of the two will be used. Which one is undefined.
+objc[44327]: Class NSURLSessionDelegate is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy (0x7fff87c202d8) and /Users/psargent/Library/Developer/CoreSimulator/Devices/4AF9252F-7A13-4725-9567-7D6B75CAEECA/data/Containers/Bundle/Application/523122FC-037D-40E9-9D06-5F0E37DE8529/Hello_MultiScreen_iPhone.app/Hello_MultiScreen_iPhone (0x10bb52540). One of the two will be used. Which one is undefined.
 MonoTouch: Could not install sigaction override, unexpected sigaction implementation.
-2022-05-24 08:20:55.157464-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=38840
-2022-05-24 08:20:55.157856-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskCopyDebugDescription: Hello_MultiScree[38840]/0#-1 LF=0
-2022-05-24 08:20:55.164690-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=38840
-2022-05-24 08:20:55.164947-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskCopyDebugDescription: Hello_MultiScree[38840]/0#-1 LF=0
-2022-05-24 08:20:55.285798-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=38840
-2022-05-24 08:20:55.286187-0700 Hello_MultiScreen_iPhone[38840:1548230] SecTaskCopyDebugDescription: Hello_MultiScree[38840]/0#-1 LF=0
-2022-05-24 08:21:00.897235-0700 Hello_MultiScreen_iPhone[38840:1548230] [unspecified] container_system_group_path_for_identifier: error = ((container_error_t)98) NOT_CODESIGNED
-2022-05-24 08:21:00.897369-0700 Hello_MultiScreen_iPhone[38840:1548230] [MC] Error getting system group container for systemgroup.com.apple.configurationprofiles: 98
-2022-05-24 08:21:00.897660-0700 Hello_MultiScreen_iPhone[38840:1548230] [MC] Failed to get profile system group container path. Overriding with expected path: /Users/psargent/Library/Developer/CoreSimulator/Devices/BE6AE2BE-A355-48F8-870C-D99FC72AFEC0/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
-2022-05-24 08:21:01.772171-0700 Hello_MultiScreen_iPhone[38840:1548230] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
-2022-05-24 08:21:01.773410-0700 Hello_MultiScreen_iPhone[38840:1548230] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
+2022-05-24 17:15:30.360970-0700 Hello_MultiScreen_iPhone[44327:1809074] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=44327
+2022-05-24 17:15:30.361720-0700 Hello_MultiScreen_iPhone[44327:1809074] SecTaskCopyDebugDescription: Hello_MultiScree[44327]/0#-1 LF=0
+2022-05-24 17:15:30.374390-0700 Hello_MultiScreen_iPhone[44327:1809074] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=44327
+2022-05-24 17:15:30.374688-0700 Hello_MultiScreen_iPhone[44327:1809074] SecTaskCopyDebugDescription: Hello_MultiScree[44327]/0#-1 LF=0
+2022-05-24 17:15:30.467301-0700 Hello_MultiScreen_iPhone[44327:1809074] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=44327
+2022-05-24 17:15:30.467519-0700 Hello_MultiScreen_iPhone[44327:1809074] SecTaskCopyDebugDescription: Hello_MultiScree[44327]/0#-1 LF=0
+2022-05-24 17:15:45.710342-0700 Hello_MultiScreen_iPhone[44327:1809074] [unspecified] container_system_group_path_for_identifier: error = ((container_error_t)98) NOT_CODESIGNED
+2022-05-24 17:15:45.710478-0700 Hello_MultiScreen_iPhone[44327:1809074] [MC] Error getting system group container for systemgroup.com.apple.configurationprofiles: 98
+2022-05-24 17:15:45.710777-0700 Hello_MultiScreen_iPhone[44327:1809074] [MC] Failed to get profile system group container path. Overriding with expected path: /Users/psargent/Library/Developer/CoreSimulator/Devices/4AF9252F-7A13-4725-9567-7D6B75CAEECA/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+2022-05-24 17:15:46.642536-0700 Hello_MultiScreen_iPhone[44327:1809074] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
+2022-05-24 17:15:46.643788-0700 Hello_MultiScreen_iPhone[44327:1809074] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
+2022-05-24 17:16:07.478417-0700 Hello_MultiScreen_iPhone[44327:1809074] WARNING: This app's CFBundleDevelopmentRegion is not a string value. This can lead to unexpected results at runtime. Please change CFBundleDevelopmentRegion in your Info.plist to a string value.
+2022-05-24 17:18:47.372512-0700 Hello_MultiScreen_iPhone[44327:1809074] Microsoft.Azure.Storage.StorageException: The specified blob does not exist.
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext, System.Threading.CancellationToken token) [0x0102b] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor+<>c__DisplayClass0_0`1[T].<ExecuteSync>b__0 () [0x00022] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Util.CommonUtility.RunWithoutSynchronizationContext[T] (System.Func`1[TResult] actionToRun) [0x0000c] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteSync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadRangeToStream (System.IO.Stream target, System.Nullable`1[T] offset, System.Nullable`1[T] length, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToStream (System.IO.Stream target, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00000] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToFile (System.String path, System.IO.FileMode mode, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00046] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at EmailReader.FireBaseRead.DownloadFile (System.String file, System.String cont) [0x000fe] in <aad585bb97454754a2a5ed5c772843b1>:0 
+Request Information
+RequestID:92bc5662-f01e-001e-6fcd-6f497d000000
+RequestDate:Tue, 24 May 2022 17:18:47 GMT
+StatusMessage:The specified blob does not exist.
+ErrorCode:BlobNotFound
+ErrorMessage:The specified blob does not exist.
+RequestId:92bc5662-f01e-001e-6fcd-6f497d000000
+Time:2022-05-25T00:18:47.3925626Z
+2022-05-24 17:18:47.372839-0700 Hello_MultiScreen_iPhone[44327:1809074] 
