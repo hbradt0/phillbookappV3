@@ -50,3 +50,5 @@ RemoveDynamicRegistrar:false
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/System.Text.Encoding.Extensions.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/Microsoft.CSharp.dll
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/Microsoft.Azure.KeyVault.Core.dll
+/Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/Plugin.Connectivity.dll
+/Users/psargent/phillbookApp2/bin/iPhoneSimulator/Release/Hello_MultiScreen_iPhone.app:/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Release/mtouch-cache/1-Link/Plugin.Connectivity.Abstractions.dll

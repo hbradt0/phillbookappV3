@@ -13,11 +13,11 @@
 	<key>MinimumOSVersion</key>
 	<string>12.0</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.xamarin.hellomultiscreeniphone</string>
+	<string>com.xamarin.hellomultiscreeniphone1</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleDisplayName</key>
-	<string>Create Your Story</string>
+	<string>Create Your Story Cloud</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Screens/HomeScreen</string>
 	<key>UIMainNibFile</key>
@@ -29,8 +29,8 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow device to access Photo</string>
 	<key>CFBundleShortVersionString</key>
-	<string>65</string>
+	<string>66</string>
 	<key>CFBundleVersion</key>
-	<string>65</string>
+	<string>66</string>
 </dict>
 </plist>

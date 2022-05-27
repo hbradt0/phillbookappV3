@@ -5,7 +5,7 @@
 		<key>CFBundleDevelopmentRegion</key>
 		<string>English</string>
 		<key>CFBundleIdentifier</key>
-		<string>com.apple.xcode.dsym.com.xamarin.hellomultiscreeniphone</string>
+		<string>com.apple.xcode.dsym.com.xamarin.hellomultiscreeniphone1</string>
 		<key>CFBundleInfoDictionaryVersion</key>
 		<string>6.0</string>
 		<key>CFBundlePackageType</key>
@@ -13,8 +13,8 @@
 		<key>CFBundleSignature</key>
 		<string>????</string>
 		<key>CFBundleShortVersionString</key>
-		<string>65</string>
+		<string>66</string>
 		<key>CFBundleVersion</key>
-		<string>65</string>
+		<string>66</string>
 	</dict>
 </plist>

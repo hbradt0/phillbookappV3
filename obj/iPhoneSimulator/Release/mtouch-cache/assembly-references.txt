@@ -49,3 +49,5 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/Facades/System.Text.Encoding.Extensions.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/15.8.0.3/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll
 /Users/psargent/phillbookApp2/packages/Microsoft.Azure.KeyVault.Core.2.0.4/lib/netstandard1.5/Microsoft.Azure.KeyVault.Core.dll
+/Users/psargent/phillbookApp2/packages/Xam.Plugin.Connectivity.3.2.0/lib/Xamarin.iOS10/Plugin.Connectivity.dll
+/Users/psargent/phillbookApp2/packages/Xam.Plugin.Connectivity.3.2.0/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll

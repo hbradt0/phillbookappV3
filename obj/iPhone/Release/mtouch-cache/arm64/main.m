@@ -26,6 +26,8 @@ extern void *mono_aot_module_Microsoft_Azure_Storage_Common_info;
 extern void *mono_aot_module_Newtonsoft_Json_info;
 extern void *mono_aot_module_Microsoft_CSharp_info;
 extern void *mono_aot_module_Microsoft_Azure_KeyVault_Core_info;
+extern void *mono_aot_module_Plugin_Connectivity_info;
+extern void *mono_aot_module_Plugin_Connectivity_Abstractions_info;
 
 void xamarin_register_modules_impl ()
 {
@@ -48,6 +50,8 @@ void xamarin_register_modules_impl ()
 	mono_aot_register_module (mono_aot_module_Newtonsoft_Json_info);
 	mono_aot_register_module (mono_aot_module_Microsoft_CSharp_info);
 	mono_aot_register_module (mono_aot_module_Microsoft_Azure_KeyVault_Core_info);
+	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_info);
+	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_Abstractions_info);
 
 }
 

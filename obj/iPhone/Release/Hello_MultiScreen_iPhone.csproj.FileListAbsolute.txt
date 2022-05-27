@@ -83,3 +83,9 @@
 /Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.csproj.CoreCompileInputs.cache
 /Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.csproj.CopyComplete
 /Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.exe
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.Abstractions.dll
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.dll
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.Abstractions.pdb
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.Abstractions.xml
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.pdb
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.xml

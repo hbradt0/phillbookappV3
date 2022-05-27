@@ -22,6 +22,8 @@
 --reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll
 --reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll
 --reference=/Users/psargent/phillbookApp2/packages/Newtonsoft.Json.10.0.2/lib/netstandard1.3/Newtonsoft.Json.dll
+--reference=/Users/psargent/phillbookApp2/packages/Xam.Plugin.Connectivity.3.2.0/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll
+--reference=/Users/psargent/phillbookApp2/packages/Xam.Plugin.Connectivity.3.2.0/lib/Xamarin.iOS10/Plugin.Connectivity.dll
 --reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Buffers.dll
 --reference=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll
 --reference=/Users/psargent/phillbookApp2/packages/System.Diagnostics.DiagnosticSource.4.6.0/lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll
@@ -187,6 +189,8 @@
 --reference=/Users/psargent/phillbookApp2/packages/Microsoft.Azure.Storage.Common.11.2.3/lib/netstandard2.0/Microsoft.Azure.Storage.Common.dll
 --reference=/Users/psargent/phillbookApp2/packages/Microsoft.Bcl.AsyncInterfaces.1.1.1/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll
 --reference=/Users/psargent/phillbookApp2/packages/Newtonsoft.Json.10.0.2/lib/netstandard1.3/Newtonsoft.Json.dll
+--reference=/Users/psargent/phillbookApp2/packages/Xam.Plugin.Connectivity.3.2.0/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll
+--reference=/Users/psargent/phillbookApp2/packages/Xam.Plugin.Connectivity.3.2.0/lib/Xamarin.iOS10/Plugin.Connectivity.dll
 --reference=/Users/psargent/phillbookApp2/packages/System.Diagnostics.DiagnosticSource.4.6.0/lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll
 --reference=/Users/psargent/phillbookApp2/packages/System.IO.Hashing.6.0.0/lib/netstandard2.0/System.IO.Hashing.dll
 --reference=/Users/psargent/phillbookApp2/packages/System.Memory.Data.1.0.2/lib/netstandard2.0/System.Memory.Data.dll

@@ -14,6 +14,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Social;
+using Plugin.Connectivity;
 
 namespace EmailReader //rename
 {
@@ -76,6 +77,12 @@ namespace EmailReader //rename
             String text = File.ReadAllText(file);
             String encodedtext = Base64Decode(text);
             File.WriteAllText(file, text);
+        }
+
+        public static bool IsConnected()
+        {
+            var isConnected = CrossConnectivity.Current.IsConnected;
+            return isConnected;
         }
 
         public static void UploadFile(String file, String cont = "halbookappblob")
