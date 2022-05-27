@@ -1,29 +1,17 @@
 ﻿<Properties StartupConfiguration="{A10944A3-80E8-4A8D-A6F5-1A10606AAE60}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Info.plist">
     <Files>
       <File FileName="Screens/EditJournalScreen.cs" Line="122" Column="1" />
       <File FileName="Screens/HomeScreen.cs" />
       <File FileName="Screens/HomeScreen2.cs" />
-      <File FileName="EmailFileRead.cs" Line="105" Column="1" />
+      <File FileName="EmailFileRead.cs" Line="29" Column="41" />
       <File FileName="Info.plist" />
-      <File FileName="Resources/Story1.txt" />
-      <File FileName="Resources/Story10.txt" />
-      <File FileName="Resources/Story25.txt" />
-      <File FileName="Resources/Story50.txt" />
-      <File FileName="Resources/WinText.txt" />
       <File FileName="Screens/StoryScreen.cs" Line="146" Column="45" />
-      <File FileName="Screens/StoryScreen.designer.cs" />
-      <File FileName="AppDelegate.cs" />
-      <File FileName="Screens/HelloUniverseScreen.cs" />
       <File FileName="Screens/HelloUniverseScreen.designer.cs" />
-      <File FileName="Screens/HelloWorldScreen.cs" />
+      <File FileName="Screens/HelloWorldScreen.cs" Line="125" Column="110" />
       <File FileName="Screens/HelloWorldScreen.designer.cs" />
-      <File FileName="Screens/ImageScreen.cs" Line="573" Column="50" />
-      <File FileName="Screens/ImageScreen.designer.cs" />
-      <File FileName="packages.config" />
-      <File FileName="Screens/LoginScreen.cs" Line="520" Column="48" />
-      <File FileName="Screens/LoginScreen.designer.cs" />
-      <File FileName="FireBaseRead.cs" Line="209" Column="22" />
+      <File FileName="Screens/LoginScreen.cs" Line="126" Column="2" />
+      <File FileName="FireBaseRead.cs" Line="118" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -31,6 +19,7 @@
           <Option id="ShowAllFiles" value="True" />
           <Node name="Hello_MultiScreen_iPhone" expanded="True">
             <Node name="Hello_MultiScreen_iPhone" expanded="True">
+              <Node name="Resources" expanded="True" />
               <Node name="Screens" expanded="True" />
               <Node name="Info.plist" selected="True" />
             </Node>

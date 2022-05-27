@@ -82,8 +82,8 @@ namespace EmailReader //rename
         {
             if (GetphoneID() != "")
             {
-                try
-                {
+                //try
+                //{
                     var connectionString = String.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
                     storageName, // your storage account name
                     accessKey); // your storage account access key
@@ -96,16 +96,26 @@ namespace EmailReader //rename
                     sasConstraints.SharedAccessExpiryTime = DateTime.UtcNow.AddMinutes(30);
                     sasConstraints.Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Create;
                     FileInfo file1 = new FileInfo(file);
-                    var blob = container.GetBlockBlobReference(phoneID + "/"+ file1.Name);
-                    var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
+                    if (file1.Exists)
+                    {
+                        var blob = container.GetBlockBlobReference(phoneID + "/" + file1.Name);
+                        var sas = blob.Uri + blob.GetSharedAccessSignature(sasConstraints);
 
-                    var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
-                    cloudBlockBlob.UploadFromFile(file1.FullName, null);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
+                        var cloudBlockBlob = new CloudBlockBlob(new Uri(sas));
+                        String s = File.ReadAllText(file1.FullName);
+                        var stream = new MemoryStream();
+                        var writer = new StreamWriter(stream);
+                        writer.Write(s);
+                        writer.Flush();
+                        stream.Position = 0;
+
+                        cloudBlockBlob.UploadFromStream(stream);
+                    }
+                //}
+                //catch (Exception e)
+                //{
+                //    Console.WriteLine(e);
+                //}
             }
         }
 

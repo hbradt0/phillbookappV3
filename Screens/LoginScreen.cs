@@ -120,7 +120,10 @@ namespace Hello_MultiScreen_iPhone
             listView.Frame = new CGRect(Usernamelabel.Frame.X, View.Frame.Top + 150, ResponsiveSizeX - 100, 150);
             listView.Source = new TableSource(list);
             listView.BackgroundColor = UIColor.White;
-
+            listView.SectionIndexBackgroundColor = UIColor.Purple;
+            listView.TintColor = UIColor.Purple;
+            listView.SeparatorColor = UIColor.Purple;
+ 
             ShowText.Frame = new CGRect(Usernamelabel.Frame.X+200, View.Frame.Top + 150, 50, 30);
             ShowText.BackgroundColor = UIColor.SystemPurple;
             ShowText.SetTitle("View", UIControlState.Normal);
