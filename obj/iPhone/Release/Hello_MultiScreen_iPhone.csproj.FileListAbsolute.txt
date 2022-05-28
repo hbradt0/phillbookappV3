@@ -89,3 +89,4 @@
 /Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.Abstractions.xml
 /Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.pdb
 /Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.xml
+/Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.csproj.AssemblyReference.cache

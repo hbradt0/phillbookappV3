@@ -41,7 +41,7 @@ namespace Hello_MultiScreen_iPhone
         private UIViewAnimationCurve animCurve;
         private bool keyboardShowing;
         private bool keyboardOpen = false;
-        public static String str = "Blob ";
+        public static String str = "";
 
         public static string[] list = {
             "Journal",
@@ -104,7 +104,7 @@ namespace Hello_MultiScreen_iPhone
             Logout = new UIButton(UIButtonType.System);
             ShowText = new UIButton(UIButtonType.System);
 
-            LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 80);
+            LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 50);
             LoginInstructions.Text = "Please login, choose pin and email for Cloud Services, save your one-time pin somewhere safe so " +
                 "you can locate your files once again!";
             LoginInstructions.TextColor = UIColor.Black;
@@ -395,25 +395,25 @@ namespace Hello_MultiScreen_iPhone
                     if (TableSource.SelectedRow.Contains(list[0]))
                     {
                         FireBaseRead.UploadFile(EmailFileRead.fileName1);
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy")+": Uploaded ";
+                        str = "Uploaded ";
                         ClickEvent(sender, eventArgs);
                     }
                     else if (TableSource.SelectedRow.Contains(list[1]))
                     {
                         FireBaseRead.UploadFile(EmailFileRead.fileName2);
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy") + ": Uploaded ";
+                        str = "Uploaded ";
                         ClickEvent(sender, eventArgs);
                     }
                     else if (TableSource.SelectedRow.Contains(list[2]))
                     {
                         FireBaseRead.UploadSyncImages();
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy") + ": Uploaded images";
+                        str = "Uploaded Images";
                         ClickEvent(sender, eventArgs);
                     }
                     else 
                     {
                         FireBaseRead.UploadFile(EmailFileRead.fileName1);
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy") + ": Uploaded ";
+                        str = "Uploaded ";
                         ClickEvent(sender, eventArgs);
                     }
                 }
@@ -443,25 +443,25 @@ namespace Hello_MultiScreen_iPhone
                     if (TableSource.SelectedRow.Contains(list[0]))
                     {
                         FireBaseRead.DeleteFile(EmailFileRead.fileName1);
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy") + ": Deleted ";
+                        str = "Deleted ";
                         ClickEvent(sender, eventArgs);
                     }
                     else if (TableSource.SelectedRow.Contains(list[1]))
                     {
                         FireBaseRead.DeleteFile(EmailFileRead.fileName2);
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy") + ": Deleted ";
+                        str = "Deleted ";
                         ClickEvent(sender, eventArgs);
                     }
                     else if (TableSource.SelectedRow.Contains(list[2]))
                     {
                         FireBaseRead.DeleteSyncFiles();
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy") + ": Deleted Images";
+                        str = "Deleted Images";
                         ClickEvent(sender, eventArgs);
                     }
                     else
                     {
                         FireBaseRead.DeleteFile(EmailFileRead.fileName1);
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy") + ": Deleted ";
+                        str = "Deleted ";
                         ClickEvent(sender, eventArgs);
                     }
                 }
@@ -490,25 +490,25 @@ namespace Hello_MultiScreen_iPhone
                     if (TableSource.SelectedRow.Contains(list[0]))
                     {
                         FireBaseRead.DownloadFile(EmailFileRead.fileName1);
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy") + ": Downloaded ";
+                        str = "Downloaded ";
                         ClickEvent(sender, eventArgs);
                     }
                     else if (TableSource.SelectedRow.Contains(list[1]))
                     {
                         FireBaseRead.DownloadFile(EmailFileRead.fileName2);
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy") + ": Downloaded ";
+                        str = "Downloaded ";
                         ClickEvent(sender, eventArgs);
                     }
                     else if (TableSource.SelectedRow.Contains(list[2]))
                     {
                         FireBaseRead.DownloadSyncFiles();
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy") + ": Downloaded Images";
+                        str = "Downloaded Images ";
                         ClickEvent(sender, eventArgs);
                     }
                     else
                     {
                         FireBaseRead.DownloadFile(EmailFileRead.fileName1);
-                        str = DateTime.Now.ToLocalTime().ToString("MMddyyyy") + ": Downloaded ";
+                        str = "Downloaded ";
                         ClickEvent(sender, eventArgs);
                     }
                     ClickEvent(sender, eventArgs);
@@ -521,7 +521,7 @@ namespace Hello_MultiScreen_iPhone
 
             if (TableSource.SelectedRow == list[1])
             {
-                textView.Text = str + "Todo List to the Cloud\n" + FireBaseRead.DownloadFileStream(EmailFileRead.fileName2);
+                textView.Text = str + "Todo List in the Cloud\n" + FireBaseRead.DownloadFileStream(EmailFileRead.fileName2);
             }
             else if (TableSource.SelectedRow == list[2])
             {
@@ -529,7 +529,7 @@ namespace Hello_MultiScreen_iPhone
             }
             else
             {
-                textView.Text = str + "Journal to the Cloud\n" + FireBaseRead.DownloadFileStream(EmailFileRead.fileName1);
+                textView.Text = str + "Journal in the Cloud\n" + FireBaseRead.DownloadFileStream(EmailFileRead.fileName1);
             }
         }
 
@@ -574,6 +574,7 @@ namespace Hello_MultiScreen_iPhone
                     textView.Hidden = true;
                     ShowText.Hidden = true;
                     imageView3.Hidden = false;
+                    LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 80);
             }
 
             if (!FireBaseRead.IsConnected())
@@ -616,6 +617,7 @@ namespace Hello_MultiScreen_iPhone
                 var cell = new UITableViewCell(UITableViewCellStyle.Default, "");
                 cell.BackgroundColor = UIColor.White;
                 string item = list[indexPath.Row];
+                cell.TextLabel.TextColor = UIColor.Black;
                 cell.TextLabel.Text = item;
                 return cell;
             }
