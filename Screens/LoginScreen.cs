@@ -110,29 +110,40 @@ namespace Hello_MultiScreen_iPhone
             LoginInstructions.TextColor = UIColor.Black;
             LoginInstructions.BackgroundColor = UIColor.FromRGB(204, 204, 255);
 
-            imageView3 = new UIImageView();
-            imageView3.Image = UIImage.FromBundle("pinkflower.png");
-            imageView3.Frame = new CGRect(ResponsiveWidthLeft+100, View.Frame.Top + 200, 80, 80);
 
-            Usernamelabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 350, 80, 30);
+            imageView3 = new UIImageView();
+            UIImage img3 = new UIImage();
+            if (EmailFileRead.FileExists(EmailFileRead.fileNameImage) && EmailFileRead.fileNameImage != "")
+            {
+                img3 = UIImage.FromFile(EmailFileRead.fileNameImage);
+            }
+            else
+                img3 = UIImage.FromFile("TestPic.png");
+            imageView3.Image = img3;
+            imageView3.Frame = new CGRect(ResponsiveWidthLeft+100, View.Frame.Top + 200, 100, 100);
+
+            Usernamelabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 350, 70, 30);
             Usernamelabel.BackgroundColor = UIColor.FromRGB(204, 204, 255);
             Usernamelabel.Text = "Username: ";
+            Usernamelabel.TextAlignment = UITextAlignment.Center;
             Usernamelabel.TextColor = UIColor.Black;
 
             Passwordlabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 400, 80, 30);
             Passwordlabel.Text = "Pin: ";
+            Passwordlabel.TextAlignment = UITextAlignment.Center;
             Passwordlabel.BackgroundColor = UIColor.FromRGB(204, 204, 255);
             Passwordlabel.TextColor = UIColor.Black;
 
             listView.Frame = new CGRect(Usernamelabel.Frame.X, View.Frame.Top + 160, ResponsiveSizeX-90, 160);
             listView.Source = new TableSource(list);
             listView.BackgroundColor = UIColor.White;
- 
+            listView.TintColor = UIColor.SystemCyan;
+
             ShowText.Frame = new CGRect(Usernamelabel.Frame.X+220, View.Frame.Top + 160, 50, 30);
             ShowText.BackgroundColor = UIColor.SystemPurple;
             ShowText.SetTitle("View", UIControlState.Normal);
 
-            loginemail.Frame = new CGRect(Usernamelabel.Frame.X+100, View.Frame.Top + 350, ResponsiveSizeX-80, 30);
+            loginemail.Frame = new CGRect(Usernamelabel.Frame.X+70, View.Frame.Top + 350, ResponsiveSizeX-80, 30);
             loginemail.BackgroundColor = UIColor.White;
             loginemail.TextColor = UIColor.SystemPurple;
             loginemail.KeyboardType = UIKeyboardType.ASCIICapable;
@@ -142,7 +153,7 @@ namespace Hello_MultiScreen_iPhone
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
             g.CancelsTouchesInView = false; //for iOS5View.AddGestureRecognizer (g);
 
-            loginpassword.Frame = new CGRect(Passwordlabel.Frame.X+100, View.Frame.Top + 400, ResponsiveSizeX-80, 30);
+            loginpassword.Frame = new CGRect(Usernamelabel.Frame.X+70, View.Frame.Top + 400, ResponsiveSizeX-80, 30);
             loginpassword.BackgroundColor = UIColor.White;
             loginpassword.TextColor = UIColor.SystemPurple;
             loginpassword.KeyboardType = UIKeyboardType.ASCIICapable;
@@ -150,7 +161,7 @@ namespace Hello_MultiScreen_iPhone
 
             LoginButton.BackgroundColor = UIColor.SystemPurple;
             LoginButton.SetTitle("Login", UIControlState.Normal);
-            LoginButton.Frame = new CGRect(ResponsiveWidthLeft+100, View.Frame.Top + 460, ResponsiveSizeX-80, 30);
+            LoginButton.Frame = new CGRect(Usernamelabel.Frame.X+70, View.Frame.Top + 460, ResponsiveSizeX-80, 30);
 
             DownloadCloud.BackgroundColor = UIColor.SystemIndigo;
             DownloadCloud.SetTitle("Download Cloud Data", UIControlState.Normal);
@@ -617,6 +628,7 @@ namespace Hello_MultiScreen_iPhone
                 var cell = new UITableViewCell(UITableViewCellStyle.Default, "");
                 cell.BackgroundColor = UIColor.White;
                 string item = list[indexPath.Row];
+                cell.TextLabel.TintColor = UIColor.SystemCyan;
                 cell.TextLabel.TextColor = UIColor.Black;
                 cell.TextLabel.Text = item;
                 return cell;
