@@ -110,15 +110,9 @@ namespace Hello_MultiScreen_iPhone
             LoginInstructions.TextColor = UIColor.Black;
             LoginInstructions.BackgroundColor = UIColor.FromRGB(204, 204, 255);
 
-
             imageView3 = new UIImageView();
             UIImage img3 = new UIImage();
-            if (EmailFileRead.FileExists(EmailFileRead.fileNameImage) && EmailFileRead.fileNameImage != "")
-            {
-                img3 = UIImage.FromFile(EmailFileRead.fileNameImage);
-            }
-            else
-                img3 = UIImage.FromFile("TestPic.png");
+            img3 = UIImage.FromFile("TestPic.png");
             imageView3.Image = img3;
             imageView3.Frame = new CGRect(ResponsiveWidthLeft+100, View.Frame.Top + 200, 100, 100);
 
@@ -337,52 +331,73 @@ namespace Hello_MultiScreen_iPhone
 
         void LoginButtonClick(object sender, EventArgs eventArgs)
         {
-            if (loginemail.Text != "" && loginpassword.Text != "")
+            if (!FireBaseRead.IsConnected())
             {
-                if (FireBaseRead.GetphoneID()=="")
+                DownloadCloud.Enabled = false;
+                UploadCloud.Enabled = false;
+                Logout.Enabled = false;
+                LoginButton.Enabled = false;
+                DeleteCloud.Enabled = false;
+                ShowText.Enabled = false;
+                LoginInstructions.Text = "Lost Network Connection. Please reconnect to the internet";
+            }
+            else
+            {
+                DownloadCloud.Enabled = true;
+                UploadCloud.Enabled = true;
+                Logout.Enabled = true;
+                LoginButton.Enabled = true;
+                DeleteCloud.Enabled = true;
+                ShowText.Enabled = true;
+
+
+                if (loginemail.Text != "" && loginpassword.Text != "")
                 {
-                    LoginButton.Hidden = true;
-                    loginemail.Hidden = true;
-                    loginpassword.Hidden = true;
-                    DownloadCloud.Hidden = false;
-                    UploadCloud.Hidden = false;
-                    Logout.Hidden = false;
-                    Usernamelabel.Hidden = true;
-                    Passwordlabel.Hidden = true;
-                    listView.Hidden = false;
-                    DeleteCloud.Hidden = false;
-                    textView.Hidden = false;
-                    imageView3.Hidden = true;
-                    ShowText.Hidden = false;
-                    LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 50);
-                    FireBaseRead.cloudservices = true;
-                    FireBaseRead.phoneID = loginemail.Text + loginpassword.Text;
-                    FireBaseRead.Encrypt();
-                    LoginInstructions.Text = "Welcome " + loginemail.Text + "!";
-                    FireBaseRead.LoginEmail = loginemail.Text;
-                    FireBaseRead.LoginPassword = loginpassword.Text;
-                    textView.Text = FireBaseRead.DownloadFileStream(EmailFileRead.fileName1);
-                }
-                else
-                {
-                    var Confirm = new UIAlertView("Confirmation", "Already registered, please click confirm to repopulate your login", null, "Cancel", "Yes");
-                    Confirm.Show();
-                    Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
+                    if (FireBaseRead.GetphoneID() == "")
                     {
-                        if (es.ButtonIndex == 0)
-                        {
-                        //Do nothing
+                        LoginButton.Hidden = true;
+                        loginemail.Hidden = true;
+                        loginpassword.Hidden = true;
+                        DownloadCloud.Hidden = false;
+                        UploadCloud.Hidden = false;
+                        Logout.Hidden = false;
+                        Usernamelabel.Hidden = true;
+                        Passwordlabel.Hidden = true;
+                        listView.Hidden = false;
+                        DeleteCloud.Hidden = false;
+                        textView.Hidden = false;
+                        imageView3.Hidden = true;
+                        ShowText.Hidden = false;
+                        LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 50);
+                        FireBaseRead.cloudservices = true;
+                        FireBaseRead.phoneID = loginemail.Text + loginpassword.Text;
+                        FireBaseRead.Encrypt();
+                        LoginInstructions.Text = "Welcome " + loginemail.Text + "!";
+                        FireBaseRead.LoginEmail = loginemail.Text;
+                        FireBaseRead.LoginPassword = loginpassword.Text;
+                        textView.Text = FireBaseRead.DownloadFileStream(EmailFileRead.fileName1);
                     }
-                        else
+                    else
+                    {
+                        var Confirm = new UIAlertView("Confirmation", "Already registered, please click confirm to repopulate your login", null, "Cancel", "Yes");
+                        Confirm.Show();
+                        Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
                         {
-                            loginemail.Text = FireBaseRead.LoginEmail;
-                            loginpassword.Text = FireBaseRead.LoginPassword;
+                            if (es.ButtonIndex == 0)
+                            {
+                            //Do nothing
                         }
-                    };
+                            else
+                            {
+                                loginemail.Text = FireBaseRead.LoginEmail;
+                                loginpassword.Text = FireBaseRead.LoginPassword;
+                            }
+                        };
+                    }
+                    UIApplication.SharedApplication.KeyWindow.EndEditing(true);
+                    keyboardOpen = false;
+                    scrollView.ScrollRectToVisible(LoginInstructions.Frame, true);
                 }
-                UIApplication.SharedApplication.KeyWindow.EndEditing(true);
-                keyboardOpen = false;
-                scrollView.ScrollRectToVisible(LoginInstructions.Frame, true);
             }
         }
 
@@ -393,43 +408,46 @@ namespace Hello_MultiScreen_iPhone
             {
                 table = list.First();
             }
-            var Confirm = new UIAlertView("Confirmation", "Uploading to the cloud, "+table+" file(s), will not overwrite other changes so please share the files before! This will take a while!", null, "Cancel", "Yes");
-            Confirm.Show();
-            Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
+            if (FireBaseRead.IsConnected())
             {
-                if (es.ButtonIndex == 0)
+
+                var Confirm = new UIAlertView("Confirmation", "Uploading to the cloud, " + table + " file(s), will not overwrite other changes so please share the files before! This will take a while!", null, "Cancel", "Yes");
+                Confirm.Show();
+                Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
                 {
+                    if (es.ButtonIndex == 0)
+                    {
                     //Do nothing
                 }
-                else
-                {
-                    if (TableSource.SelectedRow.Contains(list[0]))
+                    else
                     {
-                        FireBaseRead.UploadFile(EmailFileRead.fileName1);
-                        str = "Uploaded ";
-                        ClickEvent(sender, eventArgs);
+                        if (TableSource.SelectedRow.Contains(list[0]))
+                        {
+                            FireBaseRead.UploadFile(EmailFileRead.fileName1);
+                            str = "Uploaded ";
+                            ClickEvent(sender, eventArgs);
+                        }
+                        else if (TableSource.SelectedRow.Contains(list[1]))
+                        {
+                            FireBaseRead.UploadFile(EmailFileRead.fileName2);
+                            str = "Uploaded ";
+                            ClickEvent(sender, eventArgs);
+                        }
+                        else if (TableSource.SelectedRow.Contains(list[2]))
+                        {
+                            FireBaseRead.UploadSyncImages();
+                            str = "Uploaded Images";
+                            ClickEvent(sender, eventArgs);
+                        }
+                        else
+                        {
+                            FireBaseRead.UploadFile(EmailFileRead.fileName1);
+                            str = "Uploaded ";
+                            ClickEvent(sender, eventArgs);
+                        }
                     }
-                    else if (TableSource.SelectedRow.Contains(list[1]))
-                    {
-                        FireBaseRead.UploadFile(EmailFileRead.fileName2);
-                        str = "Uploaded ";
-                        ClickEvent(sender, eventArgs);
-                    }
-                    else if (TableSource.SelectedRow.Contains(list[2]))
-                    {
-                        FireBaseRead.UploadSyncImages();
-                        str = "Uploaded Images";
-                        ClickEvent(sender, eventArgs);
-                    }
-                    else 
-                    {
-                        FireBaseRead.UploadFile(EmailFileRead.fileName1);
-                        str = "Uploaded ";
-                        ClickEvent(sender, eventArgs);
-                    }
-                }
-            };
-
+                };
+            }
 
         }
 
@@ -440,43 +458,46 @@ namespace Hello_MultiScreen_iPhone
             {
                 table = list.First();
             }
-
-            var Confirm = new UIAlertView("Confirmation", "Deleting from the cloud, " + table + " file(s),will be deleted, This will take a while!", null, "Cancel", "Yes");
-            Confirm.Show();
-            Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
+            if (FireBaseRead.IsConnected())
             {
-                if (es.ButtonIndex == 0)
+
+                var Confirm = new UIAlertView("Confirmation", "Deleting from the cloud, " + table + " file(s),will be deleted, This will take a while!", null, "Cancel", "Yes");
+                Confirm.Show();
+                Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
                 {
+                    if (es.ButtonIndex == 0)
+                    {
                     //Do nothing
                 }
-                else
-                {
-                    if (TableSource.SelectedRow.Contains(list[0]))
-                    {
-                        FireBaseRead.DeleteFile(EmailFileRead.fileName1);
-                        str = "Deleted ";
-                        ClickEvent(sender, eventArgs);
-                    }
-                    else if (TableSource.SelectedRow.Contains(list[1]))
-                    {
-                        FireBaseRead.DeleteFile(EmailFileRead.fileName2);
-                        str = "Deleted ";
-                        ClickEvent(sender, eventArgs);
-                    }
-                    else if (TableSource.SelectedRow.Contains(list[2]))
-                    {
-                        FireBaseRead.DeleteSyncFiles();
-                        str = "Deleted Images";
-                        ClickEvent(sender, eventArgs);
-                    }
                     else
                     {
-                        FireBaseRead.DeleteFile(EmailFileRead.fileName1);
-                        str = "Deleted ";
-                        ClickEvent(sender, eventArgs);
+                        if (TableSource.SelectedRow.Contains(list[0]))
+                        {
+                            FireBaseRead.DeleteFile(EmailFileRead.fileName1);
+                            str = "Deleted ";
+                            ClickEvent(sender, eventArgs);
+                        }
+                        else if (TableSource.SelectedRow.Contains(list[1]))
+                        {
+                            FireBaseRead.DeleteFile(EmailFileRead.fileName2);
+                            str = "Deleted ";
+                            ClickEvent(sender, eventArgs);
+                        }
+                        else if (TableSource.SelectedRow.Contains(list[2]))
+                        {
+                            FireBaseRead.DeleteSyncFiles();
+                            str = "Deleted Images";
+                            ClickEvent(sender, eventArgs);
+                        }
+                        else
+                        {
+                            FireBaseRead.DeleteFile(EmailFileRead.fileName1);
+                            str = "Deleted ";
+                            ClickEvent(sender, eventArgs);
+                        }
                     }
-                }
-            };
+                };
+            }
 
         }
 
@@ -487,60 +508,65 @@ namespace Hello_MultiScreen_iPhone
             {
                 table = list.First();
             }
-
-            var Confirm = new UIAlertView("Confirmation", "Downloading from the cloud, " + table + " file(s),will overwrite other changes so please share the files before! This will take a while!", null, "Cancel", "Yes");
-            Confirm.Show();
-            Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
+            if (FireBaseRead.IsConnected())
             {
-                if (es.ButtonIndex == 0)
+
+                var Confirm = new UIAlertView("Confirmation", "Downloading from the cloud, " + table + " file(s),will overwrite other changes so please share the files before! This will take a while!", null, "Cancel", "Yes");
+                Confirm.Show();
+                Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
                 {
+                    if (es.ButtonIndex == 0)
+                    {
                     //Do nothing
                 }
-                else
-                {
-                    if (TableSource.SelectedRow.Contains(list[0]))
-                    {
-                        FireBaseRead.DownloadFile(EmailFileRead.fileName1);
-                        str = "Downloaded ";
-                        ClickEvent(sender, eventArgs);
-                    }
-                    else if (TableSource.SelectedRow.Contains(list[1]))
-                    {
-                        FireBaseRead.DownloadFile(EmailFileRead.fileName2);
-                        str = "Downloaded ";
-                        ClickEvent(sender, eventArgs);
-                    }
-                    else if (TableSource.SelectedRow.Contains(list[2]))
-                    {
-                        FireBaseRead.DownloadSyncFiles();
-                        str = "Downloaded Images ";
-                        ClickEvent(sender, eventArgs);
-                    }
                     else
                     {
-                        FireBaseRead.DownloadFile(EmailFileRead.fileName1);
-                        str = "Downloaded ";
+                        if (TableSource.SelectedRow.Contains(list[0]))
+                        {
+                            FireBaseRead.DownloadFile(EmailFileRead.fileName1);
+                            str = "Downloaded ";
+                            ClickEvent(sender, eventArgs);
+                        }
+                        else if (TableSource.SelectedRow.Contains(list[1]))
+                        {
+                            FireBaseRead.DownloadFile(EmailFileRead.fileName2);
+                            str = "Downloaded ";
+                            ClickEvent(sender, eventArgs);
+                        }
+                        else if (TableSource.SelectedRow.Contains(list[2]))
+                        {
+                            FireBaseRead.DownloadSyncFiles();
+                            str = "Downloaded Images ";
+                            ClickEvent(sender, eventArgs);
+                        }
+                        else
+                        {
+                            FireBaseRead.DownloadFile(EmailFileRead.fileName1);
+                            str = "Downloaded ";
+                            ClickEvent(sender, eventArgs);
+                        }
                         ClickEvent(sender, eventArgs);
                     }
-                    ClickEvent(sender, eventArgs);
-                }
-            };
+                };
+            }
         }
 
         void ClickEvent(object sender, EventArgs eventArgs)
         {
-
-            if (TableSource.SelectedRow == list[1])
+            if (FireBaseRead.IsConnected())
             {
-                textView.Text = str + "Todo List in the Cloud\n" + FireBaseRead.DownloadFileStream(EmailFileRead.fileName2);
-            }
-            else if (TableSource.SelectedRow == list[2])
-            {
-                textView.Text = FireBaseRead.GetImageFiles();
-            }
-            else
-            {
-                textView.Text = str + "Journal in the Cloud\n" + FireBaseRead.DownloadFileStream(EmailFileRead.fileName1);
+                if (TableSource.SelectedRow == list[1])
+                {
+                    textView.Text = str + "Todo List in the Cloud\n" + FireBaseRead.DownloadFileStream(EmailFileRead.fileName2);
+                }
+                else if (TableSource.SelectedRow == list[2])
+                {
+                    textView.Text = FireBaseRead.GetImageFiles();
+                }
+                else
+                {
+                    textView.Text = str + "Journal in the Cloud\n" + FireBaseRead.DownloadFileStream(EmailFileRead.fileName1);
+                }
             }
         }
 
@@ -549,8 +575,9 @@ namespace Hello_MultiScreen_iPhone
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-
-                if (FireBaseRead.GetphoneID() != "")
+            var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
+            scrollView.ScrollRectToVisible(cgFrame, true);
+            if (FireBaseRead.GetphoneID() != "")
                 {
                     LoginButton.Hidden = true;
                     loginemail.Hidden = true;
@@ -589,20 +616,21 @@ namespace Hello_MultiScreen_iPhone
             }
 
             if (!FireBaseRead.IsConnected())
-            {
-                  
+            { 
                 DownloadCloud.Enabled = false;
                 UploadCloud.Enabled = false;
                 Logout.Enabled = false;
+                LoginButton.Enabled = false;
                 DeleteCloud.Enabled = false;
                 ShowText.Enabled = false;
-                LoginInstructions.Text = "Lost Network Connection";
+                LoginInstructions.Text = "Lost Network Connection. Please reconnect to the internet";
             }
             else
             {
                 DownloadCloud.Enabled = true;
                 UploadCloud.Enabled = true;
                 Logout.Enabled = true;
+                LoginButton.Enabled = true;
                 DeleteCloud.Enabled = true;
                 ShowText.Enabled = true;
             }
@@ -628,7 +656,7 @@ namespace Hello_MultiScreen_iPhone
                 var cell = new UITableViewCell(UITableViewCellStyle.Default, "");
                 cell.BackgroundColor = UIColor.White;
                 string item = list[indexPath.Row];
-                cell.TextLabel.TintColor = UIColor.SystemCyan;
+                cell.TintColor = UIColor.SystemCyan;
                 cell.TextLabel.TextColor = UIColor.Black;
                 cell.TextLabel.Text = item;
                 return cell;

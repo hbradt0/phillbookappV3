@@ -491,7 +491,9 @@ namespace Hello_MultiScreen_iPhone
             textViewWrite.Text = EmailFileRead.ReadText();
             UIApplication.SharedApplication.KeyWindow.EndEditing(true);
             keyboardOpen = false;
-            scrollView.ScrollRectToVisible(textViewWrite.Frame, true);
+            var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
+
+            scrollView.ScrollRectToVisible(cgFrame, true);
         }
     }
 }

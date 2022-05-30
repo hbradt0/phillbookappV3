@@ -1,47 +1,81 @@
-objc[4183]: Class NSURLSessionDelegate is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy (0x7fff87c202d8) and /Users/psargent/Library/Developer/CoreSimulator/Devices/B1C1BD12-3ED9-412B-B4E0-4982CDB6BCCB/data/Containers/Bundle/Application/C91F0B9A-7680-4375-AA8B-3B712407A2E0/Hello_MultiScreen_iPhone.app/Hello_MultiScreen_iPhone (0x101320540). One of the two will be used. Which one is undefined.
+objc[16661]: Class NSURLSessionDelegate is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy (0x7fff87c202d8) and /Users/psargent/Library/Developer/CoreSimulator/Devices/4AF9252F-7A13-4725-9567-7D6B75CAEECA/data/Containers/Bundle/Application/2DD588FB-B225-4BB9-B30A-1CEF7CB24852/Hello_MultiScreen_iPhone.app/Hello_MultiScreen_iPhone (0x102f62540). One of the two will be used. Which one is undefined.
 MonoTouch: Could not install sigaction override, unexpected sigaction implementation.
-2022-05-29 16:03:53.170054-0700 Hello_MultiScreen_iPhone[4183:3742723] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=4183
-2022-05-29 16:03:53.170369-0700 Hello_MultiScreen_iPhone[4183:3742723] SecTaskCopyDebugDescription: Hello_MultiScree[4183]/0#-1 LF=0
-2022-05-29 16:03:53.177911-0700 Hello_MultiScreen_iPhone[4183:3742723] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=4183
-2022-05-29 16:03:53.178213-0700 Hello_MultiScreen_iPhone[4183:3742723] SecTaskCopyDebugDescription: Hello_MultiScree[4183]/0#-1 LF=0
-2022-05-29 16:03:53.275149-0700 Hello_MultiScreen_iPhone[4183:3742723] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=4183
-2022-05-29 16:03:53.275406-0700 Hello_MultiScreen_iPhone[4183:3742723] SecTaskCopyDebugDescription: Hello_MultiScree[4183]/0#-1 LF=0
-2022-05-29 16:04:04.294609-0700 Hello_MultiScreen_iPhone[4183:3742723] [unspecified] container_system_group_path_for_identifier: error = ((container_error_t)98) NOT_CODESIGNED
-2022-05-29 16:04:04.294764-0700 Hello_MultiScreen_iPhone[4183:3742723] [MC] Error getting system group container for systemgroup.com.apple.configurationprofiles: 98
-2022-05-29 16:04:04.295090-0700 Hello_MultiScreen_iPhone[4183:3742723] [MC] Failed to get profile system group container path. Overriding with expected path: /Users/psargent/Library/Developer/CoreSimulator/Devices/B1C1BD12-3ED9-412B-B4E0-4982CDB6BCCB/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
-2022-05-29 16:04:06.572185-0700 Hello_MultiScreen_iPhone[4183:3742723] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
-2022-05-29 16:04:06.573422-0700 Hello_MultiScreen_iPhone[4183:3742723] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
-2022-05-29 16:04:09.575858-0700 Hello_MultiScreen_iPhone[4183:3742723] Microsoft.Azure.Storage.StorageException: The specified blob does not exist.
-  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext, System.Threading.CancellationToken token) [0x0102b] in <0978da6569544a999acb2ef3d979a5d5>:0 
-  at Microsoft.Azure.Storage.Core.Executor.Executor+<>c__DisplayClass0_0`1[T].<ExecuteSync>b__0 () [0x00022] in <0978da6569544a999acb2ef3d979a5d5>:0 
-  at Microsoft.Azure.Storage.Core.Util.CommonUtility.RunWithoutSynchronizationContext[T] (System.Func`1[TResult] actionToRun) [0x0000c] in <0978da6569544a999acb2ef3d979a5d5>:0 
-  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteSync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <0978da6569544a999acb2ef3d979a5d5>:0 
-  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadRangeToStream (System.IO.Stream target, System.Nullable`1[T] offset, System.Nullable`1[T] length, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <a04a3512352a442fa95bbc1b94ef8840>:0 
-  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToStream (System.IO.Stream target, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00000] in <a04a3512352a442fa95bbc1b94ef8840>:0 
-  at EmailReader.FireBaseRead.DownloadFileStream (System.String file, System.String cont) [0x000de] in <8376bf4d38884b0583375adff54c6e1a>:0 
-Request Information
-RequestID:8dde8e8a-d01e-0009-1eb0-73e076000000
-RequestDate:Sun, 29 May 2022 16:04:09 GMT
-StatusMessage:The specified blob does not exist.
-ErrorCode:BlobNotFound
-ErrorMessage:The specified blob does not exist.
-RequestId:8dde8e8a-d01e-0009-1eb0-73e076000000
-Time:2022-05-29T23:04:09.4348464Z
-2022-05-29 16:04:09.576280-0700 Hello_MultiScreen_iPhone[4183:3742723] 
-2022-05-29 16:04:11.931367-0700 Hello_MultiScreen_iPhone[4183:3742723] Microsoft.Azure.Storage.StorageException: The specified blob does not exist.
-  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext, System.Threading.CancellationToken token) [0x0102b] in <0978da6569544a999acb2ef3d979a5d5>:0 
-  at Microsoft.Azure.Storage.Core.Executor.Executor+<>c__DisplayClass0_0`1[T].<ExecuteSync>b__0 () [0x00022] in <0978da6569544a999acb2ef3d979a5d5>:0 
-  at Microsoft.Azure.Storage.Core.Util.CommonUtility.RunWithoutSynchronizationContext[T] (System.Func`1[TResult] actionToRun) [0x0000c] in <0978da6569544a999acb2ef3d979a5d5>:0 
-  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteSync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <0978da6569544a999acb2ef3d979a5d5>:0 
-  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadRangeToStream (System.IO.Stream target, System.Nullable`1[T] offset, System.Nullable`1[T] length, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <a04a3512352a442fa95bbc1b94ef8840>:0 
-  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToStream (System.IO.Stream target, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00000] in <a04a3512352a442fa95bbc1b94ef8840>:0 
-  at EmailReader.FireBaseRead.DownloadFileStream (System.String file, System.String cont) [0x000de] in <8376bf4d38884b0583375adff54c6e1a>:0 
-Request Information
-RequestID:8dde994d-d01e-0009-3ab0-73e076000000
-RequestDate:Sun, 29 May 2022 16:04:11 GMT
-StatusMessage:The specified blob does not exist.
-ErrorCode:BlobNotFound
-ErrorMessage:The specified blob does not exist.
-RequestId:8dde994d-d01e-0009-3ab0-73e076000000
-Time:2022-05-29T23:04:11.9265042Z
-2022-05-29 16:04:11.931892-0700 Hello_MultiScreen_iPhone[4183:3742723] 
+2022-05-30 11:40:40.189959-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16661
+2022-05-30 11:40:40.190188-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskCopyDebugDescription: Hello_MultiScree[16661]/0#-1 LF=0
+2022-05-30 11:40:40.196891-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16661
+2022-05-30 11:40:40.197122-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskCopyDebugDescription: Hello_MultiScree[16661]/0#-1 LF=0
+2022-05-30 11:40:40.324077-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16661
+2022-05-30 11:40:40.324357-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskCopyDebugDescription: Hello_MultiScree[16661]/0#-1 LF=0
+2022-05-30 11:40:48.624408-0700 Hello_MultiScreen_iPhone[16661:4200377] [unspecified] container_system_group_path_for_identifier: error = ((container_error_t)98) NOT_CODESIGNED
+2022-05-30 11:40:48.624527-0700 Hello_MultiScreen_iPhone[16661:4200377] [MC] Error getting system group container for systemgroup.com.apple.configurationprofiles: 98
+2022-05-30 11:40:48.624771-0700 Hello_MultiScreen_iPhone[16661:4200377] [MC] Failed to get profile system group container path. Overriding with expected path: /Users/psargent/Library/Developer/CoreSimulator/Devices/4AF9252F-7A13-4725-9567-7D6B75CAEECA/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+2022-05-30 11:40:55.869286-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16661
+2022-05-30 11:40:55.869636-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskCopyDebugDescription: Hello_MultiScree[16661]/0#-1 LF=0
+2022-05-30 11:40:55.870989-0700 Hello_MultiScreen_iPhone[16661:4200377] [Default] Task Hello_MultiScree[16661]/1#-1 LF=22 couldn't find entitlement CopresenceCore.Entitlement.publicAPI error nil
+2022-05-30 11:40:55.938728-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16661
+2022-05-30 11:40:55.938995-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskCopyDebugDescription: Hello_MultiScree[16661]/0#-1 LF=0
+2022-05-30 11:40:55.939215-0700 Hello_MultiScreen_iPhone[16661:4200377] [Default] Task Hello_MultiScree[16661]/1#-1 LF=22 couldn't find entitlement CopresenceCore.Entitlement.publicAPI error nil
+2022-05-30 11:40:55.948704-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16661
+2022-05-30 11:40:55.948942-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskCopyDebugDescription: Hello_MultiScree[16661]/0#-1 LF=0
+2022-05-30 11:40:56.017611-0700 Hello_MultiScreen_iPhone[16661:4200377] WARNING: This app's CFBundleDevelopmentRegion is not a string value. This can lead to unexpected results at runtime. Please change CFBundleDevelopmentRegion in your Info.plist to a string value.
+2022-05-30 11:40:56.104559-0700 Hello_MultiScreen_iPhone[16661:4200377] [LayoutConstraints] Changing the translatesAutoresizingMaskIntoConstraints property of a UICollectionReusableView that is managed by a UICollectionView is not supported, and will result in incorrect self-sizing. View: <_UIActivityContentFooterView: 0x7fde00fa5f20; baseClass = UICollectionReusableView; frame = (16 506; 358 52); layer = <CALayer: 0x600000cb0da0>>
+2022-05-30 11:40:56.142221-0700 Hello_MultiScreen_iPhone[16661:4200377] [LayoutConstraints] Unable to simultaneously satisfy constraints.
+	Probably at least one of the constraints in the following list is one you don't want. 
+	Try this: 
+		(1) look at each constraint and try to figure out which you don't expect; 
+		(2) find the code that added the unwanted constraint or constraints and fix it. 
+(
+    "<NSLayoutConstraint:0x6000029d1950 _UIActivityActionCellTitleLabel:0x7fde01a24900.height >= 22   (active)>",
+    "<NSLayoutConstraint:0x6000029d1400 UIView:0x7fde01a23a20.height >= _UIActivityActionCellTitleLabel:0x7fde01a24900.height + 30   (active)>",
+    "<NSLayoutConstraint:0x6000029ee530 'UIView-Encapsulated-Layout-Height' UIView:0x7fde01a23a20.height == 30   (active)>"
+)
+
+Will attempt to recover by breaking constraint 
+<NSLayoutConstraint:0x6000029d1950 _UIActivityActionCellTitleLabel:0x7fde01a24900.height >= 22   (active)>
+
+Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.
+The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKitCore/UIView.h> may also be helpful.
+2022-05-30 11:40:56.143093-0700 Hello_MultiScreen_iPhone[16661:4200377] [LayoutConstraints] Unable to simultaneously satisfy constraints.
+	Probably at least one of the constraints in the following list is one you don't want. 
+	Try this: 
+		(1) look at each constraint and try to figure out which you don't expect; 
+		(2) find the code that added the unwanted constraint or constraints and fix it. 
+(
+    "<NSLayoutConstraint:0x6000029e37f0 _UIActivityActionCellTitleLabel:0x7fde01877590.height >= 22   (active)>",
+    "<NSLayoutConstraint:0x6000029e32a0 UIView:0x7fde018766b0.height >= _UIActivityActionCellTitleLabel:0x7fde01877590.height + 30   (active)>",
+    "<NSLayoutConstraint:0x6000029d3b10 'UIView-Encapsulated-Layout-Height' UIView:0x7fde018766b0.height == 30   (active)>"
+)
+
+Will attempt to recover by breaking constraint 
+<NSLayoutConstraint:0x6000029e37f0 _UIActivityActionCellTitleLabel:0x7fde01877590.height >= 22   (active)>
+
+Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.
+The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKitCore/UIView.h> may also be helpful.
+2022-05-30 11:40:56.143917-0700 Hello_MultiScreen_iPhone[16661:4200377] [LayoutConstraints] Unable to simultaneously satisfy constraints.
+	Probably at least one of the constraints in the following list is one you don't want. 
+	Try this: 
+		(1) look at each constraint and try to figure out which you don't expect; 
+		(2) find the code that added the unwanted constraint or constraints and fix it. 
+(
+    "<NSLayoutConstraint:0x6000029d01e0 _UIActivityActionCellTitleLabel:0x7fde01a20090.height >= 22   (active)>",
+    "<NSLayoutConstraint:0x600002983d40 UIView:0x7fde01a1f1b0.height >= _UIActivityActionCellTitleLabel:0x7fde01a20090.height + 30   (active)>",
+    "<NSLayoutConstraint:0x6000029d3ed0 'UIView-Encapsulated-Layout-Height' UIView:0x7fde01a1f1b0.height == 30   (active)>"
+)
+
+Will attempt to recover by breaking constraint 
+<NSLayoutConstraint:0x6000029d01e0 _UIActivityActionCellTitleLabel:0x7fde01a20090.height >= 22   (active)>
+
+Make a symbolic breakpoint at UIViewAlertForUnsatisfiableConstraints to catch this in the debugger.
+The methods in the UIConstraintBasedLayoutDebugging category on UIView listed in <UIKitCore/UIView.h> may also be helpful.
+2022-05-30 11:40:57.673931-0700 Hello_MultiScreen_iPhone[16661:4200400] [ShareSheet] connection invalidated
+2022-05-30 11:41:07.670702-0700 Hello_MultiScreen_iPhone[16661:4200377] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
+2022-05-30 11:41:07.671846-0700 Hello_MultiScreen_iPhone[16661:4200377] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
+2022-05-30 11:41:42.642591-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16661
+2022-05-30 11:41:42.642910-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskCopyDebugDescription: Hello_MultiScree[16661]/0#-1 LF=0
+2022-05-30 11:41:42.643157-0700 Hello_MultiScreen_iPhone[16661:4200377] [Default] Task Hello_MultiScree[16661]/1#-1 LF=22 couldn't find entitlement CopresenceCore.Entitlement.publicAPI error nil
+2022-05-30 11:41:42.665795-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16661
+2022-05-30 11:41:42.666142-0700 Hello_MultiScreen_iPhone[16661:4200377] SecTaskCopyDebugDescription: Hello_MultiScree[16661]/0#-1 LF=0
+2022-05-30 11:41:42.666387-0700 Hello_MultiScreen_iPhone[16661:4200377] [Default] Task Hello_MultiScree[16661]/1#-1 LF=22 couldn't find entitlement CopresenceCore.Entitlement.publicAPI error nil
+2022-05-30 11:41:42.708240-0700 Hello_MultiScreen_iPhone[16661:4200377] [default] -imageForImageDescriptor: can do IO please adopt -imageForDescriptor: for IO free drawing or -prepareImageForDescriptor: if IO is allowed. (This will become a fault soon.)
+2022-05-30 11:41:42.716888-0700 Hello_MultiScreen_iPhone[16661:4200377] [LayoutConstraints] Changing the translatesAutoresizingMaskIntoConstraints property of a UICollectionReusableView that is managed by a UICollectionView is not supported, and will result in incorrect self-sizing. View: <_UIActivityContentFooterView: 0x7fde01a22fb0; baseClass = UICollectionReusableView; frame = (16 246; 358 52); layer = <CALayer: 0x600000cc9860>>
+2022-05-30 11:41:44.703967-0700 Hello_MultiScreen_iPhone[16661:4201083] [ShareSheet] connection invalidated
