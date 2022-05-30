@@ -17,7 +17,7 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleDisplayName</key>
-	<string>Create Your Story Cloud</string>
+	<string>Your Story</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Screens/HomeScreen</string>
 	<key>UIMainNibFile</key>
@@ -29,8 +29,8 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow device to access Photo</string>
 	<key>CFBundleShortVersionString</key>
-	<string>71</string>
+	<string>72</string>
 	<key>CFBundleVersion</key>
-	<string>71</string>
+	<string>72</string>
 </dict>
 </plist>

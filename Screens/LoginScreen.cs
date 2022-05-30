@@ -128,10 +128,10 @@ namespace Hello_MultiScreen_iPhone
             Passwordlabel.BackgroundColor = UIColor.FromRGB(204, 204, 255);
             Passwordlabel.TextColor = UIColor.Black;
 
-            listView.Frame = new CGRect(Usernamelabel.Frame.X, View.Frame.Top + 160, ResponsiveSizeX-90, 160);
+            listView.Frame = new CGRect(Usernamelabel.Frame.X, View.Frame.Top + 160, ResponsiveSizeX-90, 135);
             listView.Source = new TableSource(list);
-            listView.BackgroundColor = UIColor.White;
-            listView.TintColor = UIColor.SystemCyan;
+            listView.BackgroundColor = UIColor.FromRGB(100, 149, 237);
+            listView.TintColor = UIColor.Cyan;
 
             ShowText.Frame = new CGRect(Usernamelabel.Frame.X+220, View.Frame.Top + 160, 50, 30);
             ShowText.BackgroundColor = UIColor.SystemPurple;
@@ -209,6 +209,26 @@ namespace Hello_MultiScreen_iPhone
                 textView.Hidden = true;
                 ShowText.Hidden = true;
                 imageView3.Hidden = false;
+            }
+
+            if (!FireBaseRead.IsConnected())
+            {
+                DownloadCloud.Enabled = false;
+                UploadCloud.Enabled = false;
+                Logout.Enabled = false;
+                LoginButton.Enabled = false;
+                DeleteCloud.Enabled = false;
+                ShowText.Enabled = false;
+                LoginInstructions.Text = "Lost Network Connection. Please reconnect to the internet";
+            }
+            else
+            {
+                DownloadCloud.Enabled = true;
+                UploadCloud.Enabled = true;
+                Logout.Enabled = true;
+                LoginButton.Enabled = true;
+                DeleteCloud.Enabled = true;
+                ShowText.Enabled = true;
             }
 
             scrollView = new UIScrollView
@@ -385,8 +405,8 @@ namespace Hello_MultiScreen_iPhone
                         {
                             if (es.ButtonIndex == 0)
                             {
-                            //Do nothing
-                        }
+                                //Do nothing
+                            }
                             else
                             {
                                 loginemail.Text = FireBaseRead.LoginEmail;
@@ -399,6 +419,7 @@ namespace Hello_MultiScreen_iPhone
                     scrollView.ScrollRectToVisible(LoginInstructions.Frame, true);
                 }
             }
+            
         }
 
         void UploadToCloud(object sender, EventArgs eventArgs)
@@ -577,43 +598,6 @@ namespace Hello_MultiScreen_iPhone
             base.ViewDidAppear(animated);
             var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
             scrollView.ScrollRectToVisible(cgFrame, true);
-            if (FireBaseRead.GetphoneID() != "")
-                {
-                    LoginButton.Hidden = true;
-                    loginemail.Hidden = true;
-                    loginpassword.Hidden = true;
-                    DownloadCloud.Hidden = false;
-                    UploadCloud.Hidden = false;
-                    Logout.Hidden = true;
-                    Usernamelabel.Hidden = true;
-                    Passwordlabel.Hidden = true;
-                    listView.Hidden = false;
-                    DeleteCloud.Hidden = false;
-                    textView.Hidden = false;
-                    LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 50);
-                    ShowText.Hidden = false;
-                    imageView3.Hidden = true;
-
-                    FireBaseRead.phoneID = FireBaseRead.GetphoneID();
-                    LoginInstructions.Text = "Welcome back! Use cloud services, download and upload to the cloud storage.";
-                }
-                else
-                {
-                    LoginButton.Hidden = false;
-                    loginemail.Hidden = false;
-                    loginpassword.Hidden = false;
-                    DownloadCloud.Hidden = true;
-                    UploadCloud.Hidden = true;
-                    Logout.Hidden = true;
-                    listView.Hidden = true;
-                    Usernamelabel.Hidden = false;
-                    Passwordlabel.Hidden = false;
-                    DeleteCloud.Hidden = true;
-                    textView.Hidden = true;
-                    ShowText.Hidden = true;
-                    imageView3.Hidden = false;
-                    LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 80);
-            }
 
             if (!FireBaseRead.IsConnected())
             { 
@@ -635,10 +619,46 @@ namespace Hello_MultiScreen_iPhone
                 ShowText.Enabled = true;
             }
 
+            if (FireBaseRead.GetphoneID() != "")
+            {
+                LoginButton.Hidden = true;
+                loginemail.Hidden = true;
+                loginpassword.Hidden = true;
+                DownloadCloud.Hidden = false;
+                UploadCloud.Hidden = false;
+                Logout.Hidden = true;
+                Usernamelabel.Hidden = true;
+                Passwordlabel.Hidden = true;
+                listView.Hidden = false;
+                DeleteCloud.Hidden = false;
+                textView.Hidden = false;
+                LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 50);
+                ShowText.Hidden = false;
+                imageView3.Hidden = true;
+
+                FireBaseRead.phoneID = FireBaseRead.GetphoneID();
+                LoginInstructions.Text = "Welcome back! Use cloud services, download and upload to the cloud storage.";
+            }
+            else
+            {
+                LoginButton.Hidden = false;
+                loginemail.Hidden = false;
+                loginpassword.Hidden = false;
+                DownloadCloud.Hidden = true;
+                UploadCloud.Hidden = true;
+                Logout.Hidden = true;
+                listView.Hidden = true;
+                Usernamelabel.Hidden = false;
+                Passwordlabel.Hidden = false;
+                DeleteCloud.Hidden = true;
+                textView.Hidden = true;
+                ShowText.Hidden = true;
+                imageView3.Hidden = false;
+                LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 80);
+            }
         }
 
-
-    }
+        }
 
         public class TableSource : UITableViewSource
         {
@@ -654,10 +674,10 @@ namespace Hello_MultiScreen_iPhone
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
             {
                 var cell = new UITableViewCell(UITableViewCellStyle.Default, "");
-                cell.BackgroundColor = UIColor.White;
+                cell.BackgroundColor = UIColor.FromRGB(100, 149, 237);
                 string item = list[indexPath.Row];
-                cell.TintColor = UIColor.SystemCyan;
-                cell.TextLabel.TextColor = UIColor.Black;
+                cell.TintColor = UIColor.SystemGray;
+                cell.TextLabel.TextColor = UIColor.White;
                 cell.TextLabel.Text = item;
                 return cell;
             }

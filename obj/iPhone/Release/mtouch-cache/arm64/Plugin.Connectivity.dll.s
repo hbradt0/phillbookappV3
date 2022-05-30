@@ -12189,7 +12189,7 @@ _mono_aot_file_info:
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
-	.byte 221,239,26,189,14,14,123,11,59,246,148,84,128,243,143,143
+	.byte 212,132,36,46,111,12,180,174,69,181,132,51,131,0,165,63
 	.globl _mono_aot_module_Plugin_Connectivity_info
 	.align 3
 _mono_aot_module_Plugin_Connectivity_info:
