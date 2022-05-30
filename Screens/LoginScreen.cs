@@ -654,8 +654,9 @@ namespace Hello_MultiScreen_iPhone
                 textView.Hidden = true;
                 ShowText.Hidden = true;
                 imageView3.Hidden = false;
-                LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 80);
+                LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Bottom - 100, ResponsiveSizeX, 80);
             }
+            scrollView.ScrollRectToVisible(DeleteCloud.Frame, true);
         }
 
         }

@@ -1,8 +1,9 @@
-objc[19208]: Class NSURLSessionDelegate is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy (0x7fff87c202d8) and /Users/psargent/Library/Developer/CoreSimulator/Devices/FB23B0B0-5FE7-40F3-B279-AF5FE4404E54/data/Containers/Bundle/Application/D589F888-5986-4D8B-95CF-095C4B9D7F38/Hello_MultiScreen_iPhone.app/Hello_MultiScreen_iPhone (0x1060e3540). One of the two will be used. Which one is undefined.
+objc[23003]: Class NSURLSessionDelegate is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy (0x7fff87c202d8) and /Users/psargent/Library/Developer/CoreSimulator/Devices/51885B3D-69C0-497E-8045-F972DC02D177/data/Containers/Bundle/Application/E0FBFAF3-5DA5-4101-BB02-1346AE1AD445/Hello_MultiScreen_iPhone.app/Hello_MultiScreen_iPhone (0x10b6f2540). One of the two will be used. Which one is undefined.
 MonoTouch: Could not install sigaction override, unexpected sigaction implementation.
-2022-05-30 14:46:58.158501-0700 Hello_MultiScreen_iPhone[19208:4263914] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=19208
-2022-05-30 14:46:58.160372-0700 Hello_MultiScreen_iPhone[19208:4263914] SecTaskCopyDebugDescription: Hello_MultiScree[19208]/0#-1 LF=0
-2022-05-30 14:46:58.168788-0700 Hello_MultiScreen_iPhone[19208:4263914] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=19208
-2022-05-30 14:46:58.201075-0700 Hello_MultiScreen_iPhone[19208:4263914] SecTaskCopyDebugDescription: Hello_MultiScree[19208]/0#-1 LF=0
-2022-05-30 14:46:58.307783-0700 Hello_MultiScreen_iPhone[19208:4263914] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=19208
-2022-05-30 14:46:58.308078-0700 Hello_MultiScreen_iPhone[19208:4263914] SecTaskCopyDebugDescription: Hello_MultiScree[19208]/0#-1 LF=0
+2022-05-30 16:03:45.533694-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=23003
+2022-05-30 16:03:45.534093-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskCopyDebugDescription: Hello_MultiScree[23003]/0#-1 LF=0
+2022-05-30 16:03:45.542627-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=23003
+2022-05-30 16:03:45.542976-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskCopyDebugDescription: Hello_MultiScree[23003]/0#-1 LF=0
+2022-05-30 16:03:45.635616-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=23003
+2022-05-30 16:03:45.635853-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskCopyDebugDescription: Hello_MultiScree[23003]/0#-1 LF=0
+2022-05-30 16:04:00.415802-0700 Hello_MultiScreen_iPhone[23003:4318092] WARNING: This app's CFBundleDevelopmentRegion is not a string value. This can lead to unexpected results at runtime. Please change CFBundleDevelopmentRegion in your Info.plist to a string value.

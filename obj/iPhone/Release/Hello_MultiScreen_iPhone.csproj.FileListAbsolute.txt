@@ -7,6 +7,8 @@
 /Users/psargent/phillbookApp2/bin/iPhone/Release/Microsoft.Azure.Storage.Common.dll
 /Users/psargent/phillbookApp2/bin/iPhone/Release/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/psargent/phillbookApp2/bin/iPhone/Release/Newtonsoft.Json.dll
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.Abstractions.dll
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.dll
 /Users/psargent/phillbookApp2/bin/iPhone/Release/System.Diagnostics.DiagnosticSource.dll
 /Users/psargent/phillbookApp2/bin/iPhone/Release/System.IO.Hashing.dll
 /Users/psargent/phillbookApp2/bin/iPhone/Release/System.Memory.Data.dll
@@ -29,6 +31,10 @@
 /Users/psargent/phillbookApp2/bin/iPhone/Release/Newtonsoft.Json.xml
 /Users/psargent/phillbookApp2/bin/iPhone/Release/Microsoft.Azure.Storage.Common.xml
 /Users/psargent/phillbookApp2/bin/iPhone/Release/Microsoft.Azure.Storage.Blob.xml
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.Abstractions.pdb
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.Abstractions.xml
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.pdb
+/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.xml
 /Users/psargent/phillbookApp2/obj/iPhone/Release/actool/_PartialAppManifest.items
 /Users/psargent/phillbookApp2/obj/iPhone/Release/actool/_BundleResourceWithLogicalName.items
 /Users/psargent/phillbookApp2/obj/iPhone/Release/actool/_ProcessedImageAssetsPath.items
@@ -83,10 +89,3 @@
 /Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.csproj.CoreCompileInputs.cache
 /Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.csproj.CopyComplete
 /Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.exe
-/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.Abstractions.dll
-/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.dll
-/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.Abstractions.pdb
-/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.Abstractions.xml
-/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.pdb
-/Users/psargent/phillbookApp2/bin/iPhone/Release/Plugin.Connectivity.xml
-/Users/psargent/phillbookApp2/obj/iPhone/Release/Hello_MultiScreen_iPhone.csproj.AssemblyReference.cache

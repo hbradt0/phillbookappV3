@@ -355,6 +355,9 @@ namespace Hello_MultiScreen_iPhone
                 String file = myDate.ToString("MMddyyyy");
                 String fileName = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "image_" + file + args.ReferenceUrl.PathExtension);
                 NSError err = null;
+                EmailFileRead.DeleteImageFileName(fileName.Replace(args.ReferenceUrl.PathExtension, ""));
+                EmailFileRead.DeleteImageFileName(fileName.Replace(".jpg", ""));
+
                 data.Save(fileName, false, out err);
 
                 //var newHeight = (image.Size.Height / (image.Size.Width + image.Size.Height)) *2.1 * View.Frame.Width-20;
@@ -509,7 +512,7 @@ namespace Hello_MultiScreen_iPhone
                 String file = myDate.ToString("MMddyyyy");
                 String fileName = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "image_" + file + ".jpg");
                 NSError err = null;
-
+                EmailFileRead.DeleteImageFileName(fileName.Replace(".jpg",""));
                 data.Save(fileName, false, out err);
 
                 var v = MaxResizeImage(image, (float)View.Frame.Width - 20, (float)View.Frame.Width - 20, textViewWrite);
