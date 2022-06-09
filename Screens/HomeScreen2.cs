@@ -77,13 +77,21 @@ namespace Hello_MultiScreen_iPhone
         //Create your journal page
         public void ViewDidLoad1()
         {
-            ResponsiveWidthLeft = View.Frame.Width / 8;
+            ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
             nfloat size = 30;
             if (View.Frame.Width / 8 >= View.Frame.Width - 30)
                 size = View.Frame.Width / 8;
-            ResponsiveSizeX = View.Frame.Width - size;
-            ResponsiveWidthRight = View.Frame.Width - 140;
-                     
+            ResponsiveSizeX = View.Frame.Width - size + 25;
+            ResponsiveWidthRight = View.Frame.Width - 80;
+            if (View.Frame.Width >= 400)
+            {
+                ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
+                if (View.Frame.Width / 8 >= View.Frame.Width - 30)
+                    size = View.Frame.Width / 8;
+                ResponsiveSizeX = View.Frame.Width - size + 50;
+                ResponsiveWidthRight = View.Frame.Width - 60;
+            }
+
             //View issue
             var user = new UIViewController();
             user.View.BackgroundColor = UIColor.Purple;
@@ -130,20 +138,20 @@ namespace Hello_MultiScreen_iPhone
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
             g.CancelsTouchesInView = false; //for iOS5View.AddGestureRecognizer (g);
 
-            editTextDate.Frame = new CGRect(ResponsiveWidthRight+10, 500, 30, 30);
+            editTextDate.Frame = new CGRect(ResponsiveWidthLeft + 10, 500, 30, 30);
             //ButtonDateClick.BackgroundColor = UIColor.FromRGB(100, 149, 237);
 
 
             Buttonbackyourstory.Frame = new CGRect(ResponsiveWidthRight, 25, 70, 30);
             Buttonbackyourstory.SetTitle("Back", UIControlState.Normal);
 
-            ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthLeft, 450, 100, 30);
+            ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, 450, 100, 30);
             ButtonyourstoryscreenUpload.SetTitle("Submit", UIControlState.Normal);
 
-            ButtonDelete.Frame = new CGRect(ResponsiveWidthLeft, 500, 100, 30);
+            ButtonDelete.Frame = new CGRect(ResponsiveWidthRight, 500, 100, 30);
             ButtonDelete.SetTitle("Start Over", UIControlState.Normal);
 
-            ButtonDelete1Line.Frame = new CGRect(ResponsiveWidthRight, 450, 150, 30);
+            ButtonDelete1Line.Frame = new CGRect(ResponsiveWidthLeft, 450, 150, 30);
             ButtonDelete1Line.SetTitle("Delete Previous line", UIControlState.Normal);
 
             editTextWrite.AccessibilityHint = "Write Here";

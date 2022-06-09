@@ -47,12 +47,19 @@ namespace Hello_MultiScreen_iPhone
         //Create your journal page
         public void ViewDidLoad1()
         {
-            ResponsiveWidthLeft = View.Frame.Width / 8;
+            ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
             nfloat size = 30;
             if (View.Frame.Width / 8 >= View.Frame.Width - 30)
                 size = View.Frame.Width / 8;
-            ResponsiveSizeX = View.Frame.Width - size;
-            ResponsiveWidthRight = View.Frame.Width - 90;
+            ResponsiveSizeX = View.Frame.Width - size + 25;
+            ResponsiveWidthRight = View.Frame.Width - 80;
+
+            if (View.Frame.Width >= 400)
+            {
+                ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
+                if (View.Frame.Width / 8 >= View.Frame.Width - 30)
+                    size = View.Frame.Width / 8;
+            }
             //View issue
             var user = new UIViewController();
             user.View.BackgroundColor = UIColor.FromRGB(204, 204, 255);
@@ -82,7 +89,7 @@ namespace Hello_MultiScreen_iPhone
             //ButtonDateClick.BackgroundColor = UIColor.FromRGB(100, 149, 237);
             ImagePickerButton.SetTitleColor(UIColor.White, UIControlState.Normal);
             ImagePickerButton.SetBackgroundImage(UIImage.FromBundle("gallery.png"), UIControlState.Normal);
-            ImagePickerButton.Frame = new CGRect(ResponsiveWidthLeft + 60, 420, 50, 50);
+            ImagePickerButton.Frame = new CGRect(ResponsiveWidthLeft + 60, 465, 50, 50);
             //ImagePickerButton.SetTitle("Upload", UIControlState.Normal);
 
 
@@ -101,13 +108,12 @@ namespace Hello_MultiScreen_iPhone
             ButtonDelete1Line.SetTitleColor(UIColor.White, UIControlState.Normal);
             ButtonDateClick.SetTitleColor(UIColor.White, UIControlState.Normal);
             ButtonDelete1Line.BackgroundColor = UIColor.FromRGB(240, 137, 171);
-            ButtonDelete.Frame = new CGRect(ResponsiveWidthRight, 500, 100, 30);
-            ButtonDelete1Line.Frame = new CGRect(ResponsiveWidthLeft, 500, 100, 30);
+
             ButtonDelete1Line.SetTitle("Delete", UIControlState.Normal);
 
             ButtonDelete.SetTitle("Start Over", UIControlState.Normal);
 
-            ButtonDateClick.Frame = new CGRect(ResponsiveWidthRight + 50, 420, 50, 50);
+            ButtonDateClick.Frame = new CGRect(ResponsiveWidthRight + 50, 465, 50, 50);
             ButtonDateClick.SetBackgroundImage(UIImage.FromBundle("mailicon.png"), UIControlState.Normal);
 
             UIImage img2 = new UIImage();
@@ -124,17 +130,20 @@ namespace Hello_MultiScreen_iPhone
 
             CameraButton.SetTitleColor(UIColor.White, UIControlState.Normal);
             CameraButton.SetBackgroundImage(UIImage.FromBundle("camera.png"), UIControlState.Normal);
-            CameraButton.Frame = new CGRect(ResponsiveWidthLeft, 420, 50, 50);
+            CameraButton.Frame = new CGRect(ResponsiveWidthLeft, 465, 50, 50);
             //CameraButton.SetTitle("Camera", UIControlState.Normal);
+
+            ButtonDelete.Frame = new CGRect(ResponsiveWidthRight, CameraButton.Frame.Bottom + 20, 100, 30);
+            ButtonDelete1Line.Frame = new CGRect(ResponsiveWidthLeft, CameraButton.Frame.Bottom + 20, 100, 30);
 
             BackgroundImage.SetTitleColor(UIColor.White, UIControlState.Normal);
             BackgroundImage.BackgroundColor = UIColor.SystemTeal;
-            BackgroundImage.Frame = new CGRect(ResponsiveWidthRight, 630, 100, 30);
+            BackgroundImage.Frame = new CGRect(ResponsiveWidthRight, 650, 100, 30);
             BackgroundImage.SetTitle("Home Image", UIControlState.Normal);
 
             BackgroundImage3.SetTitleColor(UIColor.White, UIControlState.Normal);
             BackgroundImage3.BackgroundColor = UIColor.SystemTeal;
-            BackgroundImage3.Frame = new CGRect(ResponsiveWidthRight + 50, 550, 50, 50);
+            BackgroundImage3.Frame = new CGRect(ResponsiveWidthRight + 50, ButtonDelete1Line.Frame.Bottom+20, 50, 50);
             BackgroundImage3.SetBackgroundImage(UIImage.FromBundle("TestPic.png"), UIControlState.Normal);
             //BackgroundImage3.SetTitle("Flower Image", UIControlState.Normal);
 
@@ -142,7 +151,7 @@ namespace Hello_MultiScreen_iPhone
             UIImage imgtitle = new UIImage();
             imgtitle = UIImage.FromFile(EmailFileRead.fileNameImage1);
             BackgroundImage4.SetBackgroundImage(imgtitle, UIControlState.Normal);
-            BackgroundImage4.Frame = new CGRect(ResponsiveWidthLeft, 630, 100, 30);
+            BackgroundImage4.Frame = new CGRect(ResponsiveWidthLeft, 650, 100, 30);
             //BackgroundImage4.SetTitle("Toggle Title", UIControlState.Normal);
 
             UIImage img4 = new UIImage();
@@ -150,7 +159,7 @@ namespace Hello_MultiScreen_iPhone
             BackgroundImage2.SetBackgroundImage(img4, UIControlState.Normal);
             BackgroundImage2.SetTitle("Home", UIControlState.Normal);
             BackgroundImage2.SetTitleColor(UIColor.White, UIControlState.Normal);
-            BackgroundImage2.Frame = new CGRect(ResponsiveWidthLeft, 550, 60, 60);
+            BackgroundImage2.Frame = new CGRect(ResponsiveWidthLeft, ButtonDelete1Line.Frame.Bottom + 20, 60, 60);
 
             //ScrollView
             scrollView = new UIScrollView
@@ -238,7 +247,7 @@ namespace Hello_MultiScreen_iPhone
             UIImage imgtitle = new UIImage();
             imgtitle = UIImage.FromFile(EmailFileRead.fileNameImage1);
             BackgroundImage4.SetBackgroundImage(imgtitle, UIControlState.Normal);
-            BackgroundImage4.Frame = new CGRect(ResponsiveWidthLeft, 630, 100, 30);
+            BackgroundImage4.Frame = new CGRect(ResponsiveWidthLeft, 650, 100, 30);
         }
 
         public void BackgroundImageShow(object sender, EventArgs eventArgs)
@@ -314,7 +323,7 @@ namespace Hello_MultiScreen_iPhone
         // resize the image to be contained within a maximum width and height, keeping aspect ratio
         UIImage MaxResizeImage(UIImage sourceImage, float maxWidth, float maxHeight, UIImageView view)
         {
-            view.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 130, ResponsiveSizeX, 280);
+            view.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 130, ResponsiveSizeX, ResponsiveSizeX);
             /*
             var sourceSize = sourceImage.Size;
             var maxResizeFactor = Math.Min(maxWidth / sourceSize.Width, maxHeight / sourceSize.Height);

@@ -68,13 +68,21 @@ namespace Hello_MultiScreen_iPhone
         //Read your journal page
         public void ViewDidLoad1()
         {
-            ResponsiveWidthLeft = View.Frame.Width / 8;
+            ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
             nfloat size = 30;
             if (View.Frame.Width / 8 >= View.Frame.Width - 30)
                 size = View.Frame.Width / 8;
-            ResponsiveSizeX = View.Frame.Width - size;
-            ResponsiveWidthRight = View.Frame.Width - 90;
+            ResponsiveSizeX = View.Frame.Width - size + 25;
+            ResponsiveWidthRight = View.Frame.Width - 80;
 
+            if (View.Frame.Width >= 400)
+            {
+                ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
+                if (View.Frame.Width / 8 >= View.Frame.Width - 30)
+                    size = View.Frame.Width / 8;
+                ResponsiveSizeX = View.Frame.Width - size + 50;
+                ResponsiveWidthRight = View.Frame.Width - 60;
+            }
             //View Issue
             View.BackgroundColor = UIColor.FromRGB(178, 178, 227);
             var user = new UIViewController();

@@ -1,9 +1,49 @@
-objc[23003]: Class NSURLSessionDelegate is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy (0x7fff87c202d8) and /Users/psargent/Library/Developer/CoreSimulator/Devices/51885B3D-69C0-497E-8045-F972DC02D177/data/Containers/Bundle/Application/E0FBFAF3-5DA5-4101-BB02-1346AE1AD445/Hello_MultiScreen_iPhone.app/Hello_MultiScreen_iPhone (0x10b6f2540). One of the two will be used. Which one is undefined.
+objc[16859]: Class NSURLSessionDelegate is implemented in both /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/NetworkServiceProxy (0x7fff87c202d8) and /Users/psargent/Library/Developer/CoreSimulator/Devices/F5F3DB81-FE21-4720-A4E7-03C421A4A9DE/data/Containers/Bundle/Application/B455EF36-BB78-4B7C-9592-A973FF147A7F/Hello_MultiScreen_iPhone.app/Hello_MultiScreen_iPhone (0x103029540). One of the two will be used. Which one is undefined.
 MonoTouch: Could not install sigaction override, unexpected sigaction implementation.
-2022-05-30 16:03:45.533694-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=23003
-2022-05-30 16:03:45.534093-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskCopyDebugDescription: Hello_MultiScree[23003]/0#-1 LF=0
-2022-05-30 16:03:45.542627-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=23003
-2022-05-30 16:03:45.542976-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskCopyDebugDescription: Hello_MultiScree[23003]/0#-1 LF=0
-2022-05-30 16:03:45.635616-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=23003
-2022-05-30 16:03:45.635853-0700 Hello_MultiScreen_iPhone[23003:4318092] SecTaskCopyDebugDescription: Hello_MultiScree[23003]/0#-1 LF=0
-2022-05-30 16:04:00.415802-0700 Hello_MultiScreen_iPhone[23003:4318092] WARNING: This app's CFBundleDevelopmentRegion is not a string value. This can lead to unexpected results at runtime. Please change CFBundleDevelopmentRegion in your Info.plist to a string value.
+2022-06-09 11:22:04.236872-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16859
+2022-06-09 11:22:04.237130-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskCopyDebugDescription: Hello_MultiScree[16859]/0#-1 LF=0
+2022-06-09 11:22:04.245232-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16859
+2022-06-09 11:22:04.245539-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskCopyDebugDescription: Hello_MultiScree[16859]/0#-1 LF=0
+2022-06-09 11:22:04.376902-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16859
+2022-06-09 11:22:04.377218-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskCopyDebugDescription: Hello_MultiScree[16859]/0#-1 LF=0
+2022-06-09 11:22:11.921060-0700 Hello_MultiScreen_iPhone[16859:631013] [unspecified] container_system_group_path_for_identifier: error = ((container_error_t)98) NOT_CODESIGNED
+2022-06-09 11:22:11.921239-0700 Hello_MultiScreen_iPhone[16859:631013] [MC] Error getting system group container for systemgroup.com.apple.configurationprofiles: 98
+2022-06-09 11:22:11.921532-0700 Hello_MultiScreen_iPhone[16859:631013] [MC] Failed to get profile system group container path. Overriding with expected path: /Users/psargent/Library/Developer/CoreSimulator/Devices/F5F3DB81-FE21-4720-A4E7-03C421A4A9DE/data/Containers/Shared/SystemGroup/systemgroup.com.apple.configurationprofiles
+2022-06-09 11:22:12.436912-0700 Hello_MultiScreen_iPhone[16859:631013] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
+2022-06-09 11:22:12.437941-0700 Hello_MultiScreen_iPhone[16859:631013] [HardwareKeyboard] -[UIApplication getKeyboardDevicePropertiesForSenderID:shouldUpdate:usingSyntheticEvent:], failed to fetch device property for senderID (778835616971358211) use primary keyboard info instead.
+2022-06-09 11:23:04.818579-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16859
+2022-06-09 11:23:04.818849-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskCopyDebugDescription: Hello_MultiScree[16859]/0#-1 LF=0
+2022-06-09 11:23:04.820077-0700 Hello_MultiScreen_iPhone[16859:631013] [Default] Task Hello_MultiScree[16859]/1#-1 LF=22 couldn't find entitlement CopresenceCore.Entitlement.publicAPI error nil
+2022-06-09 11:23:04.884368-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16859
+2022-06-09 11:23:04.884609-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskCopyDebugDescription: Hello_MultiScree[16859]/0#-1 LF=0
+2022-06-09 11:23:04.884806-0700 Hello_MultiScreen_iPhone[16859:631013] [Default] Task Hello_MultiScree[16859]/1#-1 LF=22 couldn't find entitlement CopresenceCore.Entitlement.publicAPI error nil
+2022-06-09 11:23:04.887681-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16859
+2022-06-09 11:23:04.887955-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskCopyDebugDescription: Hello_MultiScree[16859]/0#-1 LF=0
+2022-06-09 11:23:04.977445-0700 Hello_MultiScreen_iPhone[16859:631013] WARNING: This app's CFBundleDevelopmentRegion is not a string value. This can lead to unexpected results at runtime. Please change CFBundleDevelopmentRegion in your Info.plist to a string value.
+2022-06-09 11:23:05.016368-0700 Hello_MultiScreen_iPhone[16859:631013] [LayoutConstraints] Changing the translatesAutoresizingMaskIntoConstraints property of a UICollectionReusableView that is managed by a UICollectionView is not supported, and will result in incorrect self-sizing. View: <_UIActivityContentFooterView: 0x7fc9a192de90; baseClass = UICollectionReusableView; frame = (16 242; 343 52); layer = <CALayer: 0x6000021891a0>>
+2022-06-09 11:23:06.641987-0700 Hello_MultiScreen_iPhone[16859:631775] [ShareSheet] connection invalidated
+2022-06-09 11:23:15.377151-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16859
+2022-06-09 11:23:15.377463-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskCopyDebugDescription: Hello_MultiScree[16859]/0#-1 LF=0
+2022-06-09 11:23:15.377712-0700 Hello_MultiScreen_iPhone[16859:631013] [Default] Task Hello_MultiScree[16859]/1#-1 LF=22 couldn't find entitlement CopresenceCore.Entitlement.publicAPI error nil
+2022-06-09 11:23:15.391439-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=16859
+2022-06-09 11:23:15.391651-0700 Hello_MultiScreen_iPhone[16859:631013] SecTaskCopyDebugDescription: Hello_MultiScree[16859]/0#-1 LF=0
+2022-06-09 11:23:15.391801-0700 Hello_MultiScreen_iPhone[16859:631013] [Default] Task Hello_MultiScree[16859]/1#-1 LF=22 couldn't find entitlement CopresenceCore.Entitlement.publicAPI error nil
+2022-06-09 11:23:15.427797-0700 Hello_MultiScreen_iPhone[16859:631013] [LayoutConstraints] Changing the translatesAutoresizingMaskIntoConstraints property of a UICollectionReusableView that is managed by a UICollectionView is not supported, and will result in incorrect self-sizing. View: <_UIActivityContentFooterView: 0x7fc99187a470; baseClass = UICollectionReusableView; frame = (16 242; 343 52); layer = <CALayer: 0x6000026ff980>>
+2022-06-09 11:23:16.972512-0700 Hello_MultiScreen_iPhone[16859:631927] [ShareSheet] connection invalidated
+2022-06-09 11:23:44.715883-0700 Hello_MultiScreen_iPhone[16859:631013] Microsoft.Azure.Storage.StorageException: The specified blob does not exist.
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteAsync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext, System.Threading.CancellationToken token) [0x0102b] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor+<>c__DisplayClass0_0`1[T].<ExecuteSync>b__0 () [0x00022] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Util.CommonUtility.RunWithoutSynchronizationContext[T] (System.Func`1[TResult] actionToRun) [0x0000c] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Core.Executor.Executor.ExecuteSync[T] (Microsoft.Azure.Storage.Core.Executor.RESTCommand`1[T] cmd, Microsoft.Azure.Storage.RetryPolicies.IRetryPolicy policy, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <0978da6569544a999acb2ef3d979a5d5>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadRangeToStream (System.IO.Stream target, System.Nullable`1[T] offset, System.Nullable`1[T] length, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00033] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at Microsoft.Azure.Storage.Blob.CloudBlob.DownloadToStream (System.IO.Stream target, Microsoft.Azure.Storage.AccessCondition accessCondition, Microsoft.Azure.Storage.Blob.BlobRequestOptions options, Microsoft.Azure.Storage.OperationContext operationContext) [0x00000] in <a04a3512352a442fa95bbc1b94ef8840>:0 
+  at EmailReader.FireBaseRead.DownloadFileStream (System.String file, System.String cont) [0x000de] in <f57ee3e91aa34c81878db5a7f6b41514>:0 
+Request Information
+RequestID:a996b7d6-a01e-003c-7b2e-7c8c62000000
+RequestDate:Thu, 09 Jun 2022 11:23:44 GMT
+StatusMessage:The specified blob does not exist.
+ErrorCode:BlobNotFound
+ErrorMessage:The specified blob does not exist.
+RequestId:a996b7d6-a01e-003c-7b2e-7c8c62000000
+Time:2022-06-09T18:23:44.6075422Z
+2022-06-09 11:23:44.716182-0700 Hello_MultiScreen_iPhone[16859:631013] 

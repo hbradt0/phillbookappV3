@@ -72,12 +72,21 @@ namespace Hello_MultiScreen_iPhone
         //Read your journal page
         public void ViewDidLoad1()
         {
-            ResponsiveWidthLeft = View.Frame.Width / 8;
+            ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
             nfloat size = 30;
             if (View.Frame.Width / 8 >= View.Frame.Width - 30)
                 size = View.Frame.Width / 8;
-            ResponsiveSizeX = View.Frame.Width - size;
-            ResponsiveWidthRight = View.Frame.Width - 90;
+            ResponsiveSizeX = View.Frame.Width - size + 25;
+            ResponsiveWidthRight = View.Frame.Width - 80;
+
+            if (View.Frame.Width >= 400)
+            {
+                ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
+                if (View.Frame.Width / 8 >= View.Frame.Width - 30)
+                    size = View.Frame.Width / 8;
+                ResponsiveSizeX = View.Frame.Width - size + 50;
+                ResponsiveWidthRight = View.Frame.Width - 60;
+            }
 
             //View Issue
             View.BackgroundColor = UIColor.FromRGB(178, 178, 227);
@@ -132,9 +141,9 @@ namespace Hello_MultiScreen_iPhone
 
             codes = new UITextView();
             codes.Editable = false;
-            codes.TextColor = UIColor.Blue;
+            codes.TextColor = UIColor.Black;
             codes.Text = "";
-            codes.BackgroundColor = UIColor.White;
+            codes.BackgroundColor = UIColor.FromRGB(230, 230, 250);
             //exit keyboard
             editTextDate.ShouldReturn = (textField) => { textField.ResignFirstResponder(); return true; };
 
@@ -147,7 +156,7 @@ namespace Hello_MultiScreen_iPhone
             //booktextView.Frame = new CGRect(25, 150, 300, 150); ;
             booktextView.Text = "Enter your email to begin your story!";
             booktextView.BackgroundColor = UIColor.FromRGB(230, 230, 250);
-            booktextView.TextColor = UIColor.SystemPurple;
+            booktextView.TextColor = UIColor.Purple;
             booktextView.UserInteractionEnabled = true;
             booktextView.ScrollEnabled = true;
             //booktextView.KeyboardType = UIKeyboardType.EmailAddress;
@@ -166,7 +175,7 @@ namespace Hello_MultiScreen_iPhone
             hiddenbuttoncode.AccessibilityHint = "type 'help'";
             hiddenbuttoncode.Text = "help";
             hiddenbuttoncode.BackgroundColor = UIColor.White;
-            hiddenbuttoncode.TextColor = UIColor.SystemPurple;
+            hiddenbuttoncode.TextColor = UIColor.Black;
 
             //exit keyboard 
             hiddenbuttoncode.ShouldReturn = (textField) => { textField.ResignFirstResponder(); return true; };
@@ -182,10 +191,10 @@ namespace Hello_MultiScreen_iPhone
             //ButtonDateClick.BackgroundColor = UIColor.FromRGB(100, 149, 237);
             var sta = new UITextView();
             sta.Editable = false;
-            sta.TextColor = UIColor.Purple;
+            sta.TextColor = UIColor.Black;
             sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, 35);
             sta.Text = "Days Prior";
-            sta.BackgroundColor = UIColor.White;
+            sta.BackgroundColor = UIColor.FromRGB(230, 230, 250);
 
             ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, hiddenbuttoncode.Frame.Bottom + 20, 35, 35);
             //ScrollView

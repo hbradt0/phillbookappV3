@@ -62,6 +62,7 @@ namespace Hello_MultiScreen_iPhone
             if (View.Frame.Width / 8 >= View.Frame.Width - 30)
                 size = View.Frame.Width / 8;
             ResponsiveSizeX = View.Frame.Width - size;
+     
 
             //---- when the hello world button is clicked
             this.btnHelloUniverse.SetTitle("Create Your Journal", UIControlState.Normal);
@@ -124,7 +125,7 @@ namespace Hello_MultiScreen_iPhone
             viewer = UIImage.FromFile("pic5.jpg");
             textView = new UITextView();
   
-            UIButton ButtonImageClick = new UIButton(UIButtonType.System);
+            ButtonImageClick = new UIButton(UIButtonType.System);
             //ButtonImageClick.SetBackgroundImage(viewer,UIControlState.Normal);
             ButtonImageClick.Frame = new CGRect(ResponsiveWidthLeft, 595+15, ResponsiveSizeX, 35);
             ButtonImageClick.SetTitleColor(UIColor.White, UIControlState.Normal);
@@ -211,6 +212,7 @@ namespace Hello_MultiScreen_iPhone
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);
+      
             //this.NavigationController.SetNavigationBarHidden (true, animated);
             UIImage img3 = new UIImage();
             if (EmailFileRead.FileExists(EmailFileRead.fileNameImage) && EmailFileRead.fileNameImage != "")

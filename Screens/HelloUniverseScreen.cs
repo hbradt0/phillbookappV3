@@ -26,7 +26,6 @@ namespace Hello_MultiScreen_iPhone
         public UIButton Buttonbackyourstory;
         public UIButton Buttonyourstoryscreen;
         public UIButton ButtonyourstoryscreenUpload;
-        public UIButton ButtonDelete;
         public UIButton ButtonDelete1Line;
         public UIButton EditJournalButton;
 
@@ -67,12 +66,21 @@ namespace Hello_MultiScreen_iPhone
             var user = new UIViewController();
             user.View.BackgroundColor = UIColor.FromRGB(204, 204, 255);
 
-            ResponsiveWidthLeft = View.Frame.Width / 8;
+            ResponsiveWidthLeft = View.Frame.Width / 8-10;
             nfloat size = 30;
             if (View.Frame.Width / 8 >= View.Frame.Width - 30)
                 size = View.Frame.Width / 8;
-            ResponsiveSizeX = View.Frame.Width - size;
-            ResponsiveWidthRight = View.Frame.Width - 90;
+            ResponsiveSizeX = View.Frame.Width - size+25;
+            ResponsiveWidthRight = View.Frame.Width - 80;
+
+            if (View.Frame.Width >= 400)
+            {
+                ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
+                if (View.Frame.Width / 8 >= View.Frame.Width - 30)
+                    size = View.Frame.Width / 8;
+                ResponsiveSizeX = View.Frame.Width - size + 50;
+                ResponsiveWidthRight = View.Frame.Width - 60;
+            }
 
             //Initialize Fields
             textViewWrite = new UITextView();
@@ -80,13 +88,12 @@ namespace Hello_MultiScreen_iPhone
             editTextWrite.Editable = true;
             Buttonbackyourstory = new UIButton(UIButtonType.System);
             ButtonyourstoryscreenUpload = new UIButton(UIButtonType.System);
-            ButtonDelete = new UIButton(UIButtonType.System);
             ButtonDelete1Line = new UIButton(UIButtonType.System);
             scrollView = new UIScrollView();
-            dateTimeText = new UIDatePicker(new CGRect(ResponsiveWidthLeft - 15, 538, 100, 30
+            dateTimeText = new UIDatePicker(new CGRect(ResponsiveWidthRight - 25, 543, 100, 30
 
              ));
-            dateTimeText.Frame = new CGRect(ResponsiveWidthLeft - 15, 538, 100, 30
+            dateTimeText.Frame = new CGRect(ResponsiveWidthRight - 25, 543, 100, 30
              );
             ButtonDateClick = new UIButton(UIButtonType.System);
             UIScrollView scrollView2 = new UIScrollView();
@@ -95,7 +102,7 @@ namespace Hello_MultiScreen_iPhone
             EditJournalButton.SetTitleColor(UIColor.White, UIControlState.Normal);
             EditJournalButton.BackgroundColor = UIColor.FromRGB(100, 149, 237);
 
-            EditJournalButton.Frame = new CGRect(ResponsiveWidthRight, 538, 100, 30);
+            EditJournalButton.Frame = new CGRect(ResponsiveWidthLeft, 538, 100, 30);
             EditJournalButton.SetTitle("Edit Journal", UIControlState.Normal);
 
             //var textTitle = new UITextView();
@@ -114,8 +121,6 @@ namespace Hello_MultiScreen_iPhone
             ButtonDateClick.SetTitleColor(UIColor.White, UIControlState.Normal);
             ButtonyourstoryscreenUpload.SetTitleColor(UIColor.White, UIControlState.Normal);
             ButtonyourstoryscreenUpload.BackgroundColor = UIColor.FromRGB(100, 149, 237);
-            ButtonDelete.SetTitleColor(UIColor.White, UIControlState.Normal);
-            ButtonDelete.BackgroundColor = UIColor.FromRGB(240, 137, 171);
             ButtonDelete1Line.SetTitleColor(UIColor.White, UIControlState.Normal);
             ButtonDelete1Line.BackgroundColor = UIColor.FromRGB(240, 137, 171);
             //ButtonDateClick.BackgroundColor = UIColor.FromRGB(100, 149, 237);
@@ -147,13 +152,11 @@ namespace Hello_MultiScreen_iPhone
 
             editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, 380, ResponsiveSizeX, 90);
 
-            ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthLeft, 488, 100, 30);
+            ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, 488, 100, 30);
             ButtonyourstoryscreenUpload.SetTitle("Submit", UIControlState.Normal);
 
-            ButtonDelete.Frame = new CGRect(ResponsiveWidthLeft, 588, 100, 30);
-            ButtonDelete.SetTitle("Start Over", UIControlState.Normal);
-
-            ButtonDelete1Line.Frame = new CGRect(ResponsiveWidthRight, 488, 100, 30);
+            ButtonDelete1Line.Frame = new CGRect(
+                ResponsiveWidthLeft, 488, 100, 30);
             ButtonDelete1Line.SetTitle("Delete Line", UIControlState.Normal);
 
             editTextWrite.AccessibilityHint = "Write Here";
@@ -173,7 +176,7 @@ namespace Hello_MultiScreen_iPhone
             dateTimeText.MaximumDate = currentDate;
 
 
-            ButtonDateClick.Frame = new CGRect(dateTimeText.Frame.Right, 538, 30, 30);
+            ButtonDateClick.Frame = new CGRect(dateTimeText.Frame.Right, dateTimeText.Frame.Y, 30, 30);
             //ButtonDateClick.SetTitle("Send Date", UIControlState.Normal);
             ButtonDateClick.SetBackgroundImage(UIImage.FromBundle("mailicon.png"), UIControlState.Normal);
 
@@ -203,7 +206,6 @@ namespace Hello_MultiScreen_iPhone
             ButtonDateClick.AddTarget(ButtonDateClickEvent, UIControlEvent.TouchUpInside);
             Buttonbackyourstory.AddTarget(ButtonbackyourstoryscreenClick, UIControlEvent.TouchUpInside);
             ButtonyourstoryscreenUpload.AddTarget(ButtonyourstoryscreenUploadClick, UIControlEvent.TouchUpInside);
-            ButtonDelete.AddTarget(ButtonDeleteClick, UIControlEvent.TouchUpInside);
             ButtonDelete1Line.AddTarget(ButtonDelete1LineClick, UIControlEvent.TouchUpInside);
             EditJournalButton.AddTarget(ButtonEditJournalClick, UIControlEvent.TouchUpInside);
 
@@ -215,7 +217,6 @@ namespace Hello_MultiScreen_iPhone
             scrollView.Add(ButtonyourstoryscreenUpload);
 
             scrollView.Add(ButtonDelete1Line);
-            scrollView.Add(ButtonDelete);
             scrollView.Add(dateTimeText);
             scrollView.AddSubview(editTextWrite);
             scrollView.Add(EditJournalButton);
@@ -234,7 +235,6 @@ namespace Hello_MultiScreen_iPhone
             ButtonDateClick.Layer.CornerRadius = 10;
             ButtonyourstoryscreenUpload.Layer.CornerRadius = 10;
             Buttonbackyourstory.Layer.CornerRadius = 10;
-            ButtonDelete.Layer.CornerRadius = 10;
             ButtonDelete1Line.Layer.CornerRadius = 10;
             EditJournalButton.Layer.CornerRadius = 10;
         }
@@ -417,30 +417,6 @@ namespace Hello_MultiScreen_iPhone
             }
         }
 
-        //Delete everything your story
-        private void ButtonDeleteClick(object sender, EventArgs eventArgs)
-        {
-            //textViewWrite = new UITextView();
-            //editTextWrite = new UITextField();
-            //textViewWrite.Frame = new CGRect(25, 25, 300, 150);
-            //editTextWrite.Frame = new CGRect(25, 25, 300, 150);
-            var Confirm = new UIAlertView("Confirmation", "Are you Sure ", null, "Cancel", "Yes");
-            Confirm.Show();
-            Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
-            {
-                if (es.ButtonIndex == 0)
-                {
-                    //Do nothing
-                }
-                else
-                {
-                    EmailFileRead.DeleteText();
-                    textViewWrite.Text = String.Empty;
-                }
-                textViewWrite.Text = EmailFileRead.ReadText();
-            };
-        }
-
         //Delete 1 line
         private void ButtonDelete1LineClick(object sender, EventArgs eventArgs)
         {
@@ -488,6 +464,7 @@ namespace Hello_MultiScreen_iPhone
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+            //this.NavigationController.SetNavigationBarHidden (true, animated);
             textViewWrite.Text = EmailFileRead.ReadText();
             UIApplication.SharedApplication.KeyWindow.EndEditing(true);
             keyboardOpen = false;

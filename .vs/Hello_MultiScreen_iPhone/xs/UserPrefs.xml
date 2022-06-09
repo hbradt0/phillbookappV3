@@ -1,20 +1,16 @@
 ﻿<Properties StartupConfiguration="{A10944A3-80E8-4A8D-A6F5-1A10606AAE60}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Screens/HelloUniverseScreen.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Screens/LoginScreen.cs">
     <Files>
-      <File FileName="Screens/EditJournalScreen.cs" Line="122" Column="1" />
-      <File FileName="Screens/HomeScreen.cs" Line="110" Column="1" />
-      <File FileName="Screens/HomeScreen2.cs" />
+      <File FileName="Screens/EditJournalScreen.cs" Line="76" Column="1" />
+      <File FileName="Screens/HomeScreen.cs" Line="124" Column="63" />
+      <File FileName="Screens/HomeScreen2.cs" Line="94" Column="1" />
       <File FileName="EmailFileRead.cs" />
       <File FileName="Info.plist" />
-      <File FileName="Screens/StoryScreen.cs" />
-      <File FileName="Screens/HelloUniverseScreen.designer.cs" Line="1" Column="1" />
-      <File FileName="Screens/HelloWorldScreen.cs" />
-      <File FileName="Screens/HelloWorldScreen.designer.cs" />
-      <File FileName="Screens/LoginScreen.cs" Line="658" Column="31" />
-      <File FileName="FireBaseRead.cs" Line="201" Column="28" />
-      <File FileName="Screens/ImageScreen.cs" />
-      <File FileName="Resources/Halbook.txt" Line="27" Column="97" />
-      <File FileName="Screens/HelloUniverseScreen.cs" Line="91" Column="42" />
+      <File FileName="Screens/StoryScreen.cs" Line="71" Column="2" />
+      <File FileName="Screens/HelloUniverseScreen.cs" Line="76" Column="11" />
+      <File FileName="Screens/HelloWorldScreen.cs" Line="82" Column="9" />
+      <File FileName="Screens/ImageScreen.cs" Line="64" Column="14" />
+      <File FileName="Screens/LoginScreen.cs" Line="81" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,7 +20,8 @@
             <Node name="Hello_MultiScreen_iPhone" expanded="True">
               <Node name="Resources" expanded="True" />
               <Node name="Screens" expanded="True">
-                <Node name="HelloUniverseScreen.cs" expanded="True" selected="True" />
+                <Node name="HelloUniverseScreen.cs" expanded="True" />
+                <Node name="LoginScreen.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -35,8 +32,10 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/psargent/phillbookApp2/FireBaseRead.cs" relfile="FireBaseRead.cs" line="285" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Hello__MultiScreen__iPhone PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.4AF9252F-7A13-4725-9567-7D6B75CAEECA" />
+  <MonoDevelop.Ide.ItemProperties.Hello__MultiScreen__iPhone PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.EE8CB3B7-6C29-404A-96A8-98C9712AFCCE" />
 </Properties>
