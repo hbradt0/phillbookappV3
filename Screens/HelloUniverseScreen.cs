@@ -418,7 +418,7 @@ namespace Hello_MultiScreen_iPhone
             UIApplication.SharedApplication.KeyWindow.EndEditing(true);
             keyboardOpen = false;
 
-            ResponsiveWidthLeft = View.Frame.Width / 10;
+            ResponsiveWidthLeft = View.Frame.Width / 12;
             ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
             ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 65;
 

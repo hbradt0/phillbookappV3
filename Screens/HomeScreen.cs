@@ -189,7 +189,7 @@ namespace Hello_MultiScreen_iPhone
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);
-            ResponsiveWidthLeft = View.Frame.Width / 8;  
+            ResponsiveWidthLeft = View.Frame.Width / 9;  
             ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft*2;
 
             //this.NavigationController.SetNavigationBarHidden (true, animated);

@@ -295,9 +295,9 @@ namespace Hello_MultiScreen_iPhone
             UIApplication.SharedApplication.KeyWindow.EndEditing(true);
             keyboardOpen = false;
 
-            ResponsiveWidthLeft = View.Frame.Width / 10;
+            ResponsiveWidthLeft = View.Frame.Width / 12;
             ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
-            ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2-60;
+            ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2-65;
 
             booktextView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 50, ResponsiveSizeX, 440);
             ButtonDelete.Frame = new CGRect(ResponsiveWidthLeft, booktextView.Frame.Bottom+20, 100, 30);

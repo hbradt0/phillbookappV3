@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{A10944A3-80E8-4A8D-A6F5-1A10606AAE60}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Screens/HomeScreen.cs">
     <Files>
-      <File FileName="Screens/EditJournalScreen.cs" Line="302" Column="85" />
-      <File FileName="Screens/HomeScreen.cs" />
-      <File FileName="Screens/HomeScreen2.cs" Line="410" Column="1" />
+      <File FileName="Screens/EditJournalScreen.cs" Line="298" Column="1" />
+      <File FileName="Screens/HomeScreen.cs" Line="192" Column="55" />
+      <File FileName="Screens/HomeScreen2.cs" />
       <File FileName="EmailFileRead.cs" />
       <File FileName="Info.plist" />
       <File FileName="Screens/StoryScreen.cs" />
-      <File FileName="Screens/HelloUniverseScreen.cs" Line="436" Column="1" />
+      <File FileName="Screens/HelloUniverseScreen.cs" />
       <File FileName="Screens/HelloWorldScreen.cs" />
       <File FileName="Screens/ImageScreen.cs" />
       <File FileName="Screens/LoginScreen.cs" />
@@ -22,7 +22,7 @@
               <Node name="Resources" expanded="True" />
               <Node name="Screens" expanded="True">
                 <Node name="HelloUniverseScreen.cs" expanded="True" />
-                <Node name="HomeScreen2.cs" selected="True" />
+                <Node name="HomeScreen.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -31,15 +31,12 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/psargent/phillbookApp2/FireBaseRead.cs" relfile="FireBaseRead.cs" line="285" column="1" />
-      <Breakpoint file="/Users/psargent/phillbookApp2/Screens/HomeScreen.cs" relfile="Screens/HomeScreen.cs" line="213" column="1" />
-      <Breakpoint file="/Users/psargent/phillbookApp2/Screens/HomeScreen.cs" relfile="Screens/HomeScreen.cs" line="213" column="1" />
-      <Breakpoint file="/Users/psargent/phillbookApp2/Screens/HomeScreen.cs" relfile="Screens/HomeScreen.cs" line="213" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Hello__MultiScreen__iPhone PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
+  <MonoDevelop.Ide.ItemProperties.Hello__MultiScreen__iPhone PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BE6AE2BE-A355-48F8-870C-D99FC72AFEC0" />
 </Properties>
