@@ -1464,43 +1464,43 @@ exception_handling:
 	-(UIButton *) btnHelloWorld
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_4 (self, _cmd, &managed_method, 0x1000);
+		return native_to_managed_trampoline_4 (self, _cmd, &managed_method, 0x1200);
 	}
 
 	-(void) setBtnHelloWorld:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_5 (self, _cmd, &managed_method, p0, 0x1100);
+		native_to_managed_trampoline_5 (self, _cmd, &managed_method, p0, 0x1300);
 	}
 
 	-(UIButton *) btnHelloUniverse
 	{
 		static MonoMethod *managed_method = NULL;
-		return native_to_managed_trampoline_4 (self, _cmd, &managed_method, 0x1200);
+		return native_to_managed_trampoline_4 (self, _cmd, &managed_method, 0x1400);
 	}
 
 	-(void) setBtnHelloUniverse:(UIButton *)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_5 (self, _cmd, &managed_method, p0, 0x1300);
+		native_to_managed_trampoline_5 (self, _cmd, &managed_method, p0, 0x1500);
 	}
 
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_6 (self, _cmd, &managed_method, 0x1500);
+		native_to_managed_trampoline_6 (self, _cmd, &managed_method, 0x1700);
 	}
 
 	-(void) viewWillAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, 0x1700);
+		native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, 0x1900);
 	}
 
 	-(void) viewWillDisappear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, 0x1800);
+		native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, 0x1A00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -1513,7 +1513,7 @@ exception_handling:
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x1400);
+		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x1600);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [UIViewController class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -1737,13 +1737,13 @@ exception_handling:
 	-(void) didReceiveMemoryWarning
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_6 (self, _cmd, &managed_method, 0xB00);
+		native_to_managed_trampoline_6 (self, _cmd, &managed_method, 0xC00);
 	}
 
 	-(void) viewDidAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, 0xC00);
+		native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, 0xD00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -1809,19 +1809,19 @@ exception_handling:
 	-(void) viewDidLoad
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_6 (self, _cmd, &managed_method, 0x1E00);
+		native_to_managed_trampoline_6 (self, _cmd, &managed_method, 0x2000);
 	}
 
 	-(void) didReceiveMemoryWarning
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_6 (self, _cmd, &managed_method, 0x2900);
+		native_to_managed_trampoline_6 (self, _cmd, &managed_method, 0x2B00);
 	}
 
 	-(void) viewDidAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, 0x2A00);
+		native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, 0x2C00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -1834,7 +1834,7 @@ exception_handling:
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x1D00);
+		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x1F00);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [UIViewController class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));
@@ -1887,13 +1887,13 @@ exception_handling:
 	-(void) didReceiveMemoryWarning
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_6 (self, _cmd, &managed_method, 0x3900);
+		native_to_managed_trampoline_6 (self, _cmd, &managed_method, 0x3A00);
 	}
 
 	-(void) viewDidAppear:(BOOL)p0
 	{
 		static MonoMethod *managed_method = NULL;
-		native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, 0x3A00);
+		native_to_managed_trampoline_7 (self, _cmd, &managed_method, p0, 0x3B00);
 	}
 
 	-(BOOL) conformsToProtocol:(void *)p0
@@ -1906,7 +1906,7 @@ exception_handling:
 	{
 		static MonoMethod *managed_method = NULL;
 		bool call_super = false;
-		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x2C00);
+		id rv = native_to_managed_trampoline_1 (self, _cmd, &managed_method, &call_super, 0x2E00);
 		if (call_super && rv) {
 			struct objc_super super = {  rv, [UIViewController class] };
 			rv = ((id (*)(objc_super*, SEL)) objc_msgSendSuper) (&super, @selector (init));

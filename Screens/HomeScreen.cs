@@ -25,6 +25,7 @@ namespace Hello_MultiScreen_iPhone
 
         public UIButton Button1;
         public UIButton Button2;
+        public UIButton ButtonTodoList;
         public UIButton Button3;
         public UIButton Buttonbackyourstory;
         public UIButton Buttonyourstoryscreen;
@@ -36,6 +37,7 @@ namespace Hello_MultiScreen_iPhone
 
         //public UIImageView imageView3;
         public UIImageView imageViewPic;
+        public UIImageView imageView3;
         public UIImageView imageViewTitle;
         public UIView View1;
         public UIView View2;
@@ -47,6 +49,7 @@ namespace Hello_MultiScreen_iPhone
         public static float viewScroll2Y = 0;
         public nfloat ResponsiveWidthLeft = 300;
         public nfloat ResponsiveSizeX = 300;
+        public nfloat ResponsiveSizeY = 35;
 
         //loads the HomeScreen.xib file and connects it to this object
         public HomeScreen () : base ("HomeScreen", null)
@@ -67,12 +70,10 @@ namespace Hello_MultiScreen_iPhone
             //---- when the hello world button is clicked
             this.btnHelloUniverse.SetTitle("Create Your Journal", UIControlState.Normal);
             this.btnHelloWorld.SetTitle("Click To Read", UIControlState.Normal);
-            this.btnHelloWorld.Frame = new CGRect(ResponsiveWidthLeft, 540+10, ResponsiveSizeX, 35);
             this.btnHelloUniverse.BackgroundColor = UIColor.FromRGB(100, 149, 240);
             this.btnHelloWorld.BackgroundColor = UIColor.FromRGB(100, 149, 240);
             this.Title = "Home";
 
-            this.btnHelloUniverse.Frame = new CGRect(ResponsiveWidthLeft, 125, ResponsiveSizeX, 35);
             this.btnHelloWorld.Layer.CornerRadius = 10;
             this.btnHelloUniverse.Layer.CornerRadius = 10;
 
@@ -118,7 +119,6 @@ namespace Hello_MultiScreen_iPhone
             else
                 img3 = UIImage.FromFile("TestPic.png");
             imageViewPic.Image = img3;
-            imageViewPic.Frame = new CGRect(ResponsiveWidthLeft, 235+20, ResponsiveSizeX, 280);
 
 
             UIImage viewer = new UIImage();
@@ -127,7 +127,6 @@ namespace Hello_MultiScreen_iPhone
   
             ButtonImageClick = new UIButton(UIButtonType.System);
             //ButtonImageClick.SetBackgroundImage(viewer,UIControlState.Normal);
-            ButtonImageClick.Frame = new CGRect(ResponsiveWidthLeft, 595+15, ResponsiveSizeX, 35);
             ButtonImageClick.SetTitleColor(UIColor.White, UIControlState.Normal);
             ButtonImageClick.SetTitle("Image Calendar", UIControlState.Normal);
             ButtonImageClick.BackgroundColor = UIColor.FromRGB(100, 149, 240);
@@ -142,19 +141,16 @@ namespace Hello_MultiScreen_iPhone
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
             imageViewTitle = new UIImageView();
-      
-            imageViewTitle.Frame = new CGRect(ResponsiveWidthLeft-20, 20, ResponsiveSizeX+60, 80);
+
 
             //PLEASE COMMENT OUT BELOW IF THIS doesn't work
-            UIButton ButtonTodoList = new UIButton(UIButtonType.System);
-            ButtonTodoList.Frame = new CGRect(ResponsiveWidthLeft, 180+5, ResponsiveSizeX, 35);
+            ButtonTodoList = new UIButton(UIButtonType.System);
             ButtonTodoList.BackgroundColor = UIColor.FromRGB(100, 149, 240);
             ButtonTodoList.SetTitle("Create To Do List", UIControlState.Normal);
             ButtonTodoList.SetTitleColor(UIColor.White,UIControlState.Normal);
             ButtonTodoList.Layer.CornerRadius = 10;
-            var imageView3 = new UIImageView();
-            imageView3.Frame= new CGRect(imageViewTitle.Frame.Left-20, imageViewTitle.Frame.Top-20
-                +20, 70, 70);
+            imageView3 = new UIImageView();
+
             //ButtonTodoList.SetImage(img4, UIControlState.Normal);
 
             UIImage img2 = new UIImage();
@@ -185,25 +181,6 @@ namespace Hello_MultiScreen_iPhone
             //View.AddSubview(Button1);
             //View.AddSubview(Buttonyourstoryscreen);           
         }
-
-        /*
-        void Button1Click(object sender, EventArgs eventArgs)
-        {
-            //UIViewController viewController2 = this.Storyboard.InstantiateViewController("ViewController2");
-            //if (viewController2 != null)
-            //    this.NavigationController.PushViewController(viewController2,false);
-
-           UIViewController view2 = new HelloWorldScreen();
-           NavigationController.PushViewController(view2, true);
-        }
-        */
-
-       /* void ButtonyourstoryscreenClick(object sender, EventArgs eventArgs)
-        {
-           // ViewController3 view3 = new ViewController3();
-           // NavigationController.PushViewController(view3, false);
-        }
-       */
        
 		/// <summary>
 		/// Is called when the view is about to appear on the screen. We use this method to hide the
@@ -212,7 +189,9 @@ namespace Hello_MultiScreen_iPhone
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);
-      
+            ResponsiveWidthLeft = View.Frame.Width / 8;  
+            ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft*2;
+
             //this.NavigationController.SetNavigationBarHidden (true, animated);
             UIImage img3 = new UIImage();
             if (EmailFileRead.FileExists(EmailFileRead.fileNameImage) && EmailFileRead.fileNameImage != "")
@@ -227,6 +206,18 @@ namespace Hello_MultiScreen_iPhone
             img2 = UIImage.FromFile(EmailFileRead.fileNameImage1);
             imageViewTitle.Image = img2;
             this.NavigationController.SetNavigationBarHidden(true, animated);
+
+            btnHelloWorld.Frame = new CGRect(ResponsiveWidthLeft, 540 + 10, ResponsiveSizeX, ResponsiveSizeY);
+            btnHelloUniverse.Frame = new CGRect(ResponsiveWidthLeft, 125, ResponsiveSizeX, ResponsiveSizeY);
+            imageView3.Frame = new CGRect(imageViewTitle.Frame.Left - 20, imageViewTitle.Frame.Top - 20
+            + 20, 70, 70);
+            ButtonTodoList.Frame = new CGRect(ResponsiveWidthLeft, 180 + 5, ResponsiveSizeX, ResponsiveSizeY);
+
+            imageViewTitle.Frame = new CGRect(ResponsiveWidthLeft - 20, 20, ResponsiveSizeX + 40, 80);
+            ButtonImageClick.Frame = new CGRect(ResponsiveWidthLeft, 595 + 15, ResponsiveSizeX, ResponsiveSizeY);
+            imageViewPic.Frame = new CGRect(ResponsiveWidthLeft, 235 + 15, ResponsiveSizeX, 280);
+
+
         }
 
         /// <summary>

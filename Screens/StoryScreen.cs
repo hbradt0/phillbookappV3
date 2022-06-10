@@ -21,7 +21,7 @@ namespace Hello_MultiScreen_iPhone
         public UIButton Button2;
         public UIButton Button3;
         public UIButton Buttonbackyourstory;
-        public UIButton Buttonyourstoryscreen;
+        public UIButton ButtonShare;
         public UIButton ButtonyourstoryscreenUpload;
         public UIButton ButtonDelete;
         public UITextView codes;
@@ -68,21 +68,6 @@ namespace Hello_MultiScreen_iPhone
         //Read your journal page
         public void ViewDidLoad1()
         {
-            ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
-            nfloat size = 30;
-            if (View.Frame.Width / 8 >= View.Frame.Width - 30)
-                size = View.Frame.Width / 8;
-            ResponsiveSizeX = View.Frame.Width - size + 25;
-            ResponsiveWidthRight = View.Frame.Width - 80;
-
-            if (View.Frame.Width >= 400)
-            {
-                ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
-                if (View.Frame.Width / 8 >= View.Frame.Width - 30)
-                    size = View.Frame.Width / 8;
-                ResponsiveSizeX = View.Frame.Width - size + 50;
-                ResponsiveWidthRight = View.Frame.Width - 60;
-            }
             //View Issue
             View.BackgroundColor = UIColor.FromRGB(178, 178, 227);
             var user = new UIViewController();
@@ -98,7 +83,6 @@ namespace Hello_MultiScreen_iPhone
             hiddenbutton = new UIButton(UIButtonType.System);
             hiddenbuttoncode = new UITextField();
 
-            booktextView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 260, ResponsiveSizeX, 410);
             //scrollView.BackgroundColor = UIColor.SystemPink;
 
             var plist = NSUserDefaults.StandardUserDefaults;
@@ -107,7 +91,7 @@ namespace Hello_MultiScreen_iPhone
             // ViewController view1 = new ViewController();
             //if (null != p)
             //    booktextView.y.Y = p;
-            var ButtonShare = new UIButton(UIButtonType.RoundedRect)
+            ButtonShare = new UIButton(UIButtonType.RoundedRect)
             {
 
                 //Frame = UIScreen.MainScreen.Bounds,
@@ -116,10 +100,7 @@ namespace Hello_MultiScreen_iPhone
 
             imageView3 = new UIImageView();
             imageView3.Image = UIImage.FromBundle("pinkflower.png");
-            imageView3.Frame = new CGRect(ResponsiveWidthLeft+50, ButtonShare.Frame.Top+50, 175, 175);
 
-
-            ButtonShare.Frame = new CGRect(View.Frame.Right-30, View.Frame.Top+675, 35, 35);
 
             //ButtonShare.SetTitle("Share Journal", UIControlState.Normal);
             ButtonShare.SetTitleColor(UIColor.White, UIControlState.Normal);
@@ -176,6 +157,16 @@ namespace Hello_MultiScreen_iPhone
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+
+
+            ResponsiveWidthLeft = View.Frame.Width / 10;
+            ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
+            ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 100;
+
+            imageView3.Frame = new CGRect(ResponsiveWidthLeft + 50, View.Frame.Top + 50, 175, 175);
+            booktextView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 260, ResponsiveSizeX, 410);
+            ButtonShare.Frame = new CGRect(booktextView.Frame.Right-35, View.Frame.Top + 675, 35, 35);
+
             booktextView.Text = EmailFileRead.ReadText();
             booktextView.TextColor = UIColor.Purple;
             if (EmailFileRead.code.ToLower() == EmailFileRead.CodeList[0])

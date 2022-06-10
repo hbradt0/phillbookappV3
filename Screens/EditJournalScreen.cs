@@ -59,20 +59,6 @@ namespace Hello_MultiScreen_iPhone
         //Read your journal page
         public void ViewDidLoad1()
         {
-            ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
-            nfloat size = 30;
-            if (View.Frame.Width / 8 >= View.Frame.Width - 30)
-                size = View.Frame.Width / 8;
-            ResponsiveSizeX = View.Frame.Width - size + 25;
-            ResponsiveWidthRight = View.Frame.Width - 80;
-            if (View.Frame.Width >= 400)
-            {
-                ResponsiveWidthLeft = View.Frame.Width / 8 - 10;
-                if (View.Frame.Width / 8 >= View.Frame.Width - 30)
-                    size = View.Frame.Width / 8;
-                ResponsiveSizeX = View.Frame.Width - size + 50;
-                ResponsiveWidthRight = View.Frame.Width - 60;
-            }
 
             //View Issue
             View.BackgroundColor = UIColor.FromRGB(178,178,227);
@@ -90,12 +76,10 @@ namespace Hello_MultiScreen_iPhone
             ButtonDelete.SetTitleColor(UIColor.White, UIControlState.Normal);
 
             ButtonDelete.BackgroundColor = UIColor.FromRGB(240, 137, 171);
-            ButtonDelete.Frame = new CGRect(ResponsiveWidthLeft, 550, 100, 30);
             ButtonDelete.SetTitle("Start Over", UIControlState.Normal);
             ButtonDelete.Layer.CornerRadius = 10;
 
 
-            booktextView.Frame = new CGRect(ResponsiveWidthLeft, 90, ResponsiveSizeX, 440); 
             booktextView.Text = EmailFileRead.ReadText();
             booktextView.BackgroundColor = UIColor.White;
             booktextView.TextColor = UIColor.Purple;
@@ -120,8 +104,7 @@ namespace Hello_MultiScreen_iPhone
             };
             //booktextView.KeyboardType = UIKeyboardType.EmailAddress;
             //booktextView.ReturnKeyType = UIReturnKeyType.Send;
-
-            Button3.Frame = new CGRect(ResponsiveWidthRight, 550, 100, 30);
+  
             Button3.SetTitle("Save", UIControlState.Normal);
             Button3.BackgroundColor = UIColor.FromRGB(100, 149, 237);
             Button3.SetTitleColor(UIColor.White, UIControlState.Normal);
@@ -311,6 +294,14 @@ namespace Hello_MultiScreen_iPhone
             booktextView.Text = EmailFileRead.ReadText();
             UIApplication.SharedApplication.KeyWindow.EndEditing(true);
             keyboardOpen = false;
+
+            ResponsiveWidthLeft = View.Frame.Width / 10;
+            ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
+            ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2-60;
+
+            booktextView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 50, ResponsiveSizeX, 440);
+            ButtonDelete.Frame = new CGRect(ResponsiveWidthLeft, booktextView.Frame.Bottom+20, 100, 30);
+            Button3.Frame = new CGRect(ResponsiveWidthRight, booktextView.Frame.Bottom+20, 100, 30);
         }
     }
 }
