@@ -163,6 +163,10 @@ namespace Hello_MultiScreen_iPhone
             ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
             ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 100;
 
+            scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 6); //small
+            if (View.Frame.Height >= 670)
+                scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 400); //big
+
             imageView3.Frame = new CGRect(ResponsiveWidthLeft + 50, View.Frame.Top + 50, 175, 175);
             booktextView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 260, ResponsiveSizeX, 410);
             ButtonShare.Frame = new CGRect(booktextView.Frame.Right-35, View.Frame.Top + 675, 35, 35);

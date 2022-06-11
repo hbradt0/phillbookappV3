@@ -207,15 +207,14 @@ namespace Hello_MultiScreen_iPhone
             imageViewTitle.Image = img2;
             this.NavigationController.SetNavigationBarHidden(true, animated);
 
-            btnHelloWorld.Frame = new CGRect(ResponsiveWidthLeft, 540 + 10, ResponsiveSizeX, ResponsiveSizeY);
-            btnHelloUniverse.Frame = new CGRect(ResponsiveWidthLeft, 125, ResponsiveSizeX, ResponsiveSizeY);
+            imageViewTitle.Frame = new CGRect(ResponsiveWidthLeft - 20, View.Frame.Top + 20, ResponsiveSizeX + 40, 80);
+            btnHelloUniverse.Frame = new CGRect(ResponsiveWidthLeft, imageViewTitle.Frame.Bottom + 25, ResponsiveSizeX, ResponsiveSizeY);
+            ButtonTodoList.Frame = new CGRect(ResponsiveWidthLeft, btnHelloUniverse.Frame.Bottom + 25, ResponsiveSizeX, ResponsiveSizeY);
             imageView3.Frame = new CGRect(imageViewTitle.Frame.Left - 20, imageViewTitle.Frame.Top - 20
             + 20, 70, 70);
-            ButtonTodoList.Frame = new CGRect(ResponsiveWidthLeft, 180 + 5, ResponsiveSizeX, ResponsiveSizeY);
-
-            imageViewTitle.Frame = new CGRect(ResponsiveWidthLeft - 20, 20, ResponsiveSizeX + 40, 80);
-            ButtonImageClick.Frame = new CGRect(ResponsiveWidthLeft, 595 + 15, ResponsiveSizeX, ResponsiveSizeY);
-            imageViewPic.Frame = new CGRect(ResponsiveWidthLeft, 235 + 15, ResponsiveSizeX, 280);
+            imageViewPic.Frame = new CGRect(ResponsiveWidthLeft, ButtonTodoList.Frame.Bottom + 25, ResponsiveSizeX, 280);
+            btnHelloWorld.Frame = new CGRect(ResponsiveWidthLeft, imageViewPic.Frame.Bottom + 25, ResponsiveSizeX, ResponsiveSizeY);
+            ButtonImageClick.Frame = new CGRect(ResponsiveWidthLeft, btnHelloWorld.Frame.Bottom + 25, ResponsiveSizeX, ResponsiveSizeY);
 
 
         }
