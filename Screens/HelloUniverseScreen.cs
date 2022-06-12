@@ -422,13 +422,15 @@ namespace Hello_MultiScreen_iPhone
             ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
             ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 65;
 
-            scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height/6); //small
+            scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height/5.5); //small
             if(View.Frame.Height>=670)
                 scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height/400); //big
+            if (View.Frame.Height == 812)
+                scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 26); //small
 
             dateTimeText.Hidden = false;
-            dateTimeText.Frame = new CGRect(ResponsiveWidthRight - 25, 543, 100, 30);
-            EditJournalButton.Frame = new CGRect(ResponsiveWidthLeft, 538, 100, 30);
+            dateTimeText.Frame = new CGRect(ResponsiveWidthRight - 25, 550, 100, 30);
+            EditJournalButton.Frame = new CGRect(ResponsiveWidthLeft, 545, 100, 30);
             editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, 380, ResponsiveSizeX, 90);
 
             ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, 488, 100, 30);

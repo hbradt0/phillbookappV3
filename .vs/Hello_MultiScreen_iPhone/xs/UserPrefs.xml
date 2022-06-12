@@ -4,8 +4,10 @@
       <File FileName="Screens/LoginScreen.cs" Line="601" Column="114" />
       <File FileName="Screens/HelloWorldScreen 2.cs" />
       <File FileName="Screens/HelloWorldScreen.cs" />
-      <File FileName="Screens/HelloUniverseScreen.cs" Line="1" Column="1" />
-      <File FileName="Screens/HomeScreen.cs" Line="209" Column="1" />
+      <File FileName="Screens/HelloUniverseScreen.cs" />
+      <File FileName="Screens/HomeScreen.cs" />
+      <File FileName="Screens/HomeScreen2.cs" />
+      <File FileName="Info.plist" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,7 +18,7 @@
               <Node name="Resources" expanded="True" />
               <Node name="Screens" expanded="True">
                 <Node name="HelloUniverseScreen.cs" expanded="True" />
-                <Node name="HomeScreen.cs" selected="True" />
+                <Node name="LoginScreen.cs" selected="True" />
               </Node>
             </Node>
           </Node>

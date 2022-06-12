@@ -66,11 +66,11 @@
 		</data>
 		<key>Hello_MultiScreen_iPhone.aotdata.arm64</key>
 		<data>
-		DUbTylEQF5FFmT+Vn/8tBkvOiUE=
+		0AYOIFUHkA7c1kXil5QjLfnpiqE=
 		</data>
 		<key>Hello_MultiScreen_iPhone.exe</key>
 		<data>
-		yozfz5HAGJ7xCyyryZ1np5oaRtM=
+		Y+jAc/qAs+mgjGKKzA/L8FYQoNI=
 		</data>
 		<key>HomeScreen.nib</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ehrtQiayiDRJ2vaiIT1wZyVpeDs=
+		bpRKHEIq3iDvZilKGK90GZQ1Wp4=
 		</data>
 		<key>LaunchScreen.nib</key>
 		<data>
@@ -166,7 +166,7 @@
 		</data>
 		<key>Plugin.Connectivity.aotdata.arm64</key>
 		<data>
-		U2ZKn1FfOW9nwL9iWbCGIT4wFBk=
+		ZY39gluoQYAJ5P7IdS4bpbbDo9Y=
 		</data>
 		<key>Plugin.Connectivity.dll</key>
 		<data>
@@ -294,11 +294,11 @@
 		</data>
 		<key>Xamarin.iOS.aotdata.arm64</key>
 		<data>
-		YUt5mYOqK7uMLTBtQn/NtWBDMLU=
+		EbdMDuIjf3jrq5IZZ+mL1TEkHR8=
 		</data>
 		<key>Xamarin.iOS.dll</key>
 		<data>
-		bMUtFOIIeO0TahPhySp5lTa+Pnc=
+		JCZx4yocIGvPgYlIZVZDg4+4xq8=
 		</data>
 		<key>alert.jpg</key>
 		<data>
@@ -553,14 +553,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BSpAqhJttmOrpDbAUpxLJ0h0vRlr6djoKD8dcvlqJIA=
+			GX41LbYNsp3jYrvMMSBQYt8y6Nzhmx1818VmJY21eAk=
 			</data>
 		</dict>
 		<key>Hello_MultiScreen_iPhone.exe</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rktv6WZIpzYwBVT0RBzebx6O139FDdxmYRBVP3D1vxY=
+			DKAZsIQEPjFyKu2ZvwYRQnKuv2eC81QTEKq0e6zMWRE=
 			</data>
 		</dict>
 		<key>HomeScreen.nib</key>
@@ -714,7 +714,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NZt4vQUBw23cMdqDLmC5yhMW3lpTxyLEmM7n80ZEqIs=
+			i6BxWS2QrGrte6yOBRhkGBp2Ts6rw8miodZ2U7xV2wc=
 			</data>
 		</dict>
 		<key>Plugin.Connectivity.dll</key>
@@ -938,14 +938,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			H0hiU+82bSUnEoawnbfJ5//r8m7JfTmdgm6XDeRbzto=
+			jcetZps70xBokOz1RlawDvDGUlwVumXjyYfDHAySp9I=
 			</data>
 		</dict>
 		<key>Xamarin.iOS.dll</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hjNUUK9EcNK5EvUJxiAC0eOYlB2dCdYM/o3l+kA9Sns=
+			M6LVZYAimGxeKXYqUwJqTFHVo4gX6dTZhcazi0OCMXA=
 			</data>
 		</dict>
 		<key>alert.jpg</key>
