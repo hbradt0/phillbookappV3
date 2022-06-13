@@ -5,7 +5,7 @@
       <File FileName="Screens/HelloWorldScreen 2.cs" />
       <File FileName="Screens/HelloWorldScreen.cs" />
       <File FileName="Screens/HelloUniverseScreen.cs" />
-      <File FileName="Screens/HomeScreen.cs" />
+      <File FileName="Screens/HomeScreen.cs" Line="195" Column="8" />
       <File FileName="Screens/HomeScreen2.cs" />
       <File FileName="Info.plist" />
     </Files>
@@ -18,8 +18,8 @@
               <Node name="Resources" expanded="True" />
               <Node name="Screens" expanded="True">
                 <Node name="HelloUniverseScreen.cs" expanded="True" />
-                <Node name="LoginScreen.cs" selected="True" />
               </Node>
+              <Node name="Info.plist" selected="True" />
             </Node>
           </Node>
         </State>

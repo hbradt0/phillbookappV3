@@ -192,6 +192,14 @@ namespace Hello_MultiScreen_iPhone
             ResponsiveWidthLeft = View.Frame.Width / 9;  
             ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft*2;
 
+            int expander = 25;
+            if (View.Frame.Height >= 670)
+            {
+                expander = 35;
+            }
+            if (View.Frame.Height == 812)
+                expander = 28;
+
             //this.NavigationController.SetNavigationBarHidden (true, animated);
             UIImage img3 = new UIImage();
             if (EmailFileRead.FileExists(EmailFileRead.fileNameImage) && EmailFileRead.fileNameImage != "")
@@ -207,14 +215,15 @@ namespace Hello_MultiScreen_iPhone
             imageViewTitle.Image = img2;
             this.NavigationController.SetNavigationBarHidden(true, animated);
 
-            imageViewTitle.Frame = new CGRect(ResponsiveWidthLeft - 20, View.Frame.Top + 20, ResponsiveSizeX + 40, 80);
-            btnHelloUniverse.Frame = new CGRect(ResponsiveWidthLeft, imageViewTitle.Frame.Bottom + 25, ResponsiveSizeX, ResponsiveSizeY);
-            ButtonTodoList.Frame = new CGRect(ResponsiveWidthLeft, btnHelloUniverse.Frame.Bottom + 25, ResponsiveSizeX, ResponsiveSizeY);
+            
+            imageViewTitle.Frame = new CGRect(ResponsiveWidthLeft - 20, View.Frame.Top + 10, ResponsiveSizeX + 40, 80);
+            btnHelloUniverse.Frame = new CGRect(ResponsiveWidthLeft, imageViewTitle.Frame.Bottom + expander, ResponsiveSizeX, ResponsiveSizeY);
+            ButtonTodoList.Frame = new CGRect(ResponsiveWidthLeft, btnHelloUniverse.Frame.Bottom + expander, ResponsiveSizeX, ResponsiveSizeY);
             imageView3.Frame = new CGRect(imageViewTitle.Frame.Left - 20, imageViewTitle.Frame.Top - 20
             + 20, 70, 70);
-            imageViewPic.Frame = new CGRect(ResponsiveWidthLeft, ButtonTodoList.Frame.Bottom + 25, ResponsiveSizeX, 280);
-            btnHelloWorld.Frame = new CGRect(ResponsiveWidthLeft, imageViewPic.Frame.Bottom + 25, ResponsiveSizeX, ResponsiveSizeY);
-            ButtonImageClick.Frame = new CGRect(ResponsiveWidthLeft, btnHelloWorld.Frame.Bottom + 25, ResponsiveSizeX, ResponsiveSizeY);
+            imageViewPic.Frame = new CGRect(ResponsiveWidthLeft, ButtonTodoList.Frame.Bottom + expander, ResponsiveSizeX, 280);
+            btnHelloWorld.Frame = new CGRect(ResponsiveWidthLeft, imageViewPic.Frame.Bottom + expander, ResponsiveSizeX, ResponsiveSizeY);
+            ButtonImageClick.Frame = new CGRect(ResponsiveWidthLeft, btnHelloWorld.Frame.Bottom + expander, ResponsiveSizeX, ResponsiveSizeY);
 
 
         }

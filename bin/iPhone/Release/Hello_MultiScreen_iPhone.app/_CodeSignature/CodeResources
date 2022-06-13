@@ -66,11 +66,11 @@
 		</data>
 		<key>Hello_MultiScreen_iPhone.aotdata.arm64</key>
 		<data>
-		0AYOIFUHkA7c1kXil5QjLfnpiqE=
+		Tb+1ehhzYfuZiGEnagcSKR6AYI0=
 		</data>
 		<key>Hello_MultiScreen_iPhone.exe</key>
 		<data>
-		Y+jAc/qAs+mgjGKKzA/L8FYQoNI=
+		ziKDtTiQPWPIzEvRqFtgtAw0yuM=
 		</data>
 		<key>HomeScreen.nib</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		bpRKHEIq3iDvZilKGK90GZQ1Wp4=
+		2PkS4MjMDun7O18ljKGq4/C2u8s=
 		</data>
 		<key>LaunchScreen.nib</key>
 		<data>
@@ -553,14 +553,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GX41LbYNsp3jYrvMMSBQYt8y6Nzhmx1818VmJY21eAk=
+			jUpSynVrBgi1F9OzmeWfOEewHy0T/1XTgrQjlrFgt34=
 			</data>
 		</dict>
 		<key>Hello_MultiScreen_iPhone.exe</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DKAZsIQEPjFyKu2ZvwYRQnKuv2eC81QTEKq0e6zMWRE=
+			xOy8RsYuGTb/AcmlipDkaMRnqyPNlTd0z25Hj5qk+Eo=
 			</data>
 		</dict>
 		<key>HomeScreen.nib</key>
