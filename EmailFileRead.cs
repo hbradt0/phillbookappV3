@@ -292,13 +292,13 @@ namespace EmailReader //rename
             {
                 if (v.Count > 1)
                 {
-                    v.Remove(v.Last());
+                    v.RemoveAt(v.Count-1);
                     if (v.Last() == String.Empty)
                         v.RemoveAt(v.Count - 1);
                 }
                 else if (v.Count >= 0)
                 {
-                    v.Remove(v.Last());
+                    v.RemoveAt(v.Count - 1);
                 }
                 File.WriteAllLines(fileName, v);
             }

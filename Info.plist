@@ -29,8 +29,8 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow device to access Photo</string>
 	<key>CFBundleShortVersionString</key>
-	<string>89</string>
+	<string>91</string>
 	<key>CFBundleVersion</key>
-	<string>89</string>
+	<string>91</string>
 </dict>
 </plist>

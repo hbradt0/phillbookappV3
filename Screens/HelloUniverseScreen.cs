@@ -385,6 +385,7 @@ namespace Hello_MultiScreen_iPhone
             //editTextWrite = new UITextField();
             //textViewWrite.Frame = new CGRect(25, 25, 300, 150);
             //editTextWrite.Frame = new CGRect(25, 25, 300, 150);
+     
             var Confirm = new UIAlertView("Confirmation", "Are you Sure?", null, "Cancel", "Yes");
             Confirm.Show();
             Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
