@@ -33,5 +33,7 @@
 	<string>93</string>
 	<key>CFBundleVersion</key>
 	<string>93</string>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 </dict>
 </plist>

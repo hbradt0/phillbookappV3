@@ -3,7 +3,7 @@
     <Files>
       <File FileName="Screens/LoginScreen.cs" Line="167" Column="1" />
       <File FileName="Screens/HelloWorldScreen 2.cs" />
-      <File FileName="Screens/HelloWorldScreen.cs" Line="384" Column="1" />
+      <File FileName="Screens/HelloWorldScreen.cs" />
       <File FileName="Screens/HelloUniverseScreen.cs" />
       <File FileName="Screens/HomeScreen.cs" />
       <File FileName="Screens/HomeScreen2.cs" />
