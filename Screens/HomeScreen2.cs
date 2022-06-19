@@ -217,6 +217,7 @@ namespace Hello_MultiScreen_iPhone
             li[0].Frame = new CGRect(ResponsiveWidthLeft, editTextWrite.Frame.Bottom + width, editTextWrite.Frame.Width, 1);
         }
 
+
         void KeyboardWillShow(object sender, UIKeyboardEventArgs args)
         {
             keyboardShowing = editTextWrite.Focused;
@@ -232,6 +233,8 @@ namespace Hello_MultiScreen_iPhone
                     i = 50;
                 if (View.Frame.Height >= 845)
                     i = 30;
+                if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+                    i = 0;
                 var cGFrame = new CGRect(View.Frame.Left, View.Frame.Bottom - 30, 100, i);
                 scrollView.ScrollRectToVisible(cGFrame, true);
 
@@ -276,6 +279,7 @@ namespace Hello_MultiScreen_iPhone
 
         }
 
+
         private void ScrollTheView(bool scale)
         {
             UIView.BeginAnimations(string.Empty, IntPtr.Zero);
@@ -303,6 +307,7 @@ namespace Hello_MultiScreen_iPhone
         {
             UIApplication.SharedApplication.KeyWindow.EndEditing(true);
             keyboardOpen = false;
+
             int i = 0;
             Int32.TryParse(editTextDate.Text, out i);
             String txt2 = EmailReader.EmailFileRead.ReadFileFromDate(EmailFileRead.fileName2, i);
@@ -310,7 +315,18 @@ namespace Hello_MultiScreen_iPhone
             var activityItems = new NSObject[] { item };
             UIActivity[] applicationActivities = null;
             var activityController = new UIActivityViewController(activityItems, applicationActivities);
-            PresentViewController(activityController, true, null);
+
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone)
+            {
+                PresentViewController(activityController, true, null);
+            }
+            else
+            {
+                UIPopoverController popup = new UIPopoverController(activityController);
+                var CGrect = new CGRect(View.Frame.Left, View.Frame.Bottom + 100, 100, 100);
+                popup.PresentFromRect(CGrect, View, UIPopoverArrowDirection.Any, true);
+                PresentViewController(activityController, true, null);
+            }
         }
 
         //Upload to todo list (submit)
@@ -400,6 +416,17 @@ namespace Hello_MultiScreen_iPhone
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+            scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
+                scrollView.ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 300);
+                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
+
+            scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 7.5); //small
+            if (View.Frame.Height >= 670)
+                scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 400); //big
+            if (View.Frame.Height == 812)
+                scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 26); //small
+
             UIApplication.SharedApplication.KeyWindow.EndEditing(true);
             keyboardOpen = false;
             textViewWrite.Text = EmailFileRead.ReadText(EmailFileRead.fileName2);
@@ -407,12 +434,6 @@ namespace Hello_MultiScreen_iPhone
             ResponsiveWidthLeft = View.Frame.Width / 12;
             ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
             ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 65;
-
-            scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 7.5); //small
-            if (View.Frame.Height >= 670)
-                scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 400); //big
-            if (View.Frame.Height == 812)
-                scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 26); //small
 
             editTextDate.Frame = new CGRect(ResponsiveWidthLeft + 10, 500, 30, 30);
             Buttonbackyourstory.Frame = new CGRect(ResponsiveWidthRight, 25, 70, 30);
@@ -423,7 +444,22 @@ namespace Hello_MultiScreen_iPhone
             textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340);
             sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
             ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, 500, 30, 30);
-            borderFunction();
+
+            int expandipad = 40;
+            int expandipad2 = 100;
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
+            {
+                editTextDate.Frame = new CGRect(ResponsiveWidthLeft + 10, 500+expandipad2, 30, 30);
+                Buttonbackyourstory.Frame = new CGRect(ResponsiveWidthRight, 25 + expandipad2, 70, 30);
+                ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, 450 + expandipad2, 100, 30);
+                ButtonDelete.Frame = new CGRect(ResponsiveWidthRight, 500 + expandipad2, 100, 30);
+                ButtonDelete1Line.Frame = new CGRect(ResponsiveWidthLeft, 450 + expandipad2, 150, 30);
+                editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, 380+expandipad, ResponsiveSizeX, 50+expandipad);
+                textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340+expandipad);
+                sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
+                ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, 500 + expandipad2, 30, 30);
+            }
+                borderFunction();
 
             var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
             scrollView.ScrollRectToVisible(cgFrame, true);

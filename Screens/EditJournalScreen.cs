@@ -114,7 +114,7 @@ namespace Hello_MultiScreen_iPhone
             scrollView = new UIScrollView
             {
                 Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height),
-                ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 400),
+                ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 250),
                 BackgroundColor = UIColor.FromRGB(204, 204, 255),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
@@ -167,11 +167,13 @@ namespace Hello_MultiScreen_iPhone
                 keyboardShowing = true;
                 animDuration = args.AnimationDuration;
                 animCurve = args.AnimationCurve;
-                int i = 250;
+                int i = 200;
                 if (View.Frame.Height >= 670)
                     i = 30;
                 if (View.Frame.Height == 812)
                     i = 100;
+                if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+                    i = 0;
                 var cGFrame = new CGRect(View.Frame.Left, View.Frame.Bottom - 30, 100, i);
                 scrollView.ScrollRectToVisible(cGFrame, true);
 
@@ -216,6 +218,7 @@ namespace Hello_MultiScreen_iPhone
             }
 
         }
+
 
         private void ScrollTheView(bool scale)
         {
@@ -300,13 +303,20 @@ namespace Hello_MultiScreen_iPhone
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
+                scrollView.ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 300);
+                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
+            }
             booktextView.Text = EmailFileRead.ReadText();
             UIApplication.SharedApplication.KeyWindow.EndEditing(true);
             keyboardOpen = false;
 
             ResponsiveWidthLeft = View.Frame.Width / 12;
             ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
-            ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2-65;
+            ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 65;
 
             scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 4.5); //small
             if (View.Frame.Height >= 670)

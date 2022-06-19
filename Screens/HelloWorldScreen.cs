@@ -211,7 +211,17 @@ namespace Hello_MultiScreen_iPhone
             var activityItems = new NSObject[] { item };
             UIActivity[] applicationActivities = null;
             var activityController = new UIActivityViewController(activityItems, applicationActivities);
-            PresentViewController(activityController, true, null);
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone)
+            {
+                PresentViewController(activityController, true, null);
+            }
+            else
+            {
+                UIPopoverController popup = new UIPopoverController(activityController);
+                var CGrect = new CGRect(View.Frame.Left, View.Frame.Bottom + 100, 100, 100);
+                popup.PresentFromRect(CGrect, View, UIPopoverArrowDirection.Any, true);
+                PresentViewController(activityController, true, null);
+            }
         }
 
         public void curveRadius()
@@ -229,7 +239,17 @@ namespace Hello_MultiScreen_iPhone
             var activityItems = new NSObject[] { item };
             UIActivity[] applicationActivities = null;
             var activityController = new UIActivityViewController(activityItems, applicationActivities);
-            PresentViewController(activityController, true, null);
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone)
+            {
+                PresentViewController(activityController, true, null);
+            }
+            else
+            {
+                UIPopoverController popup = new UIPopoverController(activityController);
+                var CGrect = new CGRect(View.Frame.Left, View.Frame.Bottom + 100, 100, 100);
+                popup.PresentFromRect(CGrect, View, UIPopoverArrowDirection.Any, true);
+                PresentViewController(activityController, true, null);
+            }
         }
 
         void KeyboardWillShow(object sender, UIKeyboardEventArgs args)
@@ -354,7 +374,13 @@ namespace Hello_MultiScreen_iPhone
         {
 
             base.ViewDidAppear(animated);
-
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
+                scrollView.ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 300);
+                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
+            }
             ResponsiveWidthLeft = View.Frame.Width / 10;
             ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
             ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 65;

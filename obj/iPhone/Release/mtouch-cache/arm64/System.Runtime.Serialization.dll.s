@@ -22,7 +22,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 6.12.0 (2020-02/adf1bc4335d Tue Mar 22 14:10:44 EDT 2022)"
+	.asciz "Mono AOT Compiler 6.12.0 (2020-02/dffa5ab9224 Mon May 16 11:03:48 EDT 2022)"
 	.asciz "System.Runtime.Serialization.dll"
 	.asciz ""
 
@@ -931,7 +931,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "D12255F4-4431-4BA6-A49A-8E7213E99DC1"
+	.asciz "39F44427-0798-4EDC-ADF7-C935D6EBF462"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -1025,7 +1025,7 @@ _mono_aot_file_info:
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
-	.byte 36,112,100,214,83,154,140,71,216,220,96,169,38,56,175,3
+	.byte 109,192,8,132,128,221,246,107,224,78,149,189,220,87,102,129
 	.globl _mono_aot_module_System_Runtime_Serialization_info
 	.align 3
 _mono_aot_module_System_Runtime_Serialization_info:

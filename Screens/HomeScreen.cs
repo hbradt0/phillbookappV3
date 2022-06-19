@@ -60,6 +60,8 @@ namespace Hello_MultiScreen_iPhone
 		{
 			base.ViewDidLoad ();
 			ViewDidLoad1();
+            View.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+
             ResponsiveWidthLeft = View.Frame.Width/8;
             nfloat size = 30;
             if (View.Frame.Width / 8 >= View.Frame.Width - 30)
@@ -102,7 +104,7 @@ namespace Hello_MultiScreen_iPhone
             //View Issue
             Title = "My Custom View Controller";
             var user = new UIViewController();
-            user.View.BackgroundColor = UIColor.FromRGB(255,153,255);
+            user.View.BackgroundColor = UIColor.FromRGB(204, 204, 255);
             //View.LargeContentImage = imageView;
             ResponsiveWidthLeft = View.Frame.Width/8;
             nfloat size = 30;
@@ -136,7 +138,7 @@ namespace Hello_MultiScreen_iPhone
             scrollView = new UIScrollView
             {
                 Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height),
-                ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 200),
+                ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + View.Frame.Height / 3 + 300),
                 BackgroundColor = UIColor.FromRGB(204, 204, 255),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
@@ -189,9 +191,16 @@ namespace Hello_MultiScreen_iPhone
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);
-            ResponsiveWidthLeft = View.Frame.Width / 9;  
-            ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft*2;
-
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
+                scrollView.ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 200);
+                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
+            }
+            Foundation.NSNotificationCenter.DefaultCenter.AddObserver(new NSString("UIDeviceOrientationDidChangeNotification"), DeviceRotated);
+            ResponsiveWidthLeft = View.Frame.Width / 9;
+            ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
             int expander = 25;
             if (View.Frame.Height >= 670)
             {
@@ -199,6 +208,7 @@ namespace Hello_MultiScreen_iPhone
             }
             if (View.Frame.Height == 812)
                 expander = 28;
+
 
             //this.NavigationController.SetNavigationBarHidden (true, animated);
             UIImage img3 = new UIImage();
@@ -214,8 +224,6 @@ namespace Hello_MultiScreen_iPhone
             img2 = UIImage.FromFile(EmailFileRead.fileNameImage1);
             imageViewTitle.Image = img2;
             this.NavigationController.SetNavigationBarHidden(true, animated);
-
-            
             imageViewTitle.Frame = new CGRect(ResponsiveWidthLeft - 20, View.Frame.Top + 10, ResponsiveSizeX + 40, 80);
             btnHelloUniverse.Frame = new CGRect(ResponsiveWidthLeft, imageViewTitle.Frame.Bottom + expander, ResponsiveSizeX, ResponsiveSizeY);
             ButtonTodoList.Frame = new CGRect(ResponsiveWidthLeft, btnHelloUniverse.Frame.Bottom + expander, ResponsiveSizeX, ResponsiveSizeY);
@@ -225,6 +233,39 @@ namespace Hello_MultiScreen_iPhone
             btnHelloWorld.Frame = new CGRect(ResponsiveWidthLeft, imageViewPic.Frame.Bottom + expander, ResponsiveSizeX, ResponsiveSizeY);
             ButtonImageClick.Frame = new CGRect(ResponsiveWidthLeft, btnHelloWorld.Frame.Bottom + expander, ResponsiveSizeX, ResponsiveSizeY);
 
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                int expandipad = 10;
+                imageViewTitle.Frame = new CGRect(ResponsiveWidthLeft - 20, View.Frame.Top + 10, ResponsiveSizeX + 40, 80 + 30 + expandipad);
+                btnHelloUniverse.Frame = new CGRect(ResponsiveWidthLeft, imageViewTitle.Frame.Bottom + expander + expandipad, ResponsiveSizeX, ResponsiveSizeY + expandipad);
+                ButtonTodoList.Frame = new CGRect(ResponsiveWidthLeft, btnHelloUniverse.Frame.Bottom + expander + expandipad, ResponsiveSizeX, ResponsiveSizeY + expandipad);
+                imageView3.Frame = new CGRect(imageViewTitle.Frame.Left - 20, imageViewTitle.Frame.Top - 20
+                + 20, 70, 70);
+                imageViewPic.Frame = new CGRect(ResponsiveWidthLeft, ButtonTodoList.Frame.Bottom + expander + expandipad, ResponsiveSizeX, ResponsiveSizeX-50);
+                btnHelloWorld.Frame = new CGRect(ResponsiveWidthLeft, imageViewPic.Frame.Bottom + expander + expandipad, ResponsiveSizeX, ResponsiveSizeY + expandipad);
+                ButtonImageClick.Frame = new CGRect(ResponsiveWidthLeft, btnHelloWorld.Frame.Bottom + expander + expandipad, ResponsiveSizeX, ResponsiveSizeY + expandipad);
+
+            }
+            
+        }
+
+
+        void DeviceRotated(NSNotification notification)
+        {
+            if (UIDevice.CurrentDevice.Orientation == UIDeviceOrientation.LandscapeLeft || UIDevice.CurrentDevice.Orientation == UIDeviceOrientation.LandscapeRight)
+            {
+                scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
+                scrollView.ContentSize = new CGSize(View.Frame.Width + 400, View.Frame.Height + 400);
+                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleDimensions;
+            }
+            else
+            {
+                scrollView.Frame = new CGRect(0, 0, View.Frame.Width, View.Frame.Height);
+                scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + 200);
+                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
+            }
 
         }
 

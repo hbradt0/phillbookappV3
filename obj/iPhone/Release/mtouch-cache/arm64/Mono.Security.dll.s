@@ -22,7 +22,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 6.12.0 (2020-02/adf1bc4335d Tue Mar 22 14:10:44 EDT 2022)"
+	.asciz "Mono AOT Compiler 6.12.0 (2020-02/dffa5ab9224 Mon May 16 11:03:48 EDT 2022)"
 	.asciz "Mono.Security.dll"
 	.asciz ""
 
@@ -57672,7 +57672,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "BFEE631D-7136-4642-A3FF-D192A8753FFC"
+	.asciz "0B294E20-A7DC-44FB-847E-E6F57F0BF9F2"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -57766,7 +57766,7 @@ _mono_aot_file_info:
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
-	.byte 16,223,148,132,206,193,218,47,79,10,246,178,94,56,167,65
+	.byte 156,58,28,24,128,191,127,154,174,237,4,219,177,239,107,251
 	.globl _mono_aot_module_Mono_Security_info
 	.align 3
 _mono_aot_module_Mono_Security_info:

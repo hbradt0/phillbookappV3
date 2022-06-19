@@ -126,6 +126,7 @@ namespace Hello_MultiScreen_iPhone
                 //BackgroundColor = UIColor.FromRGB(178, 178, 227),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
+            
             ButtonShare.Layer.CornerRadius = 10;
             ButtonShare.AddTarget(ShareButtonClick, UIControlEvent.TouchUpInside);
 
@@ -142,7 +143,17 @@ namespace Hello_MultiScreen_iPhone
             var activityItems = new NSObject[] { item };
             UIActivity[] applicationActivities = null;
             var activityController = new UIActivityViewController(activityItems, applicationActivities);
-            PresentViewController(activityController, true, null);
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone)
+            {
+                PresentViewController(activityController, true, null);
+            }
+            else
+            {
+                UIPopoverController popup = new UIPopoverController(activityController);
+                var CGrect = new CGRect(View.Frame.Left, View.Frame.Bottom + 100, 100, 100);
+                popup.PresentFromRect(CGrect, View, UIPopoverArrowDirection.Any, true);
+                PresentViewController(activityController, true, null);
+            }
         }
 
         //Back to home view
@@ -157,20 +168,29 @@ namespace Hello_MultiScreen_iPhone
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-
-
-            ResponsiveWidthLeft = View.Frame.Width / 10;
-            ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
-            ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 100;
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
+                scrollView.ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 300);
+                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
+            }
 
             scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 6); //small
             if (View.Frame.Height >= 670)
                 scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 400); //big
 
+            ResponsiveWidthLeft = View.Frame.Width / 10;
+            ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
+            ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 100;
+
             imageView3.Frame = new CGRect(ResponsiveWidthLeft + 50, View.Frame.Top + 50, 175, 175);
             booktextView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 260, ResponsiveSizeX, 410);
             ButtonShare.Frame = new CGRect(booktextView.Frame.Right-35, View.Frame.Top + 675, 35, 35);
-
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
+            {
+                imageView3.Frame = new CGRect(ResponsiveWidthLeft + 50, View.Frame.Top + 50, 175+50, 175);
+            }
             booktextView.Text = EmailFileRead.ReadText();
             booktextView.TextColor = UIColor.Purple;
             if (EmailFileRead.code.ToLower() == EmailFileRead.CodeList[0])

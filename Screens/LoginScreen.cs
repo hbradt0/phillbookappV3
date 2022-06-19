@@ -114,30 +114,24 @@ namespace Hello_MultiScreen_iPhone
             UIImage img3 = new UIImage();
             img3 = UIImage.FromFile("TestPic.png");
             imageView3.Image = img3;
-            imageView3.Frame = new CGRect(ResponsiveWidthLeft+100, View.Frame.Top + 200, 100, 100);
 
-            Usernamelabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 350, 70, 30);
             Usernamelabel.BackgroundColor = UIColor.FromRGB(204, 204, 255);
             Usernamelabel.Text = "Username: ";
             Usernamelabel.TextAlignment = UITextAlignment.Center;
             Usernamelabel.TextColor = UIColor.Black;
 
-            Passwordlabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 400, 80, 30);
             Passwordlabel.Text = "Pin: ";
             Passwordlabel.TextAlignment = UITextAlignment.Center;
             Passwordlabel.BackgroundColor = UIColor.FromRGB(204, 204, 255);
             Passwordlabel.TextColor = UIColor.Black;
 
-            listView.Frame = new CGRect(Usernamelabel.Frame.X, View.Frame.Top + 160, ResponsiveSizeX-90, 135);
             listView.Source = new TableSource(list);
             listView.BackgroundColor = UIColor.FromRGB(100, 149, 237);
             listView.TintColor = UIColor.Cyan;
 
-            ShowText.Frame = new CGRect(Usernamelabel.Frame.X+220, View.Frame.Top + 160, 50, 30);
             ShowText.BackgroundColor = UIColor.SystemPurple;
             ShowText.SetTitle("View", UIControlState.Normal);
 
-            loginemail.Frame = new CGRect(Usernamelabel.Frame.X+70, View.Frame.Top + 350, ResponsiveSizeX-80, 30);
             loginemail.BackgroundColor = UIColor.White;
             loginemail.TextColor = UIColor.SystemPurple;
             loginemail.KeyboardType = UIKeyboardType.ASCIICapable;
@@ -147,7 +141,6 @@ namespace Hello_MultiScreen_iPhone
             var g = new UITapGestureRecognizer(() => View.EndEditing(true));
             g.CancelsTouchesInView = false; //for iOS5View.AddGestureRecognizer (g);
 
-            loginpassword.Frame = new CGRect(Usernamelabel.Frame.X+70, View.Frame.Top + 400, ResponsiveSizeX-80, 30);
             loginpassword.BackgroundColor = UIColor.White;
             loginpassword.TextColor = UIColor.SystemPurple;
             loginpassword.KeyboardType = UIKeyboardType.ASCIICapable;
@@ -155,28 +148,22 @@ namespace Hello_MultiScreen_iPhone
 
             LoginButton.BackgroundColor = UIColor.SystemPurple;
             LoginButton.SetTitle("Login", UIControlState.Normal);
-            LoginButton.Frame = new CGRect(Usernamelabel.Frame.X+70, View.Frame.Top + 460, ResponsiveSizeX-80, 30);
 
             DownloadCloud.BackgroundColor = UIColor.SystemIndigo;
             DownloadCloud.SetTitle("Download Cloud Data", UIControlState.Normal);
-            DownloadCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 350, ResponsiveSizeX, 30);
 
-            textView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 410, ResponsiveSizeX, 100);
             textView.Text = "";
             textView.BackgroundColor = UIColor.White;
             textView.TextColor = UIColor.Black;
 
             UploadCloud.BackgroundColor = UIColor.SystemBlue;
             UploadCloud.SetTitle("Upload Cloud Data", UIControlState.Normal);
-            UploadCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 550, ResponsiveSizeX, 30);
 
             Logout.BackgroundColor = UIColor.SystemTeal;
             Logout.SetTitle("Logout", UIControlState.Normal);
-            Logout.Frame = new CGRect(ResponsiveWidthRight, View.Frame.Top + 100, 50, 30);
 
             DeleteCloud.BackgroundColor = UIColor.Red;
             DeleteCloud.SetTitle("Delete Cloud Files", UIControlState.Normal);
-            DeleteCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 610, ResponsiveSizeX, 30);
 
             if (FireBaseRead.GetphoneID() != "")
             {
@@ -606,9 +593,57 @@ namespace Hello_MultiScreen_iPhone
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
-            scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 6); //small
-            if (View.Frame.Height >= 670)
-                scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 400); //big
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
+                scrollView.ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 300);
+                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
+
+                ResponsiveWidthLeft = View.Frame.Width / 10;
+                ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
+                ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 65;
+
+                LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 50);
+                imageView3.Frame = new CGRect(ResponsiveWidthLeft + 100, View.Frame.Top + 200, 100, 100);
+                Usernamelabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 350, 70, 30);
+                Passwordlabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 400, 80, 30);
+                listView.Frame = new CGRect(Usernamelabel.Frame.X, View.Frame.Top + 160, ResponsiveSizeX - 90, 135);
+                ShowText.Frame = new CGRect(listView.Frame.Right+10, View.Frame.Top + 160, 50, 30);
+                loginemail.Frame = new CGRect(Usernamelabel.Frame.X + 70, View.Frame.Top + 350, ResponsiveSizeX - 80, 30);
+                loginpassword.Frame = new CGRect(Usernamelabel.Frame.X + 70, View.Frame.Top + 400, ResponsiveSizeX - 80, 30);
+                LoginButton.Frame = new CGRect(Usernamelabel.Frame.X + 70, View.Frame.Top + 460, ResponsiveSizeX - 80, 30);
+                DownloadCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 350, ResponsiveSizeX, 30);
+                textView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 410, ResponsiveSizeX, 100);
+                UploadCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 550, ResponsiveSizeX, 30);
+                Logout.Frame = new CGRect(ResponsiveWidthRight, View.Frame.Top + 100, 50, 30);
+                DeleteCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 610, ResponsiveSizeX, 30);
+            }
+            else
+            {
+                ResponsiveWidthLeft = View.Frame.Width / 10;
+                ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
+                ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 65;
+
+                LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 50);
+                imageView3.Frame = new CGRect(ResponsiveWidthLeft + 100, View.Frame.Top + 200, 100, 100);
+                Usernamelabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 350, 70, 30);
+                Passwordlabel.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 400, 80, 30);
+                listView.Frame = new CGRect(Usernamelabel.Frame.X, View.Frame.Top + 160, ResponsiveSizeX - 90, 135);
+                ShowText.Frame = new CGRect(listView.Frame.Right + 10, View.Frame.Top + 160, 50, 30);
+                loginemail.Frame = new CGRect(Usernamelabel.Frame.X + 70, View.Frame.Top + 350, ResponsiveSizeX - 80, 30);
+                loginpassword.Frame = new CGRect(Usernamelabel.Frame.X + 70, View.Frame.Top + 400, ResponsiveSizeX - 80, 30);
+                LoginButton.Frame = new CGRect(Usernamelabel.Frame.X + 70, View.Frame.Top + 460, ResponsiveSizeX - 80, 30);
+                DownloadCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 350, ResponsiveSizeX, 30);
+                textView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 410, ResponsiveSizeX, 100);
+                UploadCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 550, ResponsiveSizeX, 30);
+                Logout.Frame = new CGRect(ResponsiveWidthRight, View.Frame.Top + 100, 50, 30);
+                DeleteCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 610, ResponsiveSizeX, 30);
+
+                scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 6); //small
+                if (View.Frame.Height >= 670)
+                    scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 400); //big
+            }
             var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
             scrollView.ScrollRectToVisible(cgFrame, true);
 

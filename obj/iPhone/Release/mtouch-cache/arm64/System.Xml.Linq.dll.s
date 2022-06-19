@@ -22,7 +22,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 6.12.0 (2020-02/adf1bc4335d Tue Mar 22 14:10:44 EDT 2022)"
+	.asciz "Mono AOT Compiler 6.12.0 (2020-02/dffa5ab9224 Mon May 16 11:03:48 EDT 2022)"
 	.asciz "System.Xml.Linq.dll"
 	.asciz ""
 
@@ -21509,7 +21509,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "43AABCB5-943D-401D-8ED1-B74E48436679"
+	.asciz "95B3CB66-65A2-4597-9116-C02AFBDCE558"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -21603,7 +21603,7 @@ _mono_aot_file_info:
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
-	.byte 226,140,37,7,87,242,69,192,35,62,161,0,103,253,165,5
+	.byte 142,49,17,221,249,119,214,39,26,195,50,139,146,40,134,237
 	.globl _mono_aot_module_System_Xml_Linq_info
 	.align 3
 _mono_aot_module_System_Xml_Linq_info:

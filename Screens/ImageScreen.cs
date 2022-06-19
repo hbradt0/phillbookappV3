@@ -61,7 +61,7 @@ namespace Hello_MultiScreen_iPhone
             BackgroundImage3 = new UIButton(UIButtonType.System);
             BackgroundImage4 = new UIButton(UIButtonType.System);
 
-            UIScrollView scrollView = new UIScrollView();
+            scrollView = new UIScrollView();
             dateTimeText = new UIDatePicker();
             dateTimeText.Hidden = true;
             ButtonDateClick = new UIButton(UIButtonType.System);
@@ -123,7 +123,7 @@ namespace Hello_MultiScreen_iPhone
             //ScrollView
             scrollView = new UIScrollView
             {
-                Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height),
+                Frame = new CGRect(0, 0, View.Frame.Width+200, View.Frame.Height),
                 ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 300),
                 BackgroundColor = UIColor.FromRGB(204, 204, 255),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
@@ -206,7 +206,6 @@ namespace Hello_MultiScreen_iPhone
             UIImage imgtitle = new UIImage();
             imgtitle = UIImage.FromFile(EmailFileRead.fileNameImage1);
             BackgroundImage4.SetBackgroundImage(imgtitle, UIControlState.Normal);
-            BackgroundImage4.Frame = new CGRect(ResponsiveWidthLeft, 650, 100, 30);
         }
 
         public void BackgroundImageShow(object sender, EventArgs eventArgs)
@@ -283,18 +282,7 @@ namespace Hello_MultiScreen_iPhone
         UIImage MaxResizeImage(UIImage sourceImage, float maxWidth, float maxHeight, UIImageView view)
         {
             view.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 130, ResponsiveSizeX, ResponsiveSizeX);
-            /*
-            var sourceSize = sourceImage.Size;
-            var maxResizeFactor = Math.Min(maxWidth / sourceSize.Width, maxHeight / sourceSize.Height);
-            if (maxResizeFactor > 1) return sourceImage;
-            var width = maxResizeFactor * sourceSize.Width;
-            var height = maxResizeFactor * sourceSize.Height;
-            UIGraphics.BeginImageContext(new CGSize(width, height));
-            sourceImage.Draw(new CGRect(0, 0, width, height));
-            var resultImage = UIGraphics.GetImageFromCurrentImageContext();
-            UIGraphics.EndImageContext();
-            view.Frame = new CGRect(15, 0 + 60, height, width);
-            return resultImage;*/
+
             return sourceImage;
         }
 
@@ -328,41 +316,17 @@ namespace Hello_MultiScreen_iPhone
 
                 data.Save(fileName, false, out err);
 
-                //var newHeight = (image.Size.Height / (image.Size.Width + image.Size.Height)) *2.1 * View.Frame.Width-20;
-                //var newWidth = (image.Size.Width / (image.Size.Width + image.Size.Height)) *2.1 * View.Frame.Width-20;
 
-                //if (newWidth >= View.Frame.Width - 20)
-                //    newWidth = View.Frame.Width - 20;
-
-                //if (newHeight >= 350)
-                //    newHeight = 350;
                 var v = MaxResizeImage(image, (float)View.Frame.Width - 20, (float)View.Frame.Width - 20, textViewWrite);
 
-                //textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 60, newHeight,newWidth);
-                // UIImage img2 = new UIImage();
-                //img2 = UIImage.FromFile(fileName);
                 textViewWrite.Image = v;
-
-                // await  voider(fileName); 
             }
             else
             {
             }
             imagePicker.DismissModalViewController(true);
         }
-        /*
-        void voider(String fileName)
-        {
 
-            TesseractApi tessApi = new TesseractApi();
-            tessApi.Init("eng");
-            //tessApi.Init("eng");
-            System.Threading.Thread.Sleep(1000 * 5);
-             tessApi.SetImage(fileName);
-            if (tessApi.Text != "")
-                EmailFileRead.WriteText(tessApi.Text);
-        }
-        */
 
         void OnImagePickerCancelled(object sender, EventArgs args)
         {
@@ -373,10 +337,6 @@ namespace Hello_MultiScreen_iPhone
         //Delete everything your story
         private void ButtonDeleteClick(object sender, EventArgs eventArgs)
         {
-            //textViewWrite = new UITextView();
-            //editTextWrite = new UITextField();
-            //textViewWrite.Frame = new CGRect(25, 25, 300, 150);
-            //editTextWrite.Frame = new CGRect(25, 25, 300, 150);
             var Confirm = new UIAlertView("Confirmation", "Are you Sure ", null, "Cancel", "Yes");
             Confirm.Show();
             Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
@@ -397,10 +357,6 @@ namespace Hello_MultiScreen_iPhone
         //Delete 1 line
         private void ButtonDelete1LineClick(object sender, EventArgs eventArgs)
         {
-            //textViewWrite = new UITextView();
-            //editTextWrite = new UITextField();
-            //textViewWrite.Frame = new CGRect(25, 25, 300, 150);
-            //editTextWrite.Frame = new CGRect(25, 25, 300, 150);
             var Confirm = new UIAlertView("Confirmation", "Are you Sure?", null, "Cancel", "Yes");
             Confirm.Show();
             Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
@@ -427,15 +383,22 @@ namespace Hello_MultiScreen_iPhone
             var txt2 = NSData.FromFile(EmailReader.EmailFileRead.GetImageFileName(myDate));
             var item = NSObject.FromObject(txt2);
 
-            //String txt3 = EmailReader.EmailFileRead.ReadFileFromDateToNextDay(myDate);
-            //var item3 = NSObject.FromObject(txt3);
-
             var activityItems = new NSObject[] { item }; //, item3 };
             UIActivity[] applicationActivities = null;
 
             var activityController = new UIActivityViewController(activityItems, applicationActivities);
 
-            this.PresentViewController(activityController, true, null);
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone)
+            {
+                PresentViewController(activityController, true, null);
+            }
+            else
+            {
+                UIPopoverController popup = new UIPopoverController(activityController);
+                var CGrect = new CGRect(View.Frame.Left, View.Frame.Bottom + 100, 100, 100);
+                popup.PresentFromRect(CGrect, View, UIPopoverArrowDirection.Any, true);
+                PresentViewController(activityController, true, null);
+            }
         }
 
         private void openCamera(object sender, EventArgs eventArgs)
@@ -485,25 +448,8 @@ namespace Hello_MultiScreen_iPhone
 
                 var v = MaxResizeImage(image, (float)View.Frame.Width - 20, (float)View.Frame.Width - 20, textViewWrite);
 
-                //textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 60, newHeight,newWidth);
-                // UIImage img2 = new UIImage();
-                //img2 = UIImage.FromFile(fileName);
                 textViewWrite.Image = v;
-                /*
-                var newHeight = (image.Size.Height / (image.Size.Width + image.Size.Height)) * 2.1 * View.Frame.Width-20;
-                var newWidth = (image.Size.Width / (image.Size.Width + image.Size.Height)) * 2.1 * View.Frame.Width-20;
 
-                if (newWidth >= View.Frame.Width - 20)
-                    newWidth = View.Frame.Width - 20;
-
-                if (newHeight >= 350)
-                    newHeight = 350;
-
-                textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 60, newHeight, newWidth);
-                UIImage img2 = new UIImage();
-                img2 = UIImage.FromFile(fileName);
-                */
-                //textViewWrite.Image = img2;
             }
 
             pickerView.DismissModalViewController(true);
@@ -535,6 +481,13 @@ namespace Hello_MultiScreen_iPhone
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            { 
+                scrollView.Frame = new CGRect(0, 0, View.Frame.Width, View.Frame.Height);
+                scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + 300);
+                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
+            }
             dateTimeText.Hidden = false;
             UIImage img2 = new UIImage();
 
@@ -553,22 +506,21 @@ namespace Hello_MultiScreen_iPhone
             ResponsiveSizeX = View.Frame.Width - ResponsiveWidthLeft * 2;
             ResponsiveWidthRight = View.Frame.Width - ResponsiveWidthLeft * 2 - 65;
 
-
-            ImagePickerButton.Frame = new CGRect(ResponsiveWidthLeft + 60, 465, 50, 50);
-            BackgroundImage.Frame = new CGRect(ResponsiveWidthRight, 650, 100, 30);
-            BackgroundImage4.Frame = new CGRect(ResponsiveWidthLeft, 650, 100, 30);
-            CameraButton.Frame = new CGRect(ResponsiveWidthLeft, 465, 50, 50);
-
             img2 = UIImage.FromFile(fileName);
             var e = MaxResizeImage(img2, (float)View.Frame.Width - 20, (float)View.Frame.Width - 20, textViewWrite);
             textViewWrite.Image = e;
             dateTimeText.Frame = new CGRect(ResponsiveWidthRight, View.Frame.Top + 80, 100, 30);
 
-            ButtonDateClick.Frame = new CGRect(ResponsiveWidthRight + 50, 465, 50, 50);
+            ImagePickerButton.Frame = new CGRect(ResponsiveWidthLeft + 60, textViewWrite.Frame.Bottom + 15, 50, 50);
+            CameraButton.Frame = new CGRect(ResponsiveWidthLeft, textViewWrite.Frame.Bottom+15, 50, 50);
+
+            ButtonDateClick.Frame = new CGRect(ResponsiveWidthRight + 50, textViewWrite.Frame.Bottom+15, 50, 50);
             ButtonDelete.Frame = new CGRect(ResponsiveWidthRight, CameraButton.Frame.Bottom + 20, 100, 30);
             ButtonDelete1Line.Frame = new CGRect(ResponsiveWidthLeft, CameraButton.Frame.Bottom + 20, 100, 30);
             BackgroundImage2.Frame = new CGRect(ResponsiveWidthLeft, ButtonDelete1Line.Frame.Bottom + 20, 60, 60);
             BackgroundImage3.Frame = new CGRect(ResponsiveWidthRight + 50, ButtonDelete1Line.Frame.Bottom + 20, 50, 50);
+            BackgroundImage.Frame = new CGRect(ResponsiveWidthRight, BackgroundImage2.Frame.Y + 70, 100, 30);
+            BackgroundImage4.Frame = new CGRect(ResponsiveWidthLeft, BackgroundImage2.Frame.Y + 70, 100, 30);
 
 
         }
