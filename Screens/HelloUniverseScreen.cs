@@ -229,7 +229,7 @@ namespace Hello_MultiScreen_iPhone
                     i = 50;
                 if (View.Frame.Height >= 845)
                     i = 30;
-                if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+                if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad && View.Frame.Height>1024)
                     i = 0;
                 var cGFrame = new CGRect(View.Frame.Left, View.Frame.Bottom - 30, 100, i);
                 scrollView.ScrollRectToVisible(cGFrame, true);
@@ -480,7 +480,7 @@ namespace Hello_MultiScreen_iPhone
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
             {
                 int expandipad = 60;
-                int expandipad2 = 120;
+                int expandipad2 = 115;
                 int expandipad3 = 70;
                 dateTimeText.Hidden = false;
                 dateTimeText.Frame = new CGRect(ResponsiveWidthRight - 25, 550 + expandipad2, 100, 30);
