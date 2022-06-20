@@ -64,6 +64,7 @@ namespace Hello_MultiScreen_iPhone
             View.BackgroundColor = UIColor.FromRGB(178,178,227);
             var user = new UIViewController();
             user.View.BackgroundColor = UIColor.FromRGB(178, 178, 227);
+            this.View.LargeContentTitle = "";
 
             //Initialize Buttons
             Button3 = new UIButton(UIButtonType.System);
@@ -111,6 +112,7 @@ namespace Hello_MultiScreen_iPhone
             Button3.Layer.CornerRadius = 10;
 
             //ScrollView
+ 
             scrollView = new UIScrollView
             {
                 Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height),
@@ -118,6 +120,11 @@ namespace Hello_MultiScreen_iPhone
                 BackgroundColor = UIColor.FromRGB(204, 204, 255),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView = new UIScrollView();
+            }
+          
 
             Button3.AddTarget(Button3Click, UIControlEvent.TouchUpInside);
             ButtonDelete.AddTarget(ButtonDeleteClick, UIControlEvent.TouchUpInside);

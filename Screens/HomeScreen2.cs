@@ -152,7 +152,10 @@ namespace Hello_MultiScreen_iPhone
                 BackgroundColor = UIColor.FromRGB(204, 204, 255),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
-
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView = new UIScrollView();
+            }
             borderFunction();
             curveRadius();
             //On click Events
@@ -459,7 +462,21 @@ namespace Hello_MultiScreen_iPhone
                 sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
                 ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, 500 + expandipad2, 30, 30);
             }
-                borderFunction();
+            if (View.Frame.Height >= 850)
+            {
+                 expandipad = 20;
+                expandipad2 = 40;
+                editTextDate.Frame = new CGRect(ResponsiveWidthLeft + 10, 500 + expandipad2, 30, 30);
+                Buttonbackyourstory.Frame = new CGRect(ResponsiveWidthRight, 25 + expandipad2, 70, 30);
+                ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, 450 + expandipad2, 100, 30);
+                ButtonDelete.Frame = new CGRect(ResponsiveWidthRight, 500 + expandipad2, 100, 30);
+                ButtonDelete1Line.Frame = new CGRect(ResponsiveWidthLeft, 450 + expandipad2, 150, 30);
+                editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, 380 + expandipad, ResponsiveSizeX, 50 + expandipad);
+                textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340 + expandipad);
+                sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
+                ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, 500 + expandipad2, 30, 30);
+            }
+            borderFunction();
 
             var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
             scrollView.ScrollRectToVisible(cgFrame, true);

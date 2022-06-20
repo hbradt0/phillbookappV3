@@ -166,6 +166,10 @@ namespace Hello_MultiScreen_iPhone
                 //BackgroundColor = UIColor.FromRGB(178, 178, 227),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView = new UIScrollView();
+            }
             ButtonShare.Layer.CornerRadius = 10;
             curveRadius();
             hiddenbutton.AddTarget(HiddenClick, UIControlEvent.TouchUpInside);

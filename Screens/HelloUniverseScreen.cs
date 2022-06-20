@@ -153,6 +153,10 @@ namespace Hello_MultiScreen_iPhone
                 BackgroundColor = UIColor.FromRGB(204, 204, 255),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView = new UIScrollView();
+            }
             curveRadius();
             //On click Events
 
@@ -454,20 +458,40 @@ namespace Hello_MultiScreen_iPhone
             ButtonDateClick.Frame = new CGRect(dateTimeText.Frame.Right, dateTimeText.Frame.Y, 30, 30);
             textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340);
 
-            int expandipad = 40;
-            int expandipad2 = 100;
-            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
+
+            if (View.Frame.Height >= 850)
             {
+                int expandipad = 30;
+                int expandipad2 = 62;
+                int expandipad3 = 70;
                 dateTimeText.Hidden = false;
-                dateTimeText.Frame = new CGRect(ResponsiveWidthRight - 25, 550 + expandipad2, 100, 30);
-                EditJournalButton.Frame = new CGRect(ResponsiveWidthLeft, 545 + expandipad2, 100, 30);
-                editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, 380+expandipad, ResponsiveSizeX, 90+expandipad);
+                dateTimeText.Frame = new CGRect(ResponsiveWidthRight - 25, 550 + expandipad3, 100, 30);
+                EditJournalButton.Frame = new CGRect(ResponsiveWidthLeft, 545 + expandipad3, 100, 30);
+                editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, 380 + expandipad, ResponsiveSizeX, 90 + expandipad);
 
                 ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, 488 + expandipad2, 100, 30);
                 ButtonDelete1Line.Frame = new CGRect(
                     ResponsiveWidthLeft, 488 + expandipad2, 100, 30);
                 ButtonDateClick.Frame = new CGRect(dateTimeText.Frame.Right, dateTimeText.Frame.Y, 30, 30);
-                textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340+expandipad);
+                textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340 + expandipad);
+
+            }
+
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
+            {
+                int expandipad = 60;
+                int expandipad2 = 120;
+                int expandipad3 = 70;
+                dateTimeText.Hidden = false;
+                dateTimeText.Frame = new CGRect(ResponsiveWidthRight - 25, 550 + expandipad2, 100, 30);
+                EditJournalButton.Frame = new CGRect(ResponsiveWidthLeft, 545 + expandipad2, 100, 30);
+                editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, 380 + expandipad, ResponsiveSizeX, 90 + expandipad);
+
+                ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, 488 + expandipad2, 100, 30);
+                ButtonDelete1Line.Frame = new CGRect(
+                    ResponsiveWidthLeft, 488 + expandipad2, 100, 30);
+                ButtonDateClick.Frame = new CGRect(dateTimeText.Frame.Right, dateTimeText.Frame.Y, 30, 30);
+                textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340 + expandipad);
             }
             borderFunction();
 

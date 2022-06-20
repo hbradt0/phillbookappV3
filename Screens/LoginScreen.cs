@@ -65,6 +65,7 @@ namespace Hello_MultiScreen_iPhone
         //Read your journal page
         public void ViewDidLoad1()
         {
+           
             ResponsiveWidthLeft = View.Frame.Width / 8;
             nfloat size = 30;
             if (View.Frame.Width / 8 >= View.Frame.Width - 30)
@@ -226,6 +227,10 @@ namespace Hello_MultiScreen_iPhone
                 //BackgroundColor = UIColor.FromRGB(178, 178, 227),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView = new UIScrollView();
+            }
             curveRadius();
             LoginButton.AddTarget(LoginButtonClick, UIControlEvent.TouchUpInside);
             DownloadCloud.AddTarget(DownloadToCloud, UIControlEvent.TouchUpInside);

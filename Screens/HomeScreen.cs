@@ -142,6 +142,10 @@ namespace Hello_MultiScreen_iPhone
                 BackgroundColor = UIColor.FromRGB(204, 204, 255),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView = new UIScrollView();
+            }
             imageViewTitle = new UIImageView();
 
 
@@ -235,7 +239,9 @@ namespace Hello_MultiScreen_iPhone
 
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
             {
-                int expandipad = 10;
+                int expandipad = 1;
+                if(View.Frame.Height > 1024)
+                    expandipad = 5;
                 imageViewTitle.Frame = new CGRect(ResponsiveWidthLeft - 20, View.Frame.Top + 10, ResponsiveSizeX + 40, 80 + 30 + expandipad);
                 btnHelloUniverse.Frame = new CGRect(ResponsiveWidthLeft, imageViewTitle.Frame.Bottom + expander + expandipad, ResponsiveSizeX, ResponsiveSizeY + expandipad);
                 ButtonTodoList.Frame = new CGRect(ResponsiveWidthLeft, btnHelloUniverse.Frame.Bottom + expander + expandipad, ResponsiveSizeX, ResponsiveSizeY + expandipad);
@@ -257,7 +263,7 @@ namespace Hello_MultiScreen_iPhone
                 scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
                 scrollView.ContentSize = new CGSize(View.Frame.Width + 400, View.Frame.Height + 400);
                 scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
-                scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleDimensions;
+                scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
             }
             else
             {

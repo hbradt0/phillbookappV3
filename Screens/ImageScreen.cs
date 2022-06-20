@@ -128,6 +128,10 @@ namespace Hello_MultiScreen_iPhone
                 BackgroundColor = UIColor.FromRGB(204, 204, 255),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView = new UIScrollView();
+            }
             curveRadius();
             //Button clicks
             ButtonDateClick.AddTarget(ButtonDateClickEvent, UIControlEvent.TouchUpInside);

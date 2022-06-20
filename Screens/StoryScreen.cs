@@ -72,7 +72,7 @@ namespace Hello_MultiScreen_iPhone
             View.BackgroundColor = UIColor.FromRGB(178, 178, 227);
             var user = new UIViewController();
             user.View.BackgroundColor = UIColor.FromRGB(178, 178, 227);
-
+            this.View.LargeContentTitle = "";
             //Initialize Buttons
             Button3 = new UIButton(UIButtonType.System);
             //UIScrollView scrollView = new UIScrollView();
@@ -126,7 +126,11 @@ namespace Hello_MultiScreen_iPhone
                 //BackgroundColor = UIColor.FromRGB(178, 178, 227),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
-            
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
+            {
+                scrollView = new UIScrollView();
+            }
+
             ButtonShare.Layer.CornerRadius = 10;
             ButtonShare.AddTarget(ShareButtonClick, UIControlEvent.TouchUpInside);
 
