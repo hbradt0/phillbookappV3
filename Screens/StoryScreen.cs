@@ -190,7 +190,14 @@ namespace Hello_MultiScreen_iPhone
 
             imageView3.Frame = new CGRect(ResponsiveWidthLeft + 50, View.Frame.Top + 50, 175, 175);
             booktextView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 260, ResponsiveSizeX, 410);
-            ButtonShare.Frame = new CGRect(booktextView.Frame.Right-35, View.Frame.Top + 675, 35, 35);
+
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad && View.Frame.Height >= 1100)
+            {
+                booktextView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 260, ResponsiveSizeX, 410+200);
+
+            }
+
+            ButtonShare.Frame = new CGRect(booktextView.Frame.Right-35,booktextView.Frame.Bottom+15, 35, 35);
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
             {
                 imageView3.Frame = new CGRect(ResponsiveWidthLeft + 50, View.Frame.Top + 50, 175+50, 175);
@@ -263,7 +270,9 @@ namespace Hello_MultiScreen_iPhone
                 imageView3.Image = UIImage.FromBundle("chapter4.png");
             }
             scrollView.ScrollRectToVisible(booktextView.Frame, true);
-      
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
+                booktextView.Font = UIFont.SystemFontOfSize(14);
+
         }
 
     }

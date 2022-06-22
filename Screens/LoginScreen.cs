@@ -623,6 +623,7 @@ namespace Hello_MultiScreen_iPhone
                 UploadCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 550, ResponsiveSizeX, 30);
                 Logout.Frame = new CGRect(ResponsiveWidthRight, View.Frame.Top + 100, 50, 30);
                 DeleteCloud.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 610, ResponsiveSizeX, 30);
+                textView.Font = UIFont.SystemFontOfSize(14);
             }
             else
             {

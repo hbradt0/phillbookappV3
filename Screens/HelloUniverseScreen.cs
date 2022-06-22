@@ -229,10 +229,14 @@ namespace Hello_MultiScreen_iPhone
                     i = 50;
                 if (View.Frame.Height >= 845)
                     i = 30;
-                if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad && View.Frame.Height>1024)
+                if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad && View.Frame.Height > 1080)
+                {
                     i = 0;
+                }
                 var cGFrame = new CGRect(View.Frame.Left, View.Frame.Bottom - 30, 100, i);
                 scrollView.ScrollRectToVisible(cGFrame, true);
+
+   
 
                 var r = UIKeyboard.FrameBeginFromNotification(args.Notification);
                 //if (r.Left >= editTextWrite.Frame.Right || r.Top >= editTextWrite.Frame.Bottom || r.Right <= editTextWrite.Frame.Left || r.Bottom <= editTextWrite.Frame.Top)
@@ -479,24 +483,42 @@ namespace Hello_MultiScreen_iPhone
 
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
             {
-                int expandipad = 60;
-                int expandipad2 = 115;
-                int expandipad3 = 70;
+                int expandipad = 75;
                 dateTimeText.Hidden = false;
-                dateTimeText.Frame = new CGRect(ResponsiveWidthRight - 25, 550 + expandipad2, 100, 30);
-                EditJournalButton.Frame = new CGRect(ResponsiveWidthLeft, 545 + expandipad2, 100, 30);
-                editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, 380 + expandipad, ResponsiveSizeX, 90 + expandipad);
-
-                ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, 488 + expandipad2, 100, 30);
+                textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 40, ResponsiveSizeX, 340 + expandipad);
+                editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, textViewWrite.Frame.Bottom+15, ResponsiveSizeX, 90 + expandipad);
+                ResponsiveWidthRight = editTextWrite.Frame.Right - 100;
+                ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, editTextWrite.Frame.Bottom + 30, 100, 30);
                 ButtonDelete1Line.Frame = new CGRect(
-                    ResponsiveWidthLeft, 488 + expandipad2, 100, 30);
+                    ResponsiveWidthLeft, editTextWrite.Frame.Bottom + 30, 100, 30);
+
+                dateTimeText.Frame = new CGRect(ResponsiveWidthRight - 25, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 100, 30);
+                EditJournalButton.Frame = new CGRect(ResponsiveWidthLeft, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 100, 30);
+                ButtonDateClick.Frame = new CGRect(dateTimeText.Frame.Right, dateTimeText.Frame.Y, 30, 30);
+                textViewWrite.Font = UIFont.SystemFontOfSize(14);
+                editTextWrite.Font = UIFont.SystemFontOfSize(14);
+            }
+
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad && View.Frame.Height >= 1194)
+            {
+                int expandipad = 140;
+                dateTimeText.Hidden = false;
+                editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, 380 + expandipad, ResponsiveSizeX, 90 + expandipad/2);
+                ResponsiveWidthRight = editTextWrite.Frame.Right - 100;
+                ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, editTextWrite.Frame.Bottom + 30, 100, 30);
+                ButtonDelete1Line.Frame = new CGRect(
+                    ResponsiveWidthLeft, editTextWrite.Frame.Bottom + 30, 100, 30);
+
+                dateTimeText.Frame = new CGRect(ResponsiveWidthRight - 25, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 100, 30);
+                EditJournalButton.Frame = new CGRect(ResponsiveWidthLeft, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 100, 30);
                 ButtonDateClick.Frame = new CGRect(dateTimeText.Frame.Right, dateTimeText.Frame.Y, 30, 30);
                 textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340 + expandipad);
             }
             borderFunction();
-
             var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
             scrollView.ScrollRectToVisible(cgFrame, true);
+            
+            
         }
     }
 }

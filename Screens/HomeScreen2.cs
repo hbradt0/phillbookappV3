@@ -448,19 +448,24 @@ namespace Hello_MultiScreen_iPhone
             sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
             ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, 500, 30, 30);
 
-            int expandipad = 40;
+            int expandipad = 60;
             int expandipad2 = 100;
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
             {
-                editTextDate.Frame = new CGRect(ResponsiveWidthLeft + 10, 500+expandipad2, 30, 30);
-                Buttonbackyourstory.Frame = new CGRect(ResponsiveWidthRight, 25 + expandipad2, 70, 30);
-                ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, 450 + expandipad2, 100, 30);
-                ButtonDelete.Frame = new CGRect(ResponsiveWidthRight, 500 + expandipad2, 100, 30);
-                ButtonDelete1Line.Frame = new CGRect(ResponsiveWidthLeft, 450 + expandipad2, 150, 30);
-                editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, 380+expandipad, ResponsiveSizeX, 50+expandipad);
-                textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340+expandipad);
+                var rightpad = editTextWrite.Frame.Right - 100;
+                textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340 + expandipad);
+                ButtonyourstoryscreenUpload.Frame = new CGRect(rightpad, editTextWrite.Frame.Bottom + 30, 100, 30);
+
+                editTextDate.Frame = new CGRect(ResponsiveWidthLeft + 10, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 30, 30);
+                Buttonbackyourstory.Frame = new CGRect(rightpad, 10, 70, 30);
+                ButtonDelete.Frame = new CGRect(rightpad, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 100, 30);
+                ButtonDelete1Line.Frame = new CGRect(ResponsiveWidthLeft, editTextWrite.Frame.Bottom + 30, 150, 30);
+
                 sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
-                ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, 500 + expandipad2, 30, 30);
+                ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 30, 30);
+                textViewWrite.Font = UIFont.SystemFontOfSize(14);
+                editTextWrite.Font = UIFont.SystemFontOfSize(14);
+
             }
             if (View.Frame.Height >= 850)
             {
@@ -476,7 +481,24 @@ namespace Hello_MultiScreen_iPhone
                 sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
                 ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, 500 + expandipad2, 30, 30);
             }
-            borderFunction();
+
+            if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad && View.Frame.Height >= 1194)
+            {
+                expandipad = 150;
+                ResponsiveWidthRight = editTextWrite.Frame.Right - 100;
+                editTextWrite.Frame = new CGRect(ResponsiveWidthLeft, 380 + expandipad, ResponsiveSizeX, 50 + expandipad/2);
+                textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340 + expandipad);
+                ButtonyourstoryscreenUpload.Frame = new CGRect(ResponsiveWidthRight, editTextWrite.Frame.Bottom+30, 100, 30);
+
+                editTextDate.Frame = new CGRect(ResponsiveWidthLeft + 10, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 30, 30);
+                Buttonbackyourstory.Frame = new CGRect(ResponsiveWidthRight, 10, 70, 30);
+                ButtonDelete.Frame = new CGRect(ResponsiveWidthRight, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 100, 30);
+                ButtonDelete1Line.Frame = new CGRect(ResponsiveWidthLeft, editTextWrite.Frame.Bottom + 30, 150, 30);
+
+                sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
+                ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 30, 30);
+            }
+                borderFunction();
 
             var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
             scrollView.ScrollRectToVisible(cgFrame, true);
