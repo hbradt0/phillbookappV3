@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using UIKit;
+using Firebase;
+using Google.MobileAds;
 
 namespace Hello_MultiScreen_iPhone
 {
@@ -28,6 +30,10 @@ namespace Hello_MultiScreen_iPhone
 			this.window.RootViewController = rootNavigationController;
 
 			this.window.MakeKeyAndVisible ();
+			 //Use Firebase library to configure APIs.
+			Firebase.Core.App.Configure();
+			// Initialize the Google Mobile Ads SDK.
+			Google.MobileAds.MobileAds.SharedInstance.Start(null);
 
 			return true;
 		}

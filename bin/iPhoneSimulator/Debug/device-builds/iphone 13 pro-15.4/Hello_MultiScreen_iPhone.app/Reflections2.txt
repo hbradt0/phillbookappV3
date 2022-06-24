@@ -1,19 +1,10 @@
 Sample journal:
-<Date here> <Your Title here>
-<SubTitle here>: <date here>
-<Author(s) Names here>
+<Date here>: <Your paragraph here> 
 
-<Date here> <Your paragraph here> 
+<Date here>: <Your paragraph here> 
 
+Share main page allows us to share everything from the journal (based upon a "Date:" format provided)
 
-<Date here> <Your paragraph here> 
+Share on the todo page allows us to share by past # of days (based upon a "Date:" format provided)
 
-
-<Date here> <Your reflections here> 
-
-
-<Date here> <Your reflections here> 
-
-Share main page allows us to share everything from the journal
-
-Share on the todo page allows us to share by past # of days
+Click back to go back and see your story.

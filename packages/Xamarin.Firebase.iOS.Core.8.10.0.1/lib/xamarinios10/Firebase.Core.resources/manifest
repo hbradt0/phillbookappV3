@@ -1,0 +1,122 @@
+﻿<BindingAssembly>
+	<NativeReference Name="FirebaseCore.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks>Foundation UIKit</Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+	<NativeReference Name="FirebaseCoreDiagnostics.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks>Foundation</Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+	<NativeReference Name="GTMSessionFetcher.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks></Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+	<NativeReference Name="GoogleAPIClientForREST.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks></Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+	<NativeReference Name="GoogleDataTransport.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks>SystemConfiguration CoreTelephony</Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+	<NativeReference Name="FBLPromises.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks></Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+	<NativeReference Name="GoogleToolboxForMac.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks>SystemConfiguration</Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+	<NativeReference Name="GoogleUtilities.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks>Security SystemConfiguration</Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+	<NativeReference Name="GoogleUtilitiesComponents.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks></Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+	<NativeReference Name="nanopb.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks></Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+	<NativeReference Name="leveldb.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks></Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+	<NativeReference Name="Protobuf.xcframework">
+		<Kind>Framework</Kind>
+		<ForceLoad>True</ForceLoad>
+		<SmartLink>True</SmartLink>
+		<Frameworks></Frameworks>
+		<WeakFrameworks></WeakFrameworks>
+		<LinkerFlags></LinkerFlags>
+		<NeedsGccExceptionHandling></NeedsGccExceptionHandling>
+		<IsCxx></IsCxx>
+	</NativeReference>
+</BindingAssembly>

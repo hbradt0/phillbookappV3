@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Xamarin.Build.Download.0.11.0\build\Xamarin.Build.Download.props" Condition="Exists('packages\Xamarin.Build.Download.0.11.0\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -125,7 +126,7 @@
       <HintPath>packages\Microsoft.Azure.KeyVault.Core.2.0.4\lib\netstandard1.5\Microsoft.Azure.KeyVault.Core.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.12.0.1\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Azure.Storage.Common">
       <HintPath>packages\Microsoft.Azure.Storage.Common.11.2.3\lib\netstandard2.0\Microsoft.Azure.Storage.Common.dll</HintPath>
@@ -139,6 +140,48 @@
     </Reference>
     <Reference Include="Plugin.Connectivity">
       <HintPath>packages\Xam.Plugin.Connectivity.3.2.0\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core">
+      <HintPath>packages\Google.Apis.Core.1.36.1\lib\netstandard2.0\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis">
+      <HintPath>packages\Google.Apis.1.36.1\lib\netstandard2.0\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth">
+      <HintPath>packages\Google.Apis.Auth.1.36.1\lib\netstandard2.0\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices">
+      <HintPath>packages\Google.Apis.Auth.1.36.1\lib\netstandard2.0\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives">
+      <HintPath>packages\Microsoft.Extensions.Primitives.1.1.1\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions">
+      <HintPath>packages\Microsoft.Extensions.Configuration.Abstractions.1.1.2\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration">
+      <HintPath>packages\Microsoft.Extensions.Configuration.1.1.2\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows">
+      <HintPath>packages\System.Security.Principal.Windows.4.5.0\lib\netstandard2.0\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl">
+      <HintPath>packages\System.Security.AccessControl.4.5.0\lib\netstandard2.0\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions">
+      <HintPath>packages\System.Security.Permissions.4.5.0\lib\netstandard2.0\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.ConfigurationManager">
+      <HintPath>packages\System.Configuration.ConfigurationManager.4.5.0\lib\netstandard2.0\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+    <Reference Include="Firebase.Core">
+      <HintPath>packages\Xamarin.Firebase.iOS.Core.8.10.0.1\lib\xamarinios10\Firebase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.MobileAds">
+      <HintPath>packages\Xamarin.Google.iOS.MobileAds.8.13.0.1\lib\xamarinios10\Google.MobileAds.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -290,7 +333,11 @@
     <BundleResource Include="Resources\chapter3.png" />
     <BundleResource Include="Resources\chapter4.png" />
     <BundleResource Include="Resources\chapter5.png" />
+    <BundleResource Include="GoogleService-Info.plist" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="packages\Xamarin.Build.Download.0.11.0\build\Xamarin.Build.Download.targets" Condition="Exists('packages\Xamarin.Build.Download.0.11.0\build\Xamarin.Build.Download.targets')" />
+  <Import Project="packages\Xamarin.Firebase.iOS.Core.8.10.0.1\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('packages\Xamarin.Firebase.iOS.Core.8.10.0.1\build\Xamarin.Firebase.iOS.Core.targets')" />
+  <Import Project="packages\Xamarin.Google.iOS.MobileAds.8.13.0.1\build\Xamarin.Google.iOS.MobileAds.targets" Condition="Exists('packages\Xamarin.Google.iOS.MobileAds.8.13.0.1\build\Xamarin.Google.iOS.MobileAds.targets')" />
 </Project>

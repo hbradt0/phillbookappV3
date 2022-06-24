@@ -38,6 +38,66 @@
 			<key>type</key>
 			<string>Inapplicable Content</string>
 		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][50x50][][][1x][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13 pro-15.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>50x50 iPad spotlight icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][50x50][][][2x][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13 pro-15.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>50x50 iPad spotlight icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][72x72][][][1x][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13 pro-15.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>72x72 app icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][72x72][][][2x][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13 pro-15.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>72x72@2x app icons only apply to iPad apps targeting releases of iOS prior to 7.0</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
+		<dict>
+			<key>affected-items</key>
+			<array>
+				<string>./AppIcon.appiconset/[][ipad][76x76][][][1x][][][]</string>
+			</array>
+			<key>catalog</key>
+			<string>/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13 pro-15.4/actool/cloned-assets/Assets.xcassets</string>
+			<key>message</key>
+			<string>76x76@1x app icons only apply to iPad apps targeting releases of iOS prior to 10.0.</string>
+			<key>type</key>
+			<string>Inapplicable Content</string>
+		</dict>
 	</array>
 	<key>com.apple.actool.notices</key>
 	<array>

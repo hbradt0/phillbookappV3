@@ -985,12 +985,136 @@ Function=NetSecurityNative_Unwrap
 	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.dll
 Function=SystemNative_GetDomainSocketSizes
 	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.Core.dll
-ObjectiveCClass=OBJC_CLASS_$_G8RecognitionOperation
-	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Tesseract.Binding.iOS.dll
-ObjectiveCClass=OBJC_CLASS_$_G8RecognizedBlock
-	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Tesseract.Binding.iOS.dll
-ObjectiveCClass=OBJC_CLASS_$_G8Tesseract
-	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Tesseract.Binding.iOS.dll
+Field=GADCustomNativeAdMediaViewKey
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADSimulatorID
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADPortraitInlineAdaptiveBannerAdSizeWithWidth
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADLandscapeInlineAdaptiveBannerAdSizeWithWidth
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADCurrentOrientationInlineAdaptiveBannerAdSizeWithWidth
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADInlineAdaptiveBannerAdSizeWithWidthAndMaxHeight
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADLandscapeAnchoredAdaptiveBannerAdSizeWithWidth
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADAdSizeFromCGSize
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADAdSizeFullWidthPortraitWithHeight
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADAdSizeFullWidthLandscapeWithHeight
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADAdSizeEqualToSize
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=CGSizeFromGADAdSize
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=IsGADAdSizeValid
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADAdSizeIsFluid
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=NSStringFromGADAdSize
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=NSValueFromGADAdSize
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=GADAdSizeFromNSValue
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADAdSizeBanner
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADAdSizeFluid
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADAdSizeFullBanner
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADAdSizeInvalid
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADAdSizeLargeBanner
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADAdSizeLeaderboard
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADAdSizeMediumRectangle
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADAdSizeSkyscraper
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=kGADAdSizeSmartBannerLandscape
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=kGADAdSizeSmartBannerPortrait
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADAdLoaderAdTypeCustomNative
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADAdLoaderAdTypeGAMBanner
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADAdLoaderAdTypeNative
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADMaxAdContentRatingGeneral
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADMaxAdContentRatingMatureAudience
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADMaxAdContentRatingParentalGuidance
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADMaxAdContentRatingTeen
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADNativeAdChoicesViewAsset
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADNativeAdvertiserAsset
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADNativeBodyAsset
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADNativeCallToActionAsset
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADNativeHeadlineAsset
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADNativeIconAsset
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADNativeImageAsset
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADNativeMediaViewAsset
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADNativePriceAsset
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADNativeStarRatingAsset
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADNativeStoreAsset
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADCustomEventAdNetworkClassName
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADErrorUserInfoKeyResponseInfo
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Field=GADGoogleAdNetworkClassName
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Google.MobileAds.dll
+Function=FIRFirebaseVersion
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Firebase.Core.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRApp
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Firebase.Core.dll
+ObjectiveCClass=OBJC_CLASS_$_FIRConfiguration
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Firebase.Core.dll
+ObjectiveCClass=OBJC_CLASS_$_FIROptions
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/Firebase.Core.dll
+Function=BrotliDecoderCreateInstance
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.IO.Compression.dll
+Function=BrotliDecoderDecompressStream
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.IO.Compression.dll
+Function=BrotliDecoderDecompress
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.IO.Compression.dll
+Function=BrotliDecoderDestroyInstance
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.IO.Compression.dll
+Function=BrotliDecoderIsFinished
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.IO.Compression.dll
+Function=BrotliEncoderCreateInstance
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.IO.Compression.dll
+Function=BrotliEncoderSetParameter
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.IO.Compression.dll
+Function=BrotliEncoderCompressStream
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.IO.Compression.dll
+Function=BrotliEncoderHasMoreOutput
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.IO.Compression.dll
+Function=BrotliEncoderDestroyInstance
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.IO.Compression.dll
+Function=BrotliEncoderCompress
+	/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/mtouch-cache/1-Link/System.IO.Compression.dll
 Function=mono_pmip
 Function=xamarin_dyn_objc_msgSend
 Function=xamarin_dyn_objc_msgSendSuper
