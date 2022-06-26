@@ -64,55 +64,55 @@
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Debug/Microsoft.Extensions.Primitives.xml
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Debug/Microsoft.Extensions.Configuration.Abstractions.xml
 /Users/psargent/phillbookApp2/bin/iPhoneSimulator/Debug/Microsoft.Extensions.Configuration.xml
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/actool/_PartialAppManifest.items
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/actool/_BundleResourceWithLogicalName.items
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/actool/_ProcessedImageAssetsPath.items
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/ibtool/_BundleResourceWithLogicalName.items
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/ibtool/_ProcessedInterfaceDefinitionsPath.items
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/coremlc/_PartialAppManifest.items
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/coremlc/_BundleResourceWithLogicalName.items
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/coremlc/_ProcessedCoreMLModelsPath.items
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/_ProcessedBundleResourcesPath.items
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/_ProcessedContentPath.items
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/camera.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/Default.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/Default@2x.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/Default-568h@2x.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/Default-Landscape@2x~ipad.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/Default-Landscape~ipad.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/Default-Portrait@2x~ipad.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/Default-Portrait~ipad.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/gallery.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic_launcher.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic_launcher_foreground.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic_launcher_round.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic_launcher512.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic120.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic152.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic167.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic180.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic20.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic29.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic40.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic58.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic60.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic76.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic80.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/ic87.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/icon-100.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/icon-144.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/icon-50.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/icon-72.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/MainTitlePic.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/MainTitlePic1.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/pinkflower.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/TestPic.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/Untitled.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/mailicon.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/chapter1.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/chapter2.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/chapter3.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/chapter4.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/chapter5.png
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/
-/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/ipod touch (7th generation)-15.4/optimized/GoogleService-Info.plist
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/actool/_PartialAppManifest.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/actool/_BundleResourceWithLogicalName.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/actool/_ProcessedImageAssetsPath.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/ibtool/_BundleResourceWithLogicalName.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/ibtool/_ProcessedInterfaceDefinitionsPath.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/coremlc/_PartialAppManifest.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/coremlc/_BundleResourceWithLogicalName.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/coremlc/_ProcessedCoreMLModelsPath.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/_ProcessedBundleResourcesPath.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/_ProcessedContentPath.items
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/camera.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/Default.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/Default@2x.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/Default-568h@2x.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/Default-Landscape@2x~ipad.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/Default-Landscape~ipad.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/Default-Portrait@2x~ipad.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/Default-Portrait~ipad.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/gallery.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic_launcher.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic_launcher_foreground.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic_launcher_round.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic_launcher512.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic120.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic152.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic167.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic180.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic20.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic29.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic40.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic58.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic60.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic76.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic80.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/ic87.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/icon-100.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/icon-144.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/icon-50.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/icon-72.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/MainTitlePic.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/MainTitlePic1.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/pinkflower.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/TestPic.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/Untitled.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/mailicon.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/chapter1.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/chapter2.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/chapter3.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/chapter4.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/chapter5.png
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/GoogleService-Info.plist
+/Users/psargent/phillbookApp2/obj/iPhoneSimulator/Debug/device-builds/iphone 13-15.4/optimized/

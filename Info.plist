@@ -30,13 +30,13 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow device to access Photo</string>
 	<key>CFBundleShortVersionString</key>
-	<string>101</string>
+	<string>103</string>
 	<key>CFBundleVersion</key>
-	<string>101</string>
+	<string>103</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-6939141027430284~4677373691</string>
+	<string>ca-app-pub-6939141027430284~7632346698</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

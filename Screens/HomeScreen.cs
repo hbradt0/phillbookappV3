@@ -62,12 +62,12 @@ namespace Hello_MultiScreen_iPhone
         public void LoadBanner()
         {
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
-                bannerView = new BannerView(AdSizeCons.Banner, new CGPoint(0, View.Frame.Height+200));
+                bannerView = new BannerView(AdSizeCons.Banner, new CGPoint(0, View.Frame.Height + 550));
             else
-                bannerView = new BannerView(AdSizeCons.Banner, new CGPoint(0, View.Frame.Height + 300));
+                bannerView = new BannerView(AdSizeCons.Banner, new CGPoint(0, View.Frame.Height + 0));
             bannerView.TranslatesAutoresizingMaskIntoConstraints = true;
             scrollView.AddSubview(bannerView);
-            bannerView.AdUnitId = "ca-app-pub-3940256099942544/2934735716";//"ca-app-pub-6939141027430284/4170779681";
+            bannerView.AdUnitId = "ca-app-pub-6939141027430284/4499186391";//"ca-app-pub-3940256099942544/2934735716";//"ca-app-pub-6939141027430284/4170779681";
             bannerView.RootViewController = this;
             bannerView.LoadRequest(Request.GetDefaultRequest());
             //this.bannerView.Delegate = this;
@@ -85,19 +85,8 @@ namespace Hello_MultiScreen_iPhone
             };
             this.bannerView.ReceiveAdFailed += (sender, args) =>
             {
-                var Confirm = new UIAlertView("Confirmation", "Ad didn't work", null, "Cancel", "Yes");
-                Confirm.Show();
-                Confirm.Clicked += (object senders, UIButtonEventArgs es) =>
-                {
-                    if (es.ButtonIndex == 0)
-                    {
-                        //Do nothing
-                    }
-                    else
-                    {
-                        //Do nothing
-                    }
-                };
+
+             
             };
 
         }
