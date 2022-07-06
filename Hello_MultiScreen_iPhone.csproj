@@ -193,6 +193,7 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <InterfaceDefinition Include="Screens\StoryScreen.xib" />
     <InterfaceDefinition Include="Screens\LoginScreen.xib" />
+    <InterfaceDefinition Include="Screens\EditImportant.xib" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmailFileRead.cs" />
@@ -225,6 +226,8 @@
     <Compile Include="FireBaseRead.cs" />
     <Compile Include="Screens\LoginScreen.cs" />
     <Compile Include="Screens\LoginScreen.designer.cs" />
+    <Compile Include="Screens\EditImportant.cs" />
+    <Compile Include="Screens\EditImportant.designer.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

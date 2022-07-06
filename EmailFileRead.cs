@@ -26,6 +26,7 @@ namespace EmailReader //rename
 
         public static string fileName1 = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "notes.txt");
         public static string fileName2 = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "todo.txt");
+        public static string fileName3 = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "important.txt");
         public static string phoneIdFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "phoneId.txt");
         public static string srcFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         public static string fileNameImage = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "background.jpg");
@@ -265,6 +266,11 @@ namespace EmailReader //rename
                     date = "";
             }
             File.AppendAllText(fileName,date+text+"\n");
+        }
+
+        public static void AppendAllText(String text="\n", String fileName = "")
+        {
+            File.AppendAllText(fileName, text);
         }
 
         public static void WriteAllText(String text, String fileName = "")

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Foundation;
@@ -45,9 +45,11 @@ namespace Hello_MultiScreen_iPhone
         public UIButton ButtonDelete1Line;
         public UIButton ButtonbackTodo;
         public UIButton ShareTodo;
+        public UIButton scratchpad;
      	public UITextField editTextDate;
 
         HomeScreen homeScreen; //MAY NEED TO BE COMMENTED OUT
+        EditImportant editImportantScreen;
 
 
         private NSObject keyBoardWillShow;
@@ -92,6 +94,7 @@ namespace Hello_MultiScreen_iPhone
             scrollView = new UIScrollView();
             editTextDate = new UITextField();
             ShareTodo = new UIButton(UIButtonType.System);
+            scratchpad = new UIButton(UIButtonType.System);
 
             UIScrollView scrollView2 = new UIScrollView();
 
@@ -144,12 +147,16 @@ namespace Hello_MultiScreen_iPhone
                 this.textViewWrite.ScrollRangeToVisible(range);
             }
 
+            scratchpad.BackgroundColor = UIColor.FromRGB(100, 149, 237);
+            scratchpad.SetTitleColor(UIColor.White, UIControlState.Normal);
+            scratchpad.SetTitle("Scratch Notes", UIControlState.Normal);
+
             //ScrollView
             scrollView = new UIScrollView
             {
                 Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height),
                 ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 300),
-                BackgroundColor = UIColor.FromRGB(204, 204, 255),
+                BackgroundColor = HomeScreen.color,
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
@@ -169,7 +176,7 @@ namespace Hello_MultiScreen_iPhone
             ButtonDelete.AddTarget(ButtonDeleteClick, UIControlEvent.TouchUpInside);
             ButtonDelete1Line.AddTarget(ButtonDelete1LineClick, UIControlEvent.TouchUpInside);
             ShareTodo.AddTarget(ButtonShareClick, UIControlEvent.TouchUpInside);
-
+            scratchpad.AddTarget(ClickScratchPad, UIControlEvent.TouchUpInside);
 
             //Add to view
             scrollView.AddSubview(textViewWrite);
@@ -179,6 +186,7 @@ namespace Hello_MultiScreen_iPhone
             scrollView.Add(ButtonDelete);
             scrollView.Add(editTextDate);
             scrollView.Add(ShareTodo);
+            scrollView.Add(scratchpad);
             View.AddSubview(scrollView);//ps
             scrollView.AddSubview(editTextWrite);
 
@@ -196,6 +204,7 @@ namespace Hello_MultiScreen_iPhone
             Buttonbackyourstory.Layer.CornerRadius = 10;
             ButtonDelete.Layer.CornerRadius = 10;
             ButtonDelete1Line.Layer.CornerRadius = 10;
+            scratchpad.Layer.CornerRadius = 10;
         }
 
         public void borderFunction()
@@ -415,13 +424,19 @@ namespace Hello_MultiScreen_iPhone
 
         }
 
+        private void ClickScratchPad(object sender, EventArgs eventArgs)
+        {
+                if (this.editImportantScreen == null) { this.editImportantScreen = new EditImportant(); }
+                this.NavigationController.PushViewController(this.editImportantScreen, true);
+        }
+
 
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
             scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
                 scrollView.ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 300);
-                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.BackgroundColor = HomeScreen.color;
                 scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
 
             scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + View.Frame.Height / 7.5); //small
@@ -447,6 +462,7 @@ namespace Hello_MultiScreen_iPhone
             textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340);
             sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
             ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, 500, 30, 30);
+            scratchpad.Frame = new CGRect(ResponsiveWidthLeft, 550, 100, 30);
 
             int expandipad = 60;
             int expandipad2 = 100;
@@ -463,6 +479,8 @@ namespace Hello_MultiScreen_iPhone
 
                 sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
                 ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 30, 30);
+                scratchpad.Frame = new CGRect(ResponsiveWidthLeft, 550, 100, 30);
+
                 textViewWrite.Font = UIFont.SystemFontOfSize(14);
                 editTextWrite.Font = UIFont.SystemFontOfSize(14);
 
@@ -480,6 +498,8 @@ namespace Hello_MultiScreen_iPhone
                 textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340 + expandipad);
                 sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
                 ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, 500 + expandipad2, 30, 30);
+                scratchpad.Frame = new CGRect(ResponsiveWidthLeft, 550, 100, 30);
+
             }
 
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad && View.Frame.Height >= 1194)
@@ -497,8 +517,10 @@ namespace Hello_MultiScreen_iPhone
 
                 sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
                 ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 30, 30);
+                scratchpad.Frame = new CGRect(ResponsiveWidthLeft, 550, 100, 30);
+
             }
-                borderFunction();
+            borderFunction();
 
             var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
             scrollView.ScrollRectToVisible(cgFrame, true);

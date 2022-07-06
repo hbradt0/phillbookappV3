@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Foundation;
@@ -94,7 +94,7 @@ namespace Hello_MultiScreen_iPhone
             ButtonShare = new UIButton(UIButtonType.RoundedRect)
             {
 
-                BackgroundColor = UIColor.FromRGB(204, 204, 255)
+                BackgroundColor = HomeScreen.color;
             };
 
             editTextDate = new UITextField();
@@ -155,7 +155,7 @@ namespace Hello_MultiScreen_iPhone
             {
                 Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height),
                 ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + View.Frame.Height / 3 + 300),
-                BackgroundColor = UIColor.FromRGB(204, 204, 255),
+                BackgroundColor = HomeScreen.color;,
                 //BackgroundColor = UIColor.FromRGB(178, 178, 227),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };

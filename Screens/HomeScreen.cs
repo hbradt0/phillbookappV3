@@ -17,6 +17,9 @@ namespace Hello_MultiScreen_iPhone
         HelloUniverseScreen helloUniverseScreen;
         HomeScreen2 TodoScreen;
         ImageScreen imageScreen;
+        public static UIColor color = UIColor.FromRGB(204, 204, 255);
+        public static UIColor color2 = UIColor.FromRGB(100, 100, 255);
+        public static UIColor color3 = UIColor.FromRGB(204, 204, 255);
 
         //Variables
         public UITextView textView;
@@ -67,7 +70,7 @@ namespace Hello_MultiScreen_iPhone
                 bannerView = new BannerView(AdSizeCons.Banner, new CGPoint(0, View.Frame.Height + 0));
             bannerView.TranslatesAutoresizingMaskIntoConstraints = true;
             scrollView.AddSubview(bannerView);
-            bannerView.AdUnitId = "ca-app-pub-6939141027430284/4499186391";//"ca-app-pub-3940256099942544/2934735716";//"ca-app-pub-6939141027430284/4170779681";
+            bannerView.AdUnitId = "ca-app-pub-6939141027430284/4499186391";
             bannerView.RootViewController = this;
             bannerView.LoadRequest(Request.GetDefaultRequest());
             //this.bannerView.Delegate = this;
@@ -75,27 +78,31 @@ namespace Hello_MultiScreen_iPhone
             {
                 scrollView.AddSubview(bannerView);
             };
-            this.bannerView.ScreenDismissed += (sender,args) =>
+            this.bannerView.ScreenDismissed += (sender, args) =>
             {
 
             };
             this.bannerView.ClickRecorded += (sender, args) =>
             {
-                bannerView.Hidden = true;
+                //bannerView.Hidden = true;
             };
             this.bannerView.ReceiveAdFailed += (sender, args) =>
             {
 
-             
             };
 
         }
 
         public override void ViewDidLoad()
         {
+
             base.ViewDidLoad();
+            if (NSUserDefaults.StandardUserDefaults.StringForKey("color") == "1")
+                HomeScreen.color = HomeScreen.color2;
+            else
+                HomeScreen.color = HomeScreen.color3;
             ViewDidLoad1();
-            View.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+            View.BackgroundColor = HomeScreen.color;
 
             ResponsiveWidthLeft = View.Frame.Width / 8;
             nfloat size = 30;
@@ -141,7 +148,7 @@ namespace Hello_MultiScreen_iPhone
             //View Issue
             Title = "My Custom View Controller";
             var user = new UIViewController();
-            user.View.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+            user.View.BackgroundColor = HomeScreen.color;
             //View.LargeContentImage = imageView;
             ResponsiveWidthLeft = View.Frame.Width / 8;
             nfloat size = 30;
@@ -176,7 +183,7 @@ namespace Hello_MultiScreen_iPhone
             {
                 Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height),
                 ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + View.Frame.Height / 3 + 300),
-                BackgroundColor = UIColor.FromRGB(204, 204, 255),
+                BackgroundColor = HomeScreen.color,
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
@@ -233,11 +240,17 @@ namespace Hello_MultiScreen_iPhone
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
+
+            var str = NSUserDefaults.StandardUserDefaults.StringForKey("color");
+            if (str == "1")
+                HomeScreen.color = HomeScreen.color2;
+            else
+                HomeScreen.color = HomeScreen.color3;
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
             {
                 scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
                 scrollView.ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 200);
-                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.BackgroundColor = HomeScreen.color;
                 scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
             }
             Foundation.NSNotificationCenter.DefaultCenter.AddObserver(new NSString("UIDeviceOrientationDidChangeNotification"), DeviceRotated);
@@ -296,6 +309,7 @@ namespace Hello_MultiScreen_iPhone
 
             }
 
+
         }
 
 
@@ -305,14 +319,14 @@ namespace Hello_MultiScreen_iPhone
             {
                 scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
                 scrollView.ContentSize = new CGSize(View.Frame.Width + 400, View.Frame.Height + 400);
-                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.BackgroundColor = HomeScreen.color;
                 scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
             }
             else
             {
                 scrollView.Frame = new CGRect(0, 0, View.Frame.Width, View.Frame.Height);
                 scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + 200);
-                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.BackgroundColor = HomeScreen.color;
                 scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
             }
 

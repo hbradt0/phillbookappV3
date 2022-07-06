@@ -109,21 +109,21 @@ namespace Hello_MultiScreen_iPhone
             LoginInstructions.Text = "Please login, choose pin and email for Cloud Services, save your one-time pin somewhere safe so " +
                 "you can locate your files once again!";
             LoginInstructions.TextColor = UIColor.Black;
-            LoginInstructions.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+            LoginInstructions.BackgroundColor = HomeScreen.color;
 
             imageView3 = new UIImageView();
             UIImage img3 = new UIImage();
             img3 = UIImage.FromFile("TestPic.png");
             imageView3.Image = img3;
 
-            Usernamelabel.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+            Usernamelabel.BackgroundColor = HomeScreen.color;
             Usernamelabel.Text = "Username: ";
             Usernamelabel.TextAlignment = UITextAlignment.Center;
             Usernamelabel.TextColor = UIColor.Black;
 
             Passwordlabel.Text = "Pin: ";
             Passwordlabel.TextAlignment = UITextAlignment.Center;
-            Passwordlabel.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+            Passwordlabel.BackgroundColor = HomeScreen.color;
             Passwordlabel.TextColor = UIColor.Black;
 
             listView.Source = new TableSource(list);
@@ -223,7 +223,7 @@ namespace Hello_MultiScreen_iPhone
             {
                 Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height),
                 ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 300),
-                BackgroundColor = UIColor.FromRGB(204, 204, 255),
+                BackgroundColor = HomeScreen.color,
                 //BackgroundColor = UIColor.FromRGB(178, 178, 227),
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
@@ -602,7 +602,7 @@ namespace Hello_MultiScreen_iPhone
             {
                 scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
                 scrollView.ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 300);
-                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.BackgroundColor = HomeScreen.color;
                 scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
 
                 ResponsiveWidthLeft = View.Frame.Width / 10;

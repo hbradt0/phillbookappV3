@@ -1,0 +1,10 @@
+Sample journal:
+<Date here>: <Your paragraph here> 
+
+<Date here>: <Your paragraph here> 
+
+Share main page allows us to share everything from the journal (based upon a "Date:" format provided)
+
+Share on the todo page allows us to share by past # of days (based upon a "Date:" format provided)
+
+Click back to go back and see your story.

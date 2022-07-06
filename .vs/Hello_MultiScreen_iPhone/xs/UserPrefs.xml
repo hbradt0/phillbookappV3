@@ -1,20 +1,22 @@
 ﻿<Properties StartupConfiguration="{A10944A3-80E8-4A8D-A6F5-1A10606AAE60}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Screens/HomeScreen.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Screens/ImageScreen.cs">
     <Files>
-      <File FileName="Screens/LoginScreen.cs" Line="57" Column="1" />
+      <File FileName="Screens/LoginScreen.cs" Line="108" Column="58" />
       <File FileName="Screens/HelloWorldScreen 2.cs" />
       <File FileName="Screens/HelloWorldScreen.cs" />
       <File FileName="Screens/HelloUniverseScreen.cs" />
-      <File FileName="Screens/HomeScreen.cs" Line="89" Column="14" />
-      <File FileName="Screens/HomeScreen2.cs" />
+      <File FileName="Screens/HomeScreen.cs" />
+      <File FileName="Screens/HomeScreen2.cs" Line="150" Column="73" />
       <File FileName="Info.plist" />
       <File FileName="Screens/EditJournalScreen.cs" />
       <File FileName="EmailFileRead.cs" />
-      <File FileName="Screens/ImageScreen.cs" />
+      <File FileName="Screens/ImageScreen.cs" Line="1" Column="1" />
       <File FileName="Screens/StoryScreen.cs" />
       <File FileName="Screens/BannerListener.cs" />
       <File FileName="AppDelegate.cs" />
       <File FileName="FireBaseRead.cs" />
+      <File FileName="Screens/EditImportant.cs" />
+      <File FileName="Screens/EditImportant.designer.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,8 +26,7 @@
             <Node name="Hello_MultiScreen_iPhone" expanded="True">
               <Node name="Resources" expanded="True" />
               <Node name="Screens" expanded="True">
-                <Node name="HelloUniverseScreen.cs" expanded="True" />
-                <Node name="HomeScreen.cs" selected="True" />
+                <Node name="ImageScreen.cs" selected="True" />
               </Node>
             </Node>
           </Node>

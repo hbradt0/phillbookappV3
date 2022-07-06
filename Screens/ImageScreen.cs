@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Foundation;
@@ -48,7 +48,7 @@ namespace Hello_MultiScreen_iPhone
         public void ViewDidLoad1()
         {
             var user = new UIViewController();
-            user.View.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+            user.View.BackgroundColor = HomeScreen.color;
 
             //Initialize Fields
             textViewWrite = new UIImageView();
@@ -125,7 +125,7 @@ namespace Hello_MultiScreen_iPhone
             {
                 Frame = new CGRect(0, 0, View.Frame.Width+200, View.Frame.Height),
                 ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 300),
-                BackgroundColor = UIColor.FromRGB(204, 204, 255),
+                BackgroundColor = HomeScreen.color,
                 AutoresizingMask = UIViewAutoresizing.FlexibleHeight
             };
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
@@ -200,7 +200,7 @@ namespace Hello_MultiScreen_iPhone
             {
                 EmailFileRead.fileNameImage1 = "MainTitlePic1.png";
                 i = 0;
-            }
+             }
             else
             {
                 EmailFileRead.fileNameImage1 = "MainTitlePic.png";
@@ -210,6 +210,7 @@ namespace Hello_MultiScreen_iPhone
             UIImage imgtitle = new UIImage();
             imgtitle = UIImage.FromFile(EmailFileRead.fileNameImage1);
             BackgroundImage4.SetBackgroundImage(imgtitle, UIControlState.Normal);
+            
         }
 
         public void BackgroundImageShow(object sender, EventArgs eventArgs)
@@ -489,7 +490,7 @@ namespace Hello_MultiScreen_iPhone
             { 
                 scrollView.Frame = new CGRect(0, 0, View.Frame.Width, View.Frame.Height);
                 scrollView.ContentSize = new CGSize(View.Frame.Width, View.Frame.Height + 300);
-                scrollView.BackgroundColor = UIColor.FromRGB(204, 204, 255);
+                scrollView.BackgroundColor = HomeScreen.color;
                 scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
             }
             dateTimeText.Hidden = false;
