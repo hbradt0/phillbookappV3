@@ -17,9 +17,9 @@ namespace Hello_MultiScreen_iPhone
         HelloUniverseScreen helloUniverseScreen;
         HomeScreen2 TodoScreen;
         ImageScreen imageScreen;
-        public static UIColor color = UIColor.FromRGB(204, 204, 255);
-        public static UIColor color2 = UIColor.FromRGB(100, 100, 255);
-        public static UIColor color3 = UIColor.FromRGB(204, 204, 255);
+        public static UIColor color = UIColor.FromPatternImage(UIImage.FromFile("bg.jpg"));
+        //public static UIColor color2 = UIColor.FromRGB(100, 100, 255);
+        //public static UIColor color3 = UIColor.FromRGB(204, 204, 255);
 
         //Variables
         public UITextView textView;
@@ -97,10 +97,8 @@ namespace Hello_MultiScreen_iPhone
         {
 
             base.ViewDidLoad();
-            if (NSUserDefaults.StandardUserDefaults.StringForKey("color") == "1")
-                HomeScreen.color = HomeScreen.color2;
-            else
-                HomeScreen.color = HomeScreen.color3;
+            color = UIColor.FromPatternImage(UIImage.FromFile("bg.jpg"));
+
             ViewDidLoad1();
             View.BackgroundColor = HomeScreen.color;
 
@@ -240,12 +238,6 @@ namespace Hello_MultiScreen_iPhone
         public override void ViewWillAppear(bool animated)
         {
             base.ViewWillAppear(animated);
-
-            var str = NSUserDefaults.StandardUserDefaults.StringForKey("color");
-            if (str == "1")
-                HomeScreen.color = HomeScreen.color2;
-            else
-                HomeScreen.color = HomeScreen.color3;
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
             {
                 scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
