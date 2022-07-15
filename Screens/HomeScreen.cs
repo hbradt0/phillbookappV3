@@ -302,8 +302,8 @@ namespace Hello_MultiScreen_iPhone
                 imageViewTitle.Frame = new CGRect(ResponsiveWidthLeft - 20, View.Frame.Top + 10, ResponsiveSizeX + 40, 80 + 30 + 10);
 
             }
-            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
-            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.SystemIndigo;
+            this.NavigationController.NavigationBar.TintColor = UIColor.White;
 
         }
 

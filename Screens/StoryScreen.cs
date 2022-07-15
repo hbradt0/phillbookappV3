@@ -272,8 +272,8 @@ namespace Hello_MultiScreen_iPhone
             scrollView.ScrollRectToVisible(booktextView.Frame, true);
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
                 booktextView.Font = UIFont.SystemFontOfSize(14);
-            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
-            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.SystemIndigo;
+            this.NavigationController.NavigationBar.TintColor = UIColor.White;
         }
 
     }

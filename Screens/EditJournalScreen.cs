@@ -337,8 +337,8 @@ namespace Hello_MultiScreen_iPhone
             booktextView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 50, ResponsiveSizeX, 440);
             ButtonDelete.Frame = new CGRect(ResponsiveWidthLeft, booktextView.Frame.Bottom+20, 100, 30);
             Button3.Frame = new CGRect(ResponsiveWidthRight, booktextView.Frame.Bottom + 20, 100, 30);
-            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
-            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.SystemIndigo;
+            this.NavigationController.NavigationBar.TintColor = UIColor.White;
         }
     }
 }

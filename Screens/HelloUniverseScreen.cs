@@ -521,8 +521,8 @@ namespace Hello_MultiScreen_iPhone
             borderFunction();
             var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
             scrollView.ScrollRectToVisible(cgFrame, true);
-            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
-            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.SystemIndigo;
+            this.NavigationController.NavigationBar.TintColor = UIColor.White;
 
         }
     }

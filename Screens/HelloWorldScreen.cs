@@ -434,8 +434,8 @@ namespace Hello_MultiScreen_iPhone
                 str = str + "\n" + EmailFileRead.CodeList[3];
             }
             codes.Text = str;
-            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
-            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.SystemIndigo;
+            this.NavigationController.NavigationBar.TintColor = UIColor.White;
         }
     }
 }

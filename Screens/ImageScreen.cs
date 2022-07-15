@@ -528,8 +528,8 @@ namespace Hello_MultiScreen_iPhone
             BackgroundImage3.Frame = new CGRect(ResponsiveWidthRight + 50, ButtonDelete1Line.Frame.Bottom + 20, 50, 50);
             BackgroundImage.Frame = new CGRect(ResponsiveWidthRight, BackgroundImage2.Frame.Y + 70, 100, 30);
             BackgroundImage4.Frame = new CGRect(ResponsiveWidthLeft, BackgroundImage2.Frame.Y + 70, 100, 30);
-            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
-            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.SystemIndigo;
+            this.NavigationController.NavigationBar.TintColor = UIColor.White;
 
         }
 

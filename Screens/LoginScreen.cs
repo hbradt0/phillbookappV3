@@ -710,8 +710,8 @@ namespace Hello_MultiScreen_iPhone
                 imageView3.Hidden = false;
             }
             scrollView.ScrollRectToVisible(DeleteCloud.Frame, true);
-            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
-            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.SystemIndigo;
+            this.NavigationController.NavigationBar.TintColor = UIColor.White;
         }
 
         }
