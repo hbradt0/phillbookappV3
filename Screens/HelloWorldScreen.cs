@@ -104,7 +104,7 @@ namespace Hello_MultiScreen_iPhone
             ShareTodo.SetBackgroundImage(UIImage.FromBundle("mailicon.png"), UIControlState.Normal);
 
             editTextDate.BackgroundColor = UIColor.White;
-            editTextDate.TextColor = UIColor.Purple;
+            editTextDate.TextColor = UIColor.Black;
             editTextDate.AccessibilityHint = "0 (days)";
             editTextDate.Text = "0";
 
@@ -112,7 +112,7 @@ namespace Hello_MultiScreen_iPhone
             codes.Editable = false;
             codes.TextColor = UIColor.Black;
             codes.Text = "";
-            codes.BackgroundColor = UIColor.FromRGB(230, 230, 250);
+            codes.BackgroundColor = UIColor.FromRGB(252, 251, 244);
             editTextDate.ShouldReturn = (textField) => { textField.ResignFirstResponder(); return true; };
 
 
@@ -120,7 +120,7 @@ namespace Hello_MultiScreen_iPhone
             ButtonShare.SetBackgroundImage(UIImage.FromBundle("mailicon.png"), UIControlState.Normal);
 
             booktextView.Text = "Enter your email to begin your story!";
-            booktextView.BackgroundColor = UIColor.FromRGB(230, 230, 250);
+            booktextView.BackgroundColor = UIColor.FromRGB(252, 251, 244);
             booktextView.TextColor = UIColor.Purple;
             booktextView.UserInteractionEnabled = true;
             booktextView.ScrollEnabled = true;
@@ -147,7 +147,7 @@ namespace Hello_MultiScreen_iPhone
             sta.Editable = false;
             sta.TextColor = UIColor.Black;
             sta.Text = "Days Prior";
-            sta.BackgroundColor = UIColor.FromRGB(230, 230, 250);
+            sta.BackgroundColor = UIColor.FromRGB(252, 251, 244);
             CloudLoginButton = new UIButton(UIButtonType.System);
 
             CloudLoginButton.SetTitleColor(UIColor.White, UIControlState.Normal);
@@ -434,6 +434,8 @@ namespace Hello_MultiScreen_iPhone
                 str = str + "\n" + EmailFileRead.CodeList[3];
             }
             codes.Text = str;
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
+            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
         }
     }
 }

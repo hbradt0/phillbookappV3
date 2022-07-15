@@ -64,7 +64,7 @@ namespace Hello_MultiScreen_iPhone
         {
             //View issue
             var user = new UIViewController();
-            user.View.BackgroundColor = HomeScreen.color;
+            View.BackgroundColor = HomeScreen.color;
 
             //Initialize Fields
             textViewWrite = new UITextView();
@@ -76,6 +76,8 @@ namespace Hello_MultiScreen_iPhone
             scrollView = new UIScrollView();
             dateTimeText = new UIDatePicker();
             dateTimeText.Hidden = true;
+            dateTimeText.BackgroundColor = HomeScreen.color;
+            dateTimeText.TintColor = UIColor.White;
 
             ButtonDateClick = new UIButton(UIButtonType.System);
             UIScrollView scrollView2 = new UIScrollView();
@@ -86,8 +88,8 @@ namespace Hello_MultiScreen_iPhone
 
             EditJournalButton.SetTitle("Edit Journal", UIControlState.Normal);
 
-            textViewWrite.TextColor = UIColor.Purple;
-            textViewWrite.BackgroundColor = UIColor.FromRGB(230, 230, 250);
+            textViewWrite.TextColor = UIColor.Black;
+            textViewWrite.BackgroundColor = UIColor.FromRGB(252, 251, 244);
             textViewWrite.Editable = false;
             editTextWrite.TextColor = UIColor.Black;
             Buttonbackyourstory.BackgroundColor = UIColor.FromRGB(100, 149, 237);
@@ -118,7 +120,7 @@ namespace Hello_MultiScreen_iPhone
             ButtonDelete1Line.SetTitle("Delete Line", UIControlState.Normal);
 
             editTextWrite.AccessibilityHint = "Write Here";
-            editTextWrite.BackgroundColor = UIColor.White;
+            editTextWrite.BackgroundColor = UIColor.FromRGB(252, 251, 244);
             editTextWrite.KeyboardType = UIKeyboardType.ASCIICapable;
             editTextWrite.ReturnKeyType = UIReturnKeyType.Done;
 
@@ -483,6 +485,8 @@ namespace Hello_MultiScreen_iPhone
 
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
             {
+                scrollView.BackgroundColor = HomeScreen.color;
+                //scrollView.ContentMode = UIViewContentMode.Redraw;
                 int expandipad = 75;
                 dateTimeText.Hidden = false;
                 textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 40, ResponsiveSizeX, 340 + expandipad);
@@ -517,8 +521,9 @@ namespace Hello_MultiScreen_iPhone
             borderFunction();
             var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
             scrollView.ScrollRectToVisible(cgFrame, true);
-            
-            
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
+            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
+
         }
     }
 }

@@ -109,7 +109,7 @@ namespace Hello_MultiScreen_iPhone
             //booktextView.Frame = new CGRect(25, 150, 300, 150); ;
             booktextView.Text = "Enter your email to begin your story!";
             booktextView.BackgroundColor = UIColor.FromRGB(230, 230, 250);
-            booktextView.TextColor = UIColor.SystemPurple;
+            booktextView.TextColor = UIColor.Black;
             booktextView.UserInteractionEnabled = true;
             booktextView.ScrollEnabled = true;
 
@@ -203,7 +203,7 @@ namespace Hello_MultiScreen_iPhone
                 imageView3.Frame = new CGRect(ResponsiveWidthLeft + 50, View.Frame.Top + 50, 175+50, 175);
             }
             booktextView.Text = EmailFileRead.ReadText();
-            booktextView.TextColor = UIColor.Purple;
+            booktextView.TextColor = UIColor.SystemIndigo;
             if (EmailFileRead.code.ToLower() == EmailFileRead.CodeList[0])
             {
                 booktextView.Text = "Enter your email to begin your story!";
@@ -272,7 +272,8 @@ namespace Hello_MultiScreen_iPhone
             scrollView.ScrollRectToVisible(booktextView.Frame, true);
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad || View.Frame.Height >= 1300)
                 booktextView.Font = UIFont.SystemFontOfSize(14);
-
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
+            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
         }
 
     }

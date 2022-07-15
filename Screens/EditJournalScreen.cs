@@ -83,7 +83,7 @@ namespace Hello_MultiScreen_iPhone
 
             booktextView.Text = EmailFileRead.ReadText();
             booktextView.BackgroundColor = UIColor.White;
-            booktextView.TextColor = UIColor.Purple;
+            booktextView.TextColor = UIColor.Black;
             booktextView.UserInteractionEnabled = true;
             booktextView.ScrollEnabled = true;
             booktextView.KeyboardType = UIKeyboardType.ASCIICapable;
@@ -337,6 +337,8 @@ namespace Hello_MultiScreen_iPhone
             booktextView.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 50, ResponsiveSizeX, 440);
             ButtonDelete.Frame = new CGRect(ResponsiveWidthLeft, booktextView.Frame.Bottom+20, 100, 30);
             Button3.Frame = new CGRect(ResponsiveWidthRight, booktextView.Frame.Bottom + 20, 100, 30);
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
+            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
         }
     }
 }

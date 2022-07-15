@@ -108,29 +108,29 @@ namespace Hello_MultiScreen_iPhone
             LoginInstructions.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 100, ResponsiveSizeX, 50);
             LoginInstructions.Text = "Please login, choose pin and email for Cloud Services, save your one-time pin somewhere safe so " +
                 "you can locate your files once again!";
-            LoginInstructions.TextColor = UIColor.Black;
-            LoginInstructions.BackgroundColor = HomeScreen.color;
+            LoginInstructions.TextColor = UIColor.White;
+            LoginInstructions.BackgroundColor = UIColor.SystemIndigo;
 
             imageView3 = new UIImageView();
             UIImage img3 = new UIImage();
             img3 = UIImage.FromFile("TestPic.png");
             imageView3.Image = img3;
 
-            Usernamelabel.BackgroundColor = HomeScreen.color;
+            Usernamelabel.BackgroundColor = UIColor.SystemIndigo;
             Usernamelabel.Text = "Username: ";
             Usernamelabel.TextAlignment = UITextAlignment.Center;
-            Usernamelabel.TextColor = UIColor.Black;
+            Usernamelabel.TextColor = UIColor.White;
 
             Passwordlabel.Text = "Pin: ";
             Passwordlabel.TextAlignment = UITextAlignment.Center;
-            Passwordlabel.BackgroundColor = HomeScreen.color;
-            Passwordlabel.TextColor = UIColor.Black;
+            Passwordlabel.BackgroundColor = UIColor.SystemIndigo;
+            Passwordlabel.TextColor = UIColor.White;
 
             listView.Source = new TableSource(list);
             listView.BackgroundColor = UIColor.FromRGB(100, 149, 237);
             listView.TintColor = UIColor.Cyan;
 
-            ShowText.BackgroundColor = UIColor.SystemPurple;
+            ShowText.BackgroundColor = UIColor.Black;
             ShowText.SetTitle("View", UIControlState.Normal);
 
             loginemail.BackgroundColor = UIColor.White;
@@ -143,11 +143,11 @@ namespace Hello_MultiScreen_iPhone
             g.CancelsTouchesInView = false; //for iOS5View.AddGestureRecognizer (g);
 
             loginpassword.BackgroundColor = UIColor.White;
-            loginpassword.TextColor = UIColor.SystemPurple;
+            loginpassword.TextColor = UIColor.SystemIndigo;
             loginpassword.KeyboardType = UIKeyboardType.ASCIICapable;
             loginpassword.ReturnKeyType = UIReturnKeyType.Done;
 
-            LoginButton.BackgroundColor = UIColor.SystemPurple;
+            LoginButton.BackgroundColor = UIColor.SystemIndigo;
             LoginButton.SetTitle("Login", UIControlState.Normal);
 
             DownloadCloud.BackgroundColor = UIColor.SystemIndigo;
@@ -710,6 +710,8 @@ namespace Hello_MultiScreen_iPhone
                 imageView3.Hidden = false;
             }
             scrollView.ScrollRectToVisible(DeleteCloud.Frame, true);
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
+            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
         }
 
         }

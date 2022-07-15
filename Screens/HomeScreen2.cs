@@ -82,7 +82,7 @@ namespace Hello_MultiScreen_iPhone
         {
             //View issue
             var user = new UIViewController();
-            user.View.BackgroundColor = UIColor.Purple;
+            user.View.BackgroundColor = HomeScreen.color;
 
             //Initialize Fields
             textViewWrite = new UITextView();
@@ -99,8 +99,8 @@ namespace Hello_MultiScreen_iPhone
             UIScrollView scrollView2 = new UIScrollView();
 
             //Buttons and edit properties
-            textViewWrite.TextColor = UIColor.Purple;
-            textViewWrite.BackgroundColor = UIColor.FromRGB(230, 230, 250);
+            textViewWrite.TextColor = UIColor.Black;
+            textViewWrite.BackgroundColor = UIColor.FromRGB(252, 251, 244);
             textViewWrite.Editable = false;
             editTextWrite.TextColor = UIColor.Black;
             ButtonyourstoryscreenUpload.SetTitleColor(UIColor.White, UIControlState.Normal);
@@ -117,7 +117,7 @@ namespace Hello_MultiScreen_iPhone
 
             ShareTodo.SetBackgroundImage(UIImage.FromBundle("mailicon.png"), UIControlState.Normal);
             editTextDate.BackgroundColor = UIColor.White;
-            editTextDate.TextColor = UIColor.Purple;
+            editTextDate.TextColor = UIColor.Black;
             editTextDate.AccessibilityHint = "0 (days)";
             editTextDate.Text = "0";
 
@@ -128,7 +128,7 @@ namespace Hello_MultiScreen_iPhone
             g.CancelsTouchesInView = false; //for iOS5View.AddGestureRecognizer (g);
 
             editTextWrite.AccessibilityHint = "Write Here";
-            editTextWrite.BackgroundColor = UIColor.White;
+            editTextWrite.BackgroundColor = UIColor.FromRGB(252, 251, 244);
             editTextWrite.KeyboardType = UIKeyboardType.ASCIICapable;
             editTextWrite.ReturnKeyType = UIReturnKeyType.Done;
 
@@ -169,7 +169,7 @@ namespace Hello_MultiScreen_iPhone
             sta = new UITextView();
             sta.Editable = false;
             sta.Text = "Days Prior";
-            sta.TextColor = UIColor.Purple;
+            sta.TextColor = UIColor.Black;
             sta.BackgroundColor = UIColor.White;
 
             ButtonyourstoryscreenUpload.AddTarget(ButtonyourstoryscreenUploadClick, UIControlEvent.TouchUpInside);
@@ -498,7 +498,7 @@ namespace Hello_MultiScreen_iPhone
                 textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340 + expandipad);
                 sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
                 ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, 500 + expandipad2, 30, 30);
-                scratchpad.Frame = new CGRect(ResponsiveWidthLeft, 550, 100, 30);
+                scratchpad.Frame = new CGRect(ResponsiveWidthLeft, 550+expandipad2, 100, 30);
 
             }
 
@@ -517,14 +517,15 @@ namespace Hello_MultiScreen_iPhone
 
                 sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
                 ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 30, 30);
-                scratchpad.Frame = new CGRect(ResponsiveWidthLeft, 550, 100, 30);
+                scratchpad.Frame = new CGRect(ResponsiveWidthLeft, 550+expandipad, 100, 30);
 
             }
             borderFunction();
 
             var cgFrame = new CGRect(ResponsiveWidthLeft, View.Frame.Top, ResponsiveSizeX, 340);
             scrollView.ScrollRectToVisible(cgFrame, true);
-
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
+            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
         }
 
         public override void DidReceiveMemoryWarning()

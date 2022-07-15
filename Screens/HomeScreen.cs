@@ -114,8 +114,8 @@ namespace Hello_MultiScreen_iPhone
             //---- when the hello world button is clicked
             this.btnHelloUniverse.SetTitle("Create Your Journal", UIControlState.Normal);
             this.btnHelloWorld.SetTitle("Click To Read", UIControlState.Normal);
-            this.btnHelloUniverse.BackgroundColor = UIColor.FromRGB(100, 149, 240);
-            this.btnHelloWorld.BackgroundColor = UIColor.FromRGB(100, 149, 240);
+            this.btnHelloUniverse.BackgroundColor = UIColor.SystemIndigo;
+            this.btnHelloWorld.BackgroundColor = UIColor.SystemIndigo;
             this.Title = "Home";
 
             this.btnHelloWorld.Layer.CornerRadius = 10;
@@ -146,7 +146,7 @@ namespace Hello_MultiScreen_iPhone
             //View Issue
             Title = "My Custom View Controller";
             var user = new UIViewController();
-            user.View.BackgroundColor = HomeScreen.color;
+            //user.View.BackgroundColor = HomeScreen.color;
             //View.LargeContentImage = imageView;
             ResponsiveWidthLeft = View.Frame.Width / 8;
             nfloat size = 30;
@@ -173,7 +173,7 @@ namespace Hello_MultiScreen_iPhone
             //ButtonImageClick.SetBackgroundImage(viewer,UIControlState.Normal);
             ButtonImageClick.SetTitleColor(UIColor.White, UIControlState.Normal);
             ButtonImageClick.SetTitle("Image Calendar", UIControlState.Normal);
-            ButtonImageClick.BackgroundColor = UIColor.FromRGB(100, 149, 240);
+            ButtonImageClick.BackgroundColor = UIColor.SystemIndigo;
             ButtonImageClick.Layer.CornerRadius = 10;
 
 
@@ -193,7 +193,7 @@ namespace Hello_MultiScreen_iPhone
 
             //PLEASE COMMENT OUT BELOW IF THIS doesn't work
             ButtonTodoList = new UIButton(UIButtonType.System);
-            ButtonTodoList.BackgroundColor = UIColor.FromRGB(100, 149, 240);
+            ButtonTodoList.BackgroundColor = UIColor.SystemIndigo;
             ButtonTodoList.SetTitle("Create To Do List", UIControlState.Normal);
             ButtonTodoList.SetTitleColor(UIColor.White, UIControlState.Normal);
             ButtonTodoList.Layer.CornerRadius = 10;
@@ -237,12 +237,14 @@ namespace Hello_MultiScreen_iPhone
         /// </summary>
         public override void ViewWillAppear(bool animated)
         {
+            
             base.ViewWillAppear(animated);
+            //scrollView.BackgroundColor = HomeScreen.color;
             if (UIKit.UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad)
             {
                 scrollView.Frame = new CGRect(0, 0, View.Frame.Width + 200, View.Frame.Height);
                 scrollView.ContentSize = new CGSize(View.Frame.Width + 200, View.Frame.Height + 200);
-                scrollView.BackgroundColor = HomeScreen.color;
+                //scrollView.BackgroundColor = HomeScreen.color;
                 scrollView.AutoresizingMask = UIViewAutoresizing.FlexibleHeight;
             }
             Foundation.NSNotificationCenter.DefaultCenter.AddObserver(new NSString("UIDeviceOrientationDidChangeNotification"), DeviceRotated);
@@ -300,7 +302,8 @@ namespace Hello_MultiScreen_iPhone
                 imageViewTitle.Frame = new CGRect(ResponsiveWidthLeft - 20, View.Frame.Top + 10, ResponsiveSizeX + 40, 80 + 30 + 10);
 
             }
-
+            this.NavigationController.NavigationBar.BarTintColor = UIColor.White;
+            this.NavigationController.NavigationBar.TintColor = UIColor.Black;
 
         }
 
