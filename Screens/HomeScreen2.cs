@@ -104,11 +104,11 @@ namespace Hello_MultiScreen_iPhone
             textViewWrite.Editable = false;
             editTextWrite.TextColor = UIColor.Black;
             ButtonyourstoryscreenUpload.SetTitleColor(UIColor.White, UIControlState.Normal);
-            ButtonyourstoryscreenUpload.BackgroundColor = UIColor.FromRGB(100, 149, 237);
+            ButtonyourstoryscreenUpload.BackgroundColor = UIColor.SystemBlue;//UIColor.FromRGB(100, 149, 237);
             ButtonDelete.SetTitleColor(UIColor.White, UIControlState.Normal);
-            ButtonDelete.BackgroundColor = UIColor.FromRGB(240, 137, 171);
+            ButtonDelete.BackgroundColor = UIColor.FromRGB(255, 69, 103);
             ButtonDelete1Line.SetTitleColor(UIColor.White, UIControlState.Normal);
-            ButtonDelete1Line.BackgroundColor = UIColor.FromRGB(240, 137, 171);
+            ButtonDelete1Line.BackgroundColor = UIColor.FromRGB(255, 69, 103);
             ShareTodo.SetTitleColor(UIColor.White, UIControlState.Normal);
             Buttonbackyourstory.SetTitle("Back", UIControlState.Normal);
             ButtonyourstoryscreenUpload.SetTitle("Submit", UIControlState.Normal);
@@ -147,7 +147,7 @@ namespace Hello_MultiScreen_iPhone
                 this.textViewWrite.ScrollRangeToVisible(range);
             }
 
-            scratchpad.BackgroundColor = UIColor.FromRGB(100, 149, 237);
+            scratchpad.BackgroundColor = UIColor.SystemBlue;//UIColor.FromRGB(100, 149, 237);
             scratchpad.SetTitleColor(UIColor.White, UIControlState.Normal);
             scratchpad.SetTitle("Scratch Notes", UIControlState.Normal);
 
@@ -498,7 +498,7 @@ namespace Hello_MultiScreen_iPhone
                 textViewWrite.Frame = new CGRect(ResponsiveWidthLeft, View.Frame.Top + 30, ResponsiveSizeX, 340 + expandipad);
                 sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
                 ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, 500 + expandipad2, 30, 30);
-                scratchpad.Frame = new CGRect(ResponsiveWidthLeft, 550+expandipad2, 100, 30);
+                scratchpad.Frame = new CGRect(ResponsiveWidthLeft, editTextDate.Frame.Bottom + 30, 100, 30);
 
             }
 
@@ -517,7 +517,7 @@ namespace Hello_MultiScreen_iPhone
 
                 sta.Frame = new CGRect(editTextDate.Frame.Right, editTextDate.Frame.Top, 75, editTextDate.Frame.Height);
                 ShareTodo.Frame = new CGRect(sta.Frame.Right + 5, ButtonyourstoryscreenUpload.Frame.Bottom + 30, 30, 30);
-                scratchpad.Frame = new CGRect(ResponsiveWidthLeft, 550+expandipad, 100, 30);
+                scratchpad.Frame = new CGRect(ResponsiveWidthLeft, editTextDate.Frame.Bottom + 30, 100, 30);
 
             }
             borderFunction();

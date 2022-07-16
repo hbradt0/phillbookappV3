@@ -33,6 +33,10 @@
       <Optimize>false</Optimize>
       <LogicalName>HomeScreen.nib</LogicalName>
     </_BundleResourceWithLogicalName>
+    <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool/EditImportant.nib">
+      <Optimize>false</Optimize>
+      <LogicalName>EditImportant.nib</LogicalName>
+    </_BundleResourceWithLogicalName>
     <_BundleResourceWithLogicalName Include="obj/iPhone/Release/ibtool/HelloUniverseScreen.nib">
       <Optimize>false</Optimize>
       <LogicalName>HelloUniverseScreen.nib</LogicalName>

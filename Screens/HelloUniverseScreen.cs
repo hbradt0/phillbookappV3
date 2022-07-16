@@ -77,14 +77,14 @@ namespace Hello_MultiScreen_iPhone
             dateTimeText = new UIDatePicker();
             dateTimeText.Hidden = true;
             dateTimeText.BackgroundColor = HomeScreen.color;
-            dateTimeText.TintColor = UIColor.White;
+            dateTimeText.TintColor = UIColor.SystemBlue;
 
             ButtonDateClick = new UIButton(UIButtonType.System);
             UIScrollView scrollView2 = new UIScrollView();
             EditJournalButton = new UIButton(UIButtonType.System);
 
             EditJournalButton.SetTitleColor(UIColor.White, UIControlState.Normal);
-            EditJournalButton.BackgroundColor = UIColor.FromRGB(100, 149, 237);
+            EditJournalButton.BackgroundColor = UIColor.SystemBlue;
 
             EditJournalButton.SetTitle("Edit Journal", UIControlState.Normal);
 
@@ -96,9 +96,9 @@ namespace Hello_MultiScreen_iPhone
             Buttonbackyourstory.SetTitleColor(UIColor.White, UIControlState.Normal);
             ButtonDateClick.SetTitleColor(UIColor.White, UIControlState.Normal);
             ButtonyourstoryscreenUpload.SetTitleColor(UIColor.White, UIControlState.Normal);
-            ButtonyourstoryscreenUpload.BackgroundColor = UIColor.FromRGB(100, 149, 237);
+            ButtonyourstoryscreenUpload.BackgroundColor = UIColor.SystemBlue;//UIColor.FromRGB(123, 104, 238);//UIColor.FromRGB(100, 149, 237);
             ButtonDelete1Line.SetTitleColor(UIColor.White, UIControlState.Normal);
-            ButtonDelete1Line.BackgroundColor = UIColor.FromRGB(240, 137, 171);
+            ButtonDelete1Line.BackgroundColor = UIColor.FromRGB(255, 69, 103);//UIColor.FromRGB(240, 137, 171);
 
             var gestureToCloseKeyboard = new UITapGestureRecognizer(() => View.EndEditing(true));
             editTextWrite.ShouldChangeText = (text, range, replacementString) =>
@@ -134,7 +134,7 @@ namespace Hello_MultiScreen_iPhone
             dateTimeText.MinimumDate = minDate;
             dateTimeText.Mode = UIDatePickerMode.Date;
             dateTimeText.MaximumDate = currentDate;
-
+            
 
             //ButtonDateClick.SetTitle("Send Date", UIControlState.Normal);
             ButtonDateClick.SetBackgroundImage(UIImage.FromBundle("mailicon.png"), UIControlState.Normal);

@@ -139,7 +139,7 @@ namespace Hello_MultiScreen_iPhone
             //booktextView.ReturnKeyType = UIReturnKeyType.Send;
   
             Button3.SetTitle("Save", UIControlState.Normal);
-            Button3.BackgroundColor = UIColor.FromRGB(100, 149, 237);
+            Button3.BackgroundColor = UIColor.SystemBlue;
             Button3.SetTitleColor(UIColor.White, UIControlState.Normal);
             Button3.Layer.CornerRadius = 10;
 

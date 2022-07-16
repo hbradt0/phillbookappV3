@@ -76,7 +76,7 @@ namespace Hello_MultiScreen_iPhone
             ButtonDelete = new UIButton(UIButtonType.System);
             ButtonDelete.SetTitleColor(UIColor.White, UIControlState.Normal);
 
-            ButtonDelete.BackgroundColor = UIColor.FromRGB(240, 137, 171);
+            ButtonDelete.BackgroundColor = UIColor.FromRGB(255, 69, 103);
             ButtonDelete.SetTitle("Start Over", UIControlState.Normal);
             ButtonDelete.Layer.CornerRadius = 10;
 
@@ -107,7 +107,7 @@ namespace Hello_MultiScreen_iPhone
             //booktextView.ReturnKeyType = UIReturnKeyType.Send;
   
             Button3.SetTitle("Save", UIControlState.Normal);
-            Button3.BackgroundColor = UIColor.FromRGB(100, 149, 237);
+            Button3.BackgroundColor = UIColor.SystemBlue;
             Button3.SetTitleColor(UIColor.White, UIControlState.Normal);
             Button3.Layer.CornerRadius = 10;
 

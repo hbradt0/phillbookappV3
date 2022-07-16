@@ -82,10 +82,10 @@ namespace Hello_MultiScreen_iPhone
             dateTimeText.MaximumDate = currentDate;
 
             ButtonDelete.SetTitleColor(UIColor.White, UIControlState.Normal);
-            ButtonDelete.BackgroundColor = UIColor.FromRGB(240, 137, 171);
+            ButtonDelete.BackgroundColor = UIColor.FromRGB(255, 69, 103);
             ButtonDelete1Line.SetTitleColor(UIColor.White, UIControlState.Normal);
             ButtonDateClick.SetTitleColor(UIColor.White, UIControlState.Normal);
-            ButtonDelete1Line.BackgroundColor = UIColor.FromRGB(240, 137, 171);
+            ButtonDelete1Line.BackgroundColor = UIColor.FromRGB(255, 69, 103);
             ButtonDelete1Line.SetTitle("Delete", UIControlState.Normal);
             ButtonDelete.SetTitle("Start Over", UIControlState.Normal);
             ButtonDateClick.SetBackgroundImage(UIImage.FromBundle("mailicon.png"), UIControlState.Normal);
